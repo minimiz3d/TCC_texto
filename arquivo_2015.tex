@@ -1,0 +1,1336 @@
+    %%%% Arquivo base para o documento - ver. 1.00 (24/02/2016)
+% % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % 
+%%%%%%MDT UFSM 2015%%%%%%%%%%%%
+% % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % 
+% % %  OPCOES DE COMPILACAO  %%%%%%%%%%%
+
+
+% % % % % PAGINACAO
+% % % PAGINACAO SIMPLES (FRENTE): PARA TRABALHOS COM MENOS DE 100 PAGINAS
+\documentclass[oneside,openright,12pt]{ufsm_2015} %%%%% OPCAO PADRAO -> PAGINACAO SIMPLES. PARA TRABALHOS COM MAIS DE 100 PAGINAS COMENTE ESTA LINHA E DESCOMENTE A LINHA 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% PAGINACAO DUPLA (FRENTE E VERSO): PARA TRABALHOS COM MAIS DE 100 PAGINAS
+% \documentclass[twoside,openright,12pt]{ufsm_2015}  %%%% PARA TRABALHOS COM MAIS DE 100 PAGINAS DESCOMENTE AQUI
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%%%%%%%%% DEFINICAO PADRAO DE PACOTES -- ALTERE POR SUA CONTA E RISCO
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{epsf,amsfonts}
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+\usepackage{float}
+% % % %  PACOTE DE CODIFICACAO - PADRAO = UTF8
+\usepackage[utf8]{inputenc}  %utf8
+% \usepackage[latin1]{inputenc}   % europeu
+% % % % % % % % % % % 
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{indentfirst}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{picinpar}
+\usepackage{ifthen}
+\usepackage{path}
+\usepackage{scalefnt}
+\usepackage{tocloft}
+\usepackage[overload]{textcase}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % FIM DA DEFINICAO PADRAO DE PACOTES  % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+
+
+
+
+% % % % % % % % PACOTES PESSOAIS % % % % % % % %  
+
+
+
+
+
+
+% % % % % %  DEFINICOES PESSOAIS  
+
+
+
+
+
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % DADOS DO TRABALHO % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% % % % % % % % % % INFORMACOES INSTITUCIONAIS % % % % % % % % % % 
+% % CENTRO DE ENSINO DA UFSM
+\centroensino{CENTRO DE TECNOLOGIA}  %%% NOME POR EXTENSO
+\centroensinosigla{CT}  %%% SIGLA
+
+% % CURSO DA UFSM
+\nivelensino{Graduação}  %%%%%%% NIVEL DE ENSINO 
+\curso{Engenharia de Computação}   %%%%% NOME POR EXTENSO
+\ppg{PPGALGO}   %%%%%% SIGLA
+\statuscurso{Curso}  %%%% STATUS= {Programa} ou {Curso}
+
+
+% % % % % % % % % % INFORMACOES DO AUTOR % % % % % % % % % % 
+\author{Árthur Tolfo Pinheiro}   %%%%% AUTOR DO TRABALHO
+\sexo{M} %%%% SEXO DO AUTOR -> M=masculino   F=feminino (IMPORTANTE PARA AJUSTAR PAGINAS PRE-TEXTUAIS)
+\grauensino{Graduação}    %%%%%%%% GRAU DE ENSINO A SER CONCLUIDO
+\grauobtido{Bacharel}    %%%%% TITULO OBTIDO
+\email{lalala@uhul.com}   %%%% E-MAIL PARA CATALOGRAFICA (COPYRIGHT) - OBRIGATORIO
+\endereco{Rua das abobrinhas, n. 666} %%%% TELEFONE PARA CATALOGRAFICA (COPYRIGHT) (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
+\fone{11 2222 3333}   %%%% TELEFONE PARA CATALOGRAFICA (COPYRIGHT) FORMATO {11 2222 3333} (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
+\fax{11 2222 3333}   %%%% FAX PARA CATALOGRAFICA (COPYRIGHT) FORMATO {11 2222 3333} (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
+
+
+% % % % % % % % % % INFORMACOES DA BANCA % % % % % % % % % % 
+% OBSERVACOES: O CAMPO ORIENTADOR EH OBRIGATORIO E NAO DEVE SER COMENTADO
+% % % % % %    OS DEMAIS MEMBROS DA BANCA (COOREIENTADOR E DEMAIS PROFESSORES) QUANDO COMENTADOS NAO APARECEM NA FOLHA DE APROVACAO (O LAYOUT DA FOLHA DE APROVACAO ESTA PREPARADO PARA O ORIENTADOR E ATE MAIS 4 MEMBROS NA BANCA
+\orientador{Carlos Henrique Barriquello}{Dr}{AAAA}{M}{P}  %%%INFORMACOES SOBRE ORIENTADOR: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
+% \coorientador{TALVEZ!!!}{Dra}{AAAA}{F}{M} %%%INFORMACOES SOBRE CO-ORIENTADOR: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
+\bancaum{Banca Um}{Dr}{AAAA}{F}{M}  %%%INFORMACOES SOBRE PRIMEIRO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
+
+\bancadois{Banca Dois}{Dr}{BBBB}  %%%INFORMACOES SOBRE SEGUNDO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}
+\bancatres{Banca Três}{Dra}{CCCC} %%%INFORMACOES SOBRE TERCEIRO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}
+% \bancaquatro{Banca Quatro}{Dr}{DDDD} %%%INFORMACOES SOBRE QUARTO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}
+% \bancacinco{Banca Cinco}{Dra}{EEEE} %%%INFORMACOES SOBRE QUARTO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}
+
+
+
+% % % % % % % % % % INFORMACOES SOBRE O TRABALHO % % % % % % % % % %
+% % % %  TITULO DO TRABALHO
+\titulo{SISTEMA DE MONITORAMENTO DE VAGAS DE ESTACIONAMENTO AO AR LIVRE BASEADO EM UMA REDE DE SENSORES SEM FIO} %% NAO EH NECESSARIO CAPITALIZAR
+% % % %  TITULO DO TRABALHO EM INGLES
+\englishtitle{Título em ingês}  %% NAO EH NECESSARIO CAPITALIZAR
+% % % AREA DE CONCENTRACAO DO TRABALHO (CNPQ)
+\areaconcentracao{Área de concentração do CNPq}
+% % % TIPO DE TRABALHO - MANTER APENAS UMA LINHA DESCOMENTADA
+% \tese  %% Tese de <nivel de ensino>
+% \qualificacao %% Exame de Qualificação de <nivel de ensino>
+% \dissertacao %% Dissertacao de <nivel de ensino>
+% \monografia %% Monografia
+% \monografiag  %% Monografia (nao exibe area de concentracao)
+% \tf  %% Trabalho Final de <nivel de ensino>
+% \tfg  %% Trabalho Final de Graduacao (nao exibe area de concentracao)
+\tcc  %% Trabalho de Conclusao de Curso
+% \tccg  %% Trabalho de Conclusao de Curso (nao exibe area de concentracao)
+% \relatorio  %% Relatório de Estágio (nao exibe area de concentracao)
+% \generico   %%% Alternativa para aqueles cursos que nao recebem o titulo de bacharel ou licenciado. Ex: engenharia, arquitetura, etc... Os campos abaixo tambem devem ser preenchidos
+%     \tipogenerico{Tipo de trabalho em português}
+%     \tipogenericoen{Tipo de trabalho em inglês}
+%     \concordagenerico{o}
+%     \graugenerico{Engenheiro Eletricista}
+% % % DATA DA DEFESA 
+\data{DIA}{MÊS}{2018} %% FORMATO {DD}{MM}{AAAA}
+
+
+
+% % % % %  ALGUMAS ENTRADAS PRE-TEXTUAIS
+% % % % CASO NAO QUEIRA UTILIZA-LAS COMENTE A LINHA DE COMANDO
+% % % EPIGRAFE
+\epigrafe{O livro é uma criatura frágil, ele sofre o desgaste do tempo, ele teme os roedores, os elementos e mãos desajeitadas. Então o livreiro proteje os livros não apenas da humanidade, mas também da natureza e devota sua vida a uma guerra contra as forças do esquecimento.}{Umberto Eco} %ESTRUTURA DE CAMPOS -> {Texto}{Autor}
+% % % DEDICATORIA
+\dedicatoria{Ao Rei da Espanha!}
+% % % %  AGRADECIMENTOS
+\agradecimentos{
+A mim!
+}
+
+% % % % %  RESUMO E PALAVRAS CHAVE DO RESUMO - OBRIGATORIO PARA MDT-UFSM
+\resumo{
+O crescimento do número de veículos em circulação no país gera diversos inconvenientes, como engarrafamentos e altos índices de poluição. Neste contexto, uma das principais causas de lentidão no trânsito é a busca às cegas por vagas de estacionamento, que se dá pela falta de informatização destes locais.
+Diante disso, o objetivo deste trabalho é verificar a efetividade de uma aplicação que detecta vagas disponíveis em um estacionamento ao ar livre. Para isso foi desenvolvido um protótipo de uma rede de sensores sem fio, que utiliza sensores LDR de baixo custo para detectar a disponibilidade das vagas e comunicação por radiofrequência nas transmissões. O sistema está estruturado em uma topologia de rede em estrela, onde os \textit{sensor-nodes} transmitem individualmente o estado de determinada vaga a uma central (\textit{sink-node}) através de módulos de comunicação AM. Por fim, o \textit{sink-node} disponibiliza a quantia de vagas disponíveis para a aplicação, através da tecnologia LoRa.
+
+}
+% MELHORAR AQUI!
+\palavrachave{Estacionamento. LDR. LoRa.}
+% "... deverão constar, no mínimo, três palavras-chave, iniciadas em
+% letras maiúsculas, cada termo separado dos demais por ponto, e
+% finalizadas também por ponto." MDT 2012
+
+% % % % %  ABSTRACT E PALAVRAS CHAVE DO RESUMO - OBRIGATORIO PARA MDT-UFSM
+\abstract{
+    The growth in the number of vehicles in circulation in the country creates several drawbacks, such as traffic congestion and high rates of pollution. In this context, one of the main causes in traffic slowness is the blind search for parking spaces, which occur due to the lack of informatization of these places.
+    Thus
+    , the objective of this work is to verify the effectiveness of an application that detects vacant parking spaces in an open parking lot. For this purpose a wireless sensor network prototype was developed, which uses low-cost LDR sensors to detect parking spaces availability and radiofrequency communication in transmissions. The system is structured in a star network topology, where each sensor-node transmits the state of a particular parking space to a central, called sink-node, using AM communication modules. Finally, the sink-node provides the amount of available parking spaces to the application, through LoRa technology.
+}
+\keywords{Parking. LDR. LoRa.}
+
+
+% % %  ATIVACAO DE LISTAS E PAGINAS ESPECIAIS
+% % %  PARA QUE APARECAO NAO NO TEXTO DESCOMENTE A LINHA ABAIXO -> POR PADRAO TODAS ESTAO ATIVIDADAS
+
+% % LISTA DE FIGURAS 
+% \semfiguras   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
+% % LISTA DE GRAFICOS 
+% \semgraficos   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
+% % LISTA DE ILUSTRACOES 
+ \semilustracoes  %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
+% % LISTA DE TABELAS 
+ \semtabelas   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
+% % LISTA DE QUADROS 
+% \semquadros   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
+% % LISTA DE APENDICES 
+% \semapendices  %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
+% % LISTA DE ANEXOS 
+% \semanexos   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
+
+
+
+% % % %  LISTA DE ABREVIATURAS E SIGLAS
+%%%%%%%% OBS: O espaco entre colchetes \item[] e um ambiente matematico
+%%%%%%%% para não utilizar comente as linhas abaixo.
+\siglamax{SIGLAMAX} %%%% coloque aqui a maior sigla (indentacao)
+\listadeabreviaturasesiglas{
+\item[ACK] \textit{Acknowledgment}
+\item[ADC] \textit{Analog to Digital Converter}
+\item[AM] \textit{Amplitude Modulation}
+\item[ASK] \textit{Amplitude-Shift Keying}
+\item[BW] \textit{Bandwidth}
+\item[CHIRP] \textit{Compressed High Intensity Radar Pulses}
+\item[CoAP] \textit{Constrained Application Protocol}
+\item[CPS] \textit{Cyber Physical Systems}
+\item[CR] \textit{Coding Rate}
+\item[DNL] \textit{Differential Nonlinearity}
+\item[IoT]  \textit{Internet of Things}
+\item[INL] \textit{Integral Nonlinearity}
+\item[ISM] \textit{Industrial Scientific and Medical}
+\item[LDR] \textit{Light Dependent Resistor}
+\item[LoRa] \textit{Long Range}
+\item[LoRaWAN]  \textit{LoRa Wide Area Network}
+\item[LPWAN] \textit{Low Power Wide Area Network}
+\item[MAC] \textit{Medium Access Control}
+\item[MQTT] \textit{Message Queue Telemetry Transport}
+\item[M2M] \textit{Machine to Machine}
+\item[RF] \textit{Radiofrequência}
+\item[RSSF] \textit{Redes de Sensores Sem Fio}
+\item[SF] \textit{Spreading Factor}
+\item[SH] \textit{Sample and Hold}
+\item[WSN]	\textit{Wireless Sensor Networks}
+% \item[CdS] Sulfeto de Cádimo
+
+
+}
+
+% % % %  LISTA DE SIMBOLOS
+%%%%%%%% OBS: O espaco entre colchetes \item[] e um ambiente matematico
+%%%%%%%% para não utilizar comente as linhas abaixo.
+\simbolomax{(Re)2} %%%% coloque aqui o maior simbolo (indentacao)
+\listadesimbolos{
+\item[\overline{i}] Consumo médio total por ciclo de operação
+\item[T_{ciclo}] Tempo de ciclo
+\item[T_{on}] Tempo médio em atividade por ciclo
+\item[T_{off}] Tempo médio ocioso por ciclo
+\item[\overline{i_{on}}] Consumo médio em atividade por ciclo
+\item[\overline{i_{off}}] Consumo médio em ociosidade por ciclo
+\item[u_*]	Escala de velocidade de fricção	
+\item[w_*]	Escala de velocidade convectiva
+\item[(Re)^2]	Maior simbolo da lista
+}
+
+
+% % FICHA CATALOGRAFICA
+% \semcatalografica  %%%%  (QUANDO ATIVIDA NAO EXIBE A FICHA CATALOGRAFICA NECESSITA DO ARQUIVO DA FICHA: ficha_catalografica.pdf
+% % % A FICHA CATALOGRAFICA FORNECIDA PELA UFSM EH UM PDF DO TAMANHO A4
+% % % OS COMANDOS ABAIXO DEFINEM AS MARGENS PARA CORTAR A FICHA FORNECIDA E COLOCA-LA COMO UMA FIGURA NO DOCUMENTO LATEX
+\margemesquerda{4}   %%%% CORTE DE MARGEM ESQUERDA EM CM
+\margemdireita{1.5}   %%%% CORTE DE MARGEM DIREITA EM CM
+\margemsuperior{17}  %%%% CORTE DE MARGEM SUPERIOR EM CM
+\margeminferior{3} %%%% CORTE DE MARGEM INFERIOR EM CM
+% % %  DICA: IMPRIMA UMA COPIA DA FICHA CATALOGRAFICA E FACA A MEDIDA DAS MARGENS!
+
+
+
+
+% % FOLHA DE ERRADA (versao rudimentar...pode ser aprimorado)
+% % para não utilizar comente as linhas abaixo.
+% % deve ser preenchida como um ambiente tabular de quatro colunas:
+% % pagina & linha & onde se le & leia-a se \\
+\errata{
+10   &    10    & errado   & certo \\
+\hline
+12    &    5     & errado com um texto mais longo & certo agora com um texto mais longo\\
+\hline
+13   &    3    & $x^2$   & $2x$\\
+}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % %  OPCOES DE FORMATACAO % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % CAPITULO: por padrao alinhado a esquerda. Para ativar alinhamento centralizado descomente o comando abaixo
+
+%\centralizado  %%%% <<< centraliza todos os capitulos
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % FONTES: descomente uma das opcoes. caso nenhuma seja ativada a clase usara a fonte padrao do latex
+
+%% helvetica
+\usepackage[scaled]{helvet}
+\renewcommand*\familydefault{\sfdefault}
+
+%% arial
+% \renewcommand{\rmdefault}{phv} % Arial
+% \renewcommand{\sfdefault}{phv} % Arial
+
+%%times
+% \usepackage{mathptmx}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % %  INICIO DO DOCUMENTO  % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\begin{document}
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\pretextual  %%%% GERA AS PAGINAS PRE-TEXTUAIS   
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % CORPO DO TRABALHO - INCLUA OS SEUS TEXTOS AQUI
+% % % % % SUGESTAO -> UTILIZE ARQUIVOS EXTERNOS A PARTIR DO COMANDO \input
+
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % INICIO DAS PAGINAS TEXTUAIS % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % INTRODUCAO % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\introducao{%
+% Problemas de mobilidade urbana no Brasil estão diretamente ligados ao aumento no número da frota de veículos no país. Um destes principais contratempos são os engarrafamentos cada vez maiores e constantes no dia a dia do povo. Segundo uma pesquisa do G1 baseada em dados do Departamento Nacional de Trânsito (Denatran), somente em 2014 se constatou que havia o equivalente a um carro para cada quatro habitantes do país \cite{site:g1}. Já em 2017, este indicador aumentou e já representa pelo menos 51.2 milhões de automóveis em circulação \cite{site:cnt}. 
+
+% Além disso, estima-se que em média 30\% dos motoristas em congestionamentos estão em busca de uma vaga para estacionarem seus carros \cite{shoup2006cruising}. Ou seja, a falta informação acerca da disponibilidade de vagas nas ruas é parcialmente responsável por diversos inconvenientes que engarrafamentos causam, como atrasos e gastos desnecessários de combustível. 
+
+A disponibilização automatizada de informações acerca de objetos e locais pode ser considerada um dos pilares do conceito de internet das coisas (IoT, do inglês \textit{Internet of Things}), onde a utilização de redes de sensores sem fio é muito promissora para obtenção e transmissão de dados. Neste sentido, estima-se que o número de dispositivos conectados à Internet no ano de 2020 esteja próximo de 30 bilhões \cite{nordrum2016popular}, ou seja, monitorar parâmetros como umidade relativa do ar \cite{oliveira2011wireless}; nível de lixo em containers \cite{joshi2016cloud}; e qualidade do solo e do cultivo na agricultura de precisão \cite{ojha2015wireless} serão algumas das aplicações cada vez mais frequentes nos próximos anos.
+
+Dessa forma, para que cidades inteligentes ou “infraestruturas em rede para melhorar a eficiência econômica e política, e possibilitar o desenvolvimento social, cultural e urbano” \cite{hollands2008will} não sejam apenas um conceito pelo mundo, é preciso que soluções inovadoras se pautem nas adversidades mais evidentes destas. No Brasil, por exemplo, problemas de mobilidade urbana como engarrafamentos cada vez mais constantes, estão atrelados à grande frota de veículos no país, que conforme dados apresentados pela Confederação Nacional do Transporte em 2017, já chega a 51.2 milhões de automóveis \cite{site:cnt}. Neste sentido, segundo dezesseis estudos realizados entre os anos de 1927 e 2001, em média 30\% dos motoristas em congestionamentos estavam em busca de uma vaga para estacionarem seus veículos \cite{shoup2006cruising}. Ou seja, ainda que tenham ocorrido inúmeras mudanças nas cidades desde que estes dados foram coletados, é evidente que procurar às cegas pela disponibilidade destes locais ainda contribui significativamente para tornar o trânsito mais lento. 
+
+Neste contexto, soluções baseadas em ferramentas como redes de sensores podem ser utilizadas, onde o objetivo destas seja indicar de forma automatizada a disponibilidade de vagas em determinado local, contribuindo assim para tornar as cidades mais informatizadas, e portanto mais inteligentes. No entanto, ainda que o uso destas redes apresente diversos benefícios em inúmeras áreas, cenários compostos por WSNs (\textit{Wireless Sensor Networks}) apresentam vários complicadores em sua implementação, como a necessidade de empregar fontes de alimentação capazes de disponibilizar energia de forma segura durante longos períodos de tempo; proteção dos elementos perceptores, que podem não ser resistentes à água ou altas e baixas temperaturas, por exemplo; robustez e segurança na comunicação para que se tenha integridade dos dados; entre outros desafios que impedem um desenvolvimento mais acelerado destes sistemas \cite{puccinelli2005wireless}. 
+
+Com isso, a cada ano estão surgindo soluções no campo de IoT para os complicadores anteriormente citados. A tecnologia de comunicação sem fio LoRa é um bom exemplo por ser recente e ter como objetivo contribuir na implementação de WSNs de baixo consumo de energia e longo alcance de transmissão. Características como estas são essenciais para que iniciativas baseadas em redes LoRaWAN, como a Digital Living Lab, situada em Wollongong na Austrália \cite{site:dll}, sejam realizadas de modo que as pessoas da região entendam e possam contribuir no desenvolvimento de aplicações que ajudem na transformação de cidades mais inteligentes. Dessa forma, projetos que auxiliem de alguma forma a comunidade local são incentivados, como por exemplo a implantação de uma rede de sensores sem fio que possa mapear os hidrantes da cidade, ou possíveis pontos suscetíveis a deslizamentos de terra, e com isso ser útil para serviços de emergência.
+
+A partir disso, neste trabalho de conclusão de curso são discutidos temas como WSN, comunicação em radiofrequência, protocolo LoRaWAN, sensores de luminosidade e é proposta a implementação de um protótipo de uma rede de sensores sem fio para ser utilizada como base de uma aplicação, onde o objetivo principal é monitorar o estado de vagas de um estacionamento ao ar livre, através de um aplicativo web. Para isso, serão empregados em conjunto sensores LDR e também módulos de comunicação de radiofrequência.
+
+A estrutura deste trabalho está dividida da seguinte forma: no Capítulo 2 é realizada a revisão de literatura relacionada à aplicação proposta, mencionando técnicas e soluções utilizadas em outros trabalhos para o mesmo o problema; no Capítulo 3 são abordados conceitos básicos relevantes ao trabalho, como conversão analógico/digital e comunicação \textit{wireless}; no Capítulo 4 é apresentada a aplicação num todo, descrevendo o projeto do sistema; no Capítulo 5 são apresentados e discutidos os resultados obtidos; e por fim, o Capítulo 6 aborda as conclusões e sugestões para trabalhos futuros.
+}%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\geraintro  %%%% GERA INTRODUCAO   % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\chapter{REVISÃO DE LITERATURA}
+Este capítulo tem como objetivo abordar brevemente diferentes soluções possíveis para o mesmo problema, isto é, aplicações que visem monitorar o estado das vagas de um estacionamento ao ar livre.
+
+\section{Detecção de veículos em estacionamentos}
+A etapa primordial para se informatizar o estado das vagas de um estacionamento é a maneira com que se detecta a disponibilidade das mesmas. Geralmente utilizam-se sensores dispostos no local, como magnetômetros \cite{barton2007d} e sensores ultrassônicos \cite{lee2008intelligent}. Entretanto, a instalação e manutenção destes sistemas se torna cara em ambientes com um grande número de vagas a serem monitoradas. Para isso, soluções que utilizam processamento de imagens, como apresentado em \cite{ichihashi2009vacant}, se mostram vantajosas tanto na capacidade de detecção simultânea de várias vagas, como na não intrusividade sobre o local em si, por não afetarem diretamente a superfície. Ainda que apresente diversas vantagens, sistemas dependentes de câmeras exigem alto consumo energético, quando comparadas a sensores, e também acabam gerando grandes volumes de dados \cite{wu2007robust}.
+
+Dessa forma, fica claro que há inúmeras dificuldades em se empregar um sistema que seja vantajoso em muitos aspectos. A seguir serão apresentados os tipos mais comuns de sensores utilizados para este tipo de aplicação, sendo descritos pontos positivos e negativos de cada um.
+
+\subsubsection{Magnetômetros} 
+Este tipo de sensor opera baseando-se nas variações de campo magnético da Terra. Portanto, quando há perturbações em alguma direção do campo, a corrente e consequentemente o fluxo de elétrons também são afetados. Medindo-se estas mudanças é possível determinar, por exemplo, a existência de materiais ferromagnéticos próximos, o que indicaria a presença de um carro. 
+
+\begin{figure}[ht]
+    \caption{\label{exepretex} Magnetômetro HMC5883L}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/5883L_BoB.jpg}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{\cite{magnet}}
+        \label{fig:magnetometro}
+\end{figure}
+
+Pode-se citar como principal vantagem o funcionamento em largas faixas de temperatura (entre -30°C e 85°C no caso do sensor mostrado acima) e também a alta confiabilidade das medidas. Entretanto, estes possuem uma área de sensibilidade baixa, o que leva ao problema anteriormente citado da necessidade de instalação de uma unidade por vaga.
+
+\subsubsection{Sensores Ultrassônicos}
+O princípio de funcionamento destes está relacionado à forma com que um sinal transmitido é refletido de volta ao entrar em contato com determinada superfície. Para tanto, pulsos de alta frequência são emitidos na direção do que se pretende analisar; depois a energia recebida de volta deve ser processada; e a partir disto é possível verificar, por exemplo, a que distância está um objeto ou também que tipo de material o elemento em questão é composto.
+
+Dentre as vantagens preponderantes deste sensor está a praticidade de instalação e de se aferir resultados. Porém, diferentemente dos magnetômetros, situações climáticas adversas, como vento e chuva, causam perda de performance.
+
+\subsubsection{Câmeras}
+No caso destes sensores, a detecção das vagas de um estacionamento é feita através do uso de processamento de imagens. A alta capacidade de cobertura, ou seja, monitorar diversas vagas com apenas um só dispositivo, os tornam uma solução extremamente atrativa. Como pode ser visto na Figura \ref{fig:repoparking}, uma implementação de código aberto é capaz de detectar o estado de até quinze vagas de uma só vez.
+
+\begin{figure}[H]
+    \caption{\label{exepretex} Sistema \textit{Automatic Parking Detection} em operação}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/automatic-parking-detection.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{\cite{repoparking}}
+        \label{fig:repoparking}
+\end{figure}
+
+\section{SENSORES DE LUMINOSIDADE}
+Como o nome sugere, estes dispositivos são capazes de medir a intensidade de luz em determinada região. Existem diversos tipos destes sensores, como fototransistores e fotoresistores, do inglês \textit{Light Dependent Resistor} (LDR), cada um produzindo medidas elétricas de uma forma. Por exemplo, no caso dos LDRs (geralmente representados como na Figura \ref{fig:ldr-simbolo}), a medida é realizada em relação à resistência interna destes, que varia de forma inversamente proporcional à incidência luminosa, comumente medida em Lux. A seguir são detalhadas as características dos fotoresistores.
+\begin{figure}[ht]
+    \caption{\label{exepretex} Simbologia de fotoresistores}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/ldrsymbol.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{LightDep4:online}}
+        \label{fig:ldr-simbolo}
+\end{figure}
+
+
+\subsection{Estrutura}
+A estrutura dos fotoresistores é composta por uma trilha de algum material fotocondutor de alta resistência, como Sulfeto de Cádimo (CdS), conectada a terminais de contato de baixíssima resistência (Figura \ref{fig:ldrstructure}). Estes ficam dispostos sobre uma camada de substrato isolante, como cerâmica (Figura \ref{fig:substrato}). Vale ressaltar que o material semicondutor é dopado negativamente afim de se atingir um nível de condutividade capaz de diferenciar intensidades luminosas. Além disso, a região em volta dos contatos metálicos é dopada positivamente para evitar que estes influenciem nas medidas do sensor \cite{LightDep25:online}.
+
+\begin{figure}[H]
+    \caption{\label{exepretex} Estrutura básica de um LDR}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/ldrcds.jpg}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{LightDep99:online}}
+        \label{fig:ldrstructure}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{\label{exepretex} Camadas de um LDR}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/ldr_esturtura.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{LightDep25:online}}
+        \label{fig:substrato}
+\end{figure}
+
+\subsection{Princípio de Funcionamento}
+O funcionamento básico destes dispositivos consiste em variações na resistividade do material semicondutor que o compõe, conforme a intensidade luminosa incidente, e se dá através do efeito fotoelétrico,  postulado por Einsten em 1905 \cite{klassen2011photoelectric}. Isto é, quando a luz sobre o LDR for de alta frequência, os prótons absorvidos terão energia suficiente para fazer com que elétrons presos na camada de valência pulem para a camada de condução \cite{ibrahim2016automated}. Dessa forma, quando houver alta luminosidade incidente, haverão mais elétrons livres disponíveis para a condução de corrente elétrica (maior fotocondutividade), e portanto menor resistência do LDR.
+
+Pode-se visualizar este comportamento na Figura \ref{fig:ldr-graph}. Em casos de alta luminosidade, como entre 10Lux e 100Lux, a resistência interna do material está na faixa de centenas de Ohms, e para cenários escuros, tem-se um aumento para a extensão de mega Ohms. Esta relação é descrita pela constante do LDR $\gamma$, que define a taxa de variação de resistência do LDR, em relação a um intervalo bem definido de variação luminosa:
+\begin{equation}
+    \gamma = log(\frac {R_{start}}{R_{end}}),
+\end{equation}
+onde $R_{start}$ e $R_{end}$ representam a resistência do LDR sob as intensidades luminosas que delimitam o intervalo, em Lux. Geralmente os fabricantes fornecem o valor desta característica, que comumente equivale a valores entre 0.6 e 0.8, para LDRs compostos por Sulfeto de Cádimo \cite{Lightdep67:online}. Além disso, é possível obter outra relação útil, que determina o valor de incidência luminosa, em Lux, a partir da constante $\gamma$:
+
+\begin{equation}
+    L = (\frac{R_{LDR}}{R_{escuro}})^\gamma ,
+\end{equation}
+tal que $L$ representa o valor da incidência luminosa que deseja-se medir, e $R_{LDR}$ é a resistência atual do dispositivo.
+
+\begin{figure}[ht]
+    \caption{\label{exepretex} Iluminância relacionada à fotoresistência}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/ldrgraph.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{noro2017common}}
+        \label{fig:ldr-graph}
+\end{figure}
+
+% \subsubsection{Resposta Espectral}
+Outro ponto relevante dos LDRs é a resposta espectral destes dispositivos. Similarmente ao olho humano, fotocondutores são sensíveis à determinada faixa de comprimentos de onda (cor da luz incidente). Portanto, o material utilizado para compor este tipo de sensor é determinante na curva de resposta espectral. Esta característica é muito importante, pois indica quais comprimentos de onda afetarão a resistência interna do dispositivo. A Figura \ref{fig:wavelength} exemplifica a operação de diferentes materiais sob a incidência luminosa. Pode ser observado que o Sulfeto de Cádimo (CdS) - amplamente utilizado em sensores LDR - opera principalmente na faixa de luz visível do espectro, sendo suficiente para a aplicação em questão, por se tratar da incidência de luz solar no sistema.
+\begin{figure}[H]
+    \caption{\label{exepretex} Resposta espectral de diferentes materiais}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/wavelength-detectivity.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{resistorguide}}
+        \label{fig:wavelength}
+\end{figure}
+
+
+
+\chapter{REFERENCIAL TEÓRICO}
+Este capítulo tem como objetivo abordar conceitos básicos relativos aos sistemas utilizados neste aplicação, como obtenção de medidas utilizando sensores analógicos e princípios de comunicação sem fio.
+
+\section{REDES DE SENSORES SEM FIO}
+Se há algo em comum entre todas as gerações humanas, pode-se dizer que isto é a curiosidade que temos de compreender o ambiente que nos circunda, e dar a isso algum valor. Dessa forma, diversos exemplos de aplicações, bem intencionadas ou não, que fossem baseadas na percepção ou monitoramento de eventos foram desenvolvidas ao longo dos anos. Na Segunda Guerra Mundial, por exemplo, a marinha alemã utilizava princípios eletromagnéticos para implantar minas navais que também atuavam como sensores, e assim eram capazes de afundar automaticamente navios britânicos quando próximos \cite{HowBrita11:online}. Em contrapartida, outros sistemas também antigos de percepção, como o radar são utilizados até hoje para fins mais pacíficos em áreas como meteorologia e aviação comercial. 
+
+Com o passar do tempo, as técnicas de monitoramento foram aprimoradas e gradualmente mais automatizadas. Isto foi possível devido à rápida evolução na área de microeletrônica, que com circuitos e encapsulamentos cada vez menores e mais eficientes \cite{renna2007evolution}, possibilitou o surgimento das chamadas redes de sensores sem fio, do inglês \textit{Wireless Sensor Networks} (WSN), que podem ser definidas como: sistemas compostos de nós sensores, que através de dispositivos perceptores juntamente com comunicação sem fio objetivam mensurar e transmitir informações sobre algum fenômeno. 
+
+Nestas redes os nós sensores (\textit{sensor nodes}) são dispositivos de baixo consumo energético, equipados com sensores afim de detectar determinado evento, ou medida, de modo que a informação obtida seja transmitida por algum transceiver \cite{oliveira2011wireless}. Ou seja, por combinarem sensoriamento, processamento e comunicação em um só sistema, estes elementos são extremamente versáteis e possibilitam a criação de inúmeras aplicações. Entretanto ainda existem diversos desafios nesta área, como prolongar a vida útil das baterias, por exemplo. A seguir são apresentados alguns dos principais tópicos relevantes a estes sistemas.
+
+\subsection{Visão geral}
+Tipicamente redes de sensores sem fio (RSSFs) são definidas como um tipo especial de rede \textit{wireless}, onde cada nó trabalha cooperativamente para coletar e transmitir determinada informação \cite{loureiro2003redes}. Esta cooperação pode ser feita de diferentes formas, como por exemplo através da topologia de rede estrela (Figura \ref{fig:star-topology}), que consiste em nós independentes (\textit{sensor nodes}) enviando dados para uma central, usualmente chamada de \textit{sink node}, que os encaminha para outra rede, como a Internet, por exemplo \cite{buratti2009overview}. 
+% DEFINIR OS TIPOS E ALGUMAS APLICAÇÕES
+
+\begin{figure}[ht]
+ 	    \caption{\label{exepretex} Topologia estrela com \textit{sink-node} único}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/star_topology.png}
+    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+        \fonte{Autor (2018)}
+        \label{fig:star-topology}
+\end{figure}
+
+Além do fator cooperativo entre os nós da rede, destacam-se alguns pontos cruciais que tornam estas redes diferentes do usual, como as limitações de energia que os \textit{sensor nodes} estão restritos, ou então a necessidade destes sistemas serem baratos, pois em muitas aplicações são utilizados inúmeros nós.
+
+\subsubsection{Classificação e aplicações}
+Pelas diversas possibilidades de aplicação destas redes, pode-se classifica-las de várias formas. Uma das mais utilizadas é a classificação baseada na topologia de rede, ou seja, como é estruturada a troca de informações entre os dispositivos participantes. Na Figura \ref{fig:topologias} são apresentadas algumas das topologias mais utilizadas em redes de sensores sem fio. 
+
+\begin{figure}[ht]
+ 	    \caption{\label{exepretex} Topologias de rede}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/toplogias.png}
+    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+        \fonte{Autor (2018)}
+        \label{fig:topologias}
+\end{figure}
+
+\begin{enumerate}
+    \item Estrela (\textit{star}): Nesta topologia os \textit{sensor nodes} estão conectados a uma central (\textit{sink node}), também conhecida como nó coordenador ou mestre. Dessa forma, para que os \textit{sensor nodes} consigam trocar informações entre si, devem primeiro encaminhar os dados ao nó central. Dentre as principais vantagens de se utilizar esta estrutura de rede estão a simplicidade de implementação e o baixo consumo dos \textit{sensor nodes}. Entretanto, com apenas um nó coordenador há um ponto único de falha, e também maior consumo energético por parte deste.
+    
+    \item Malha (\textit{mesh}): Neste caso, todos os nós da rede que estejam próximos o suficiente podem trocar informações entre si, sem a necessidade de um nó coordenador. A complexidade dos nós, para que todos sejam capazes de rotear pacotes, por exemplo, torna estas redes não tão vantajosas para aplicações simples. Porém, caso a necessidade do sistema se concentre em alta tolerância a falhas e processamento distribuído, esta pode ser uma boa opção.
+    
+    \item Árvore (\textit{tree}): Já na topologia em árvore, os nós se comunicam através de uma hierarquia pré-definida. Isto é, os nós filhos, ou nós folha (\textit{leaf nodes}), de determinado nó, primeiro devem encaminhar seus dados ao nó pai para que cheguem ao avô, por exemplo. A principal vantagem de empregar esta topologia se concentra no baixo consumo dos nós filhos e alta escalabilidade. No entanto, quando um nodo pai tem algum problema, todos os \textit{leaf nodes} acabam sendo afetados, o que pode comprometer grande parte do sistema.   
+    
+\end{enumerate}
+
+Além das topologias, também é possível classificar estas redes conforme o tipo de aplicação que são destinadas \cite{forster2016introduction}. Por exemplo, redes de sensores que coletem informações sobre o corpo humano são comumente chamadas de \textit{body sensor networks} \cite{espina2014network}. Dentre as aplicações mais comuns deste tipo de WSN encontram-se medições de pressão arterial; eletrocardiografia; ou até mesmo de movimento, através de sensores inerciais \cite{fortino2018wearable}.
+
+Já redes implementadas para monitorar situações como a deste trabalho, isto é, com o intuito de obter dados do ambiente ou elementos deste, são nomeadas \textit{cyber-physical systems}, ou CPS. Neste caso destacam-se aplicações dispostas em áreas remotas, como o monitoramento de animais em migração \cite{zhang2004hardware}, ou então obtenção de dados de corais \cite{vasilescu2005data}, muito útil para biólogos. 
+
+\subsection{Componentes}
+Tipicamente estas redes consistem em dois sistemas básicos: nós da rede ou \textit{sensor nodes}, e central ou \textit{sink node}. Os \textit{sink nodes} são geralmente mais simples de serem implementados, pois não são necessariamente reféns das limitações energéticas que os nodos estão submetidos, e podem ser simplesmente um computador capaz de coletar e processar dados. Já os \textit{sensor nodes} são compostos pelos itens mostrados na Figura \ref{fig:sensor-node-components}, e devem ser selecionados criteriosamente, pois limitações como curta duração das baterias e precisão das medidas dos sensores impactam diretamente na aplicação. Abaixo são descritos brevemente estes sistemas.
+
+\begin{figure}[ht]
+ 	    \caption{\label{exepretex} Componentes básicos de um \textit{sensor node}}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/sensor-node-components.png}
+    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+        \fonte{Autor (2018)}
+        \label{fig:sensor-node-components}
+\end{figure}
+
+\begin{enumerate}
+    \item Sistema de alimentação: Para operar estes sistemas necessitam de energia provida por pequenas baterias, como pilhas alcalinas ou baterias de lítio, por exemplo.
+    \item Sensor: O elemento que dá nome aos nodos destas redes tem a função de mensurar alguma grandeza, ou evento, como a luminosidade em determinada região.
+    \item Microcontrolador: Para tornar os dados dos sensores em algum útil são utilizados estes pequenos dispositivos, que já contém sistemas como processador e memória embutidos. Dentre as suas principais funções estão o processamento e interface com o dispositivo de transmissão.
+    \item Transceiver: Por fim, é necessário utilizar um transmissor \textit{wireless} para encaminhar as informações coletadas nos nodos. Geralmente estes dispositivos podem operar tanto como transmissores, quanto como receptores, sendo chamados de \textit{transceivers}.
+\end{enumerate}
+
+\subsection{Autonomia dos nós sensores}
+Dentre as principais preocupações no desenvolvimento dos \textit{sensor nodes} encontra-se a longevidade e capacidade do sistema de alimentação empregado. Em uma aplicação composta por diversos nodos dispostos em uma área remota, como em plantações ou florestas, seria inviável utilizar baterias de curta duração, pois troca-las poderia acarretar em custos elevados. Portanto, é fundamental que a autonomia destes nodos seja devidamente projetada, levando em conta fatores como o consumo médio de cada dispositivo que compõe este sistema. Para ilustrar, pode-se imaginar um \textit{sensor node} composto por um sensor qualquer $S$; microcontrolador $M$; bateria $B$; e \textit{transceiver} $T$. Diante disso, pode-se avaliar a autonomia deste sistema relacionando os seguintes fatores:
+
+\begin{itemize}
+    \item Modo de operação: Este fator é extremamente importante, pois define o consumo médio necessário para realizar determinada ação. Em um sistema típico de WSN, deve-se considerar que a maior parte do tempo o sistema estará em modo de baixo consumo, e portanto exigirá menos da fonte de alimentação. Já quando estiver transmitindo dados, por exemplo, haverá um pico de consumo que será delimitante para o projeto.
+    
+    \item Tempo médio por operação: É essencial que se conheça o tempo necessário para realizar cada ação do sistema, pois isso também afetará o consumo médio de cada componente.
+    
+    \item Consumo individual dos componentes: Estes dados geralmente são fornecidos pelos fabricantes e são cruciais para estimar o consumo total.
+    
+    \item Capacidade da bateria: Esta informação indica o consumo médio máximo, geralmente em mAh, por parte do sistema que será alimentado.
+\end{itemize}
+
+Com isso, relaciona-se estes parâmetros através de uma uma média ponderada:
+\begin{equation}
+    \overline{i} = \frac{1}{T_{ciclo}}\sum\limits_{n=1}^n [T_{n}(on)i_{n}(on) + T_{n}(off)i_{n}(off)],
+\end{equation}
+onde $\overline{i}$ representa o consumo médio total por ciclo de operação; $T_{ciclo}$ o tempo deste ciclo ($T_{on}$ + $T_{off}$); e $T_{n}$ e $i_{n}$ são o tempo e consumo médio necessários para realizar determinada operação $n$. Vale ressaltar que $on$ e $off$ se referem aos tempos de atividade e inatividade de cada dispositivo. Por exemplo, a transmissão de dados dos \textit{sensor nodes} não será contínua, portanto o tempo inativo ($T_{T}(off)$) será maior que o tempo em operação deste \textit{transceiver} ($T_{T}(on)$). Em um sistema que consista em 3 operações básicas, como a deste trabalho: leitura do sensor; processamento dos dados; e envio das informações, pode-se afirmar que o consumo médio será dado por:
+\begin{equation}
+    \overline{i}_{on} = \frac{T_{S}(on)i_{S}(on) + T_{M}(on)i_{M}(on) + T_{T}(on)i_{T}(on)}{T_{on}},
+\end{equation}
+\begin{equation}
+    \overline{i}_{off} = \frac{T_{S}(off)i_{S}(off) + T_{M}(off)i_{M}(off) + T_{T}(off)i_{T}(off)}{T_{off}},
+\end{equation}
+e finalmente:
+\begin{equation}
+    \overline{i} = \overline{i}_{on} + \overline{i}_{off},
+\end{equation}
+em que $\overline{i}$ é o consumo médio total por ciclo, dado em mA. Através dessa equação será estimada a necessidade de alimentação para o sistema. Vale ressaltar que geralmente as baterias contém informação de energia disponível por hora, como mAh, e por isso é interessante utilizar os tempos já convertidos em hora nos cálculos. Dessa forma, dado que uma bateria tenha uma capacidade de $i_{B}$ em mAh, então o tempo total, em horas, de operação do \textit{sensor node} é estimado da seguinte forma:
+\begin{equation}
+    T_{total} = \frac{i_{B}}{\overline{i}}
+\end{equation}
+% \begin{equation}
+%     i_{hora} = \overline{i}\frac{T_{ciclo}}{3600},
+% \end{equation}
+% onde $T_{ciclo}$ é o tempo total do ciclo, em segundos. 
+
+
+% Então, se $\overline{i}$ representa o quanto de energia o \textit{sensor node} precisará por ciclo de operação, o consumo médio em uma hora será expresso por:
+
+
+
+
+
+\section{CONVERSÃO ANALÓGICO/DIGITAL}
+Um dos procedimentos cruciais para este sistema proposto é a obtenção de dados do sensor de luminosidade, que consiste em converter os infinitos possíveis valores de tensão em algo palpável para a aplicação. Isto é, como a medida elétrica em questão se trata de um sinal contínuo no tempo, então deve-se transformar esta imensidão de possibilidades (sinal analógico) em uma informação compreensível para o controlador (sinal digital). Esta conversão é
+feita por um circuito nomeado de conversor analógico/digital, também chamado de conversor A/D ou somente ADC, e consiste em algumas etapas (Figura \ref{fig:etapas-conversor}) detalhadas a seguir.
+
+\begin{figure}[ht]
+    \caption{\label{exepretex} Etapas para conversão analógico/digital}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/conversor.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Autor (2018)}
+        \label{fig:etapas-conversor}
+\end{figure}
+
+\subsection{Condicionamento do sinal}
+Geralmente as medidas a serem convertidas são de faixas de tensão superiores ou inferiores à tensão de operação dos conversores A/D, que pode ser 3.3V ou 5V, por exemplo. Portanto, deve-se acomodar este sinal através de circuitos condicionadores, representados genericamente na Figura \ref{fig:condicionador-de-sinal-generico}.
+
+\begin{figure}[ht]
+    \caption{\label{exepretex} Condicionador de sinal genérico}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/condicionador-de-sinal.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Autor (2018)}
+        \label{fig:condicionador-de-sinal-generico}
+\end{figure}
+
+Para que seja possível ler sinais da ordem de microvolts, como alguns sinais vitais de uma pessoa \cite{zhang2014signal}, por exemplo, é necessário amplificar este sinal de modo que seja compreensível para a aplicação em questão. Neste caso, o ganho $A_{v}$ deve seguir a relação abaixo: 
+
+\begin{equation}\label{eq:condicionador-amplificador}
+    |A_{v}| > 1,\quad \text{Ganho do condicionador para amplificação do sinal}    
+\end{equation}
+
+Já para casos em que o sinal a ser mensurado é de ordem de grandeza superior à do conversor, como equipamentos de alta de tensão, então utiliza-se o ganho situado na faixa da Equação \ref{eq:condicionador-atenuador}.
+
+\begin{equation}\label{eq:condicionador-atenuador}
+    0 < |A_{v}| < 1,\quad \text{Ganho do condicionador para atenuação do sinal}    
+\end{equation}
+
+Logo em sequência devem ser filtradas frequências que distorcem o sinal original a ser mensurado. Mais detalhes a respeito deste procedimento são descritos na próxima subseção.
+
+\subsection{Amostragem e retenção}
+Microcontroladores são capazes de operar com base em sinais digitais, ou seja, conjuntos de valores discretos no tempo que representem alguma grandeza, como textos e números inteiros. Entretanto, a grande maioria dos sinais presentes no universo são de natureza contínua e por isso devem ser discretizados para que sejam úteis a estes dispositivos eletrônicos. A discretização dos sinais analógicos já condicionados inicia através do processo de amostragem, que consiste em capturar de forma intervalada valores do sinal original, afim de se obter um conjunto finito de amostras que o represente.
+
+Na Figura \ref{fig:processo-de-amostragem} é demonstrado o processo de amostragem baseado em uma série de impulsos, onde cada pulso é multiplicado pelo sinal original para se obter a amplitude deste naquele instante (representado pela Equação \ref{eq:amostragem}). 
+
+\begin{figure}[ht]
+    \caption{\label{exepretex} Processo de amostragem}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/sample-and-hold.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{livro:sistemas-digitais}.}
+        \label{fig:processo-de-amostragem}
+\end{figure}
+
+\begin{equation}\label{eq:amostragem}
+    x_{d}(t) = \sum\limits_{n = -\infty}^\infty x_{c}(t)\delta(t-nT),
+\end{equation}
+onde $x_{c}(t)$ é o sinal a ser amostrado; $T$ define o período de amostragem;  $n$ é a ordem da amostra em determinado instante $t$; e $x_{d}(t)$ define o conjunto discreto de amostras, ou sinal discretizado \cite{livro:discrete-time-signal-processing}. O dispositivo responsável por este procedimento é popularmente conhecido como circuito de amostragem e retenção, do inglês \textit{sample and hold}, ou somente S/H.
+
+Além disso, afim de se obter um sinal discretizado fidedigno ao original, deve ser cumprido o teorema da amostragem, formalmente postulado por Claude E. Shannon entre 1948 e 1949 \cite{luke1999origins}, que na prática determina que a frequência da função amostradora, trem de impulsos, por exemplo, deve ser pelo menos duas vezes maior do que a frequência do sinal a ser amostrado (Equação \ref{eq:teorema-amostragem}). 
+
+\begin{equation}\label{eq:teorema-amostragem}
+    f_{amostragem} \geq 2f_{sinal}
+\end{equation}
+
+Em outras palavras, a máxima frequência do sinal a ser amostrado deve ser inferior à metade da frequência de amostragem, mais conhecida como frequência de Nyquist (Equação \ref{eq:frequencia-nyquist}).
+
+\begin{equation}\label{eq:frequencia-nyquist}
+    f_{Nyquist} = 0.5f_{amostragem}
+\end{equation}
+
+Outro ponto relevante a ser considerado é o efeito de aliasing (Figura \ref{fig:efeito-aliasing}), que pode decorrer tanto do não cumprimento do teorema da amostragem, quanto das frequências harmônicas presentes no sinal original que possuem valor superior à frequência de Nyquist. Dessa forma, fica evidente que há a necessidade de filtragem destas frequências, pois amostrar um sinal distorcido provocará erros nas medidas discretizadas. Para isso pode ser utilizado um filtro passa-baixas, que eliminará apenas as frequências mais altas (Figura \ref{fig:passa-baixas}).
+
+\begin{figure}[ht]
+    \caption{\label{exepretex} Efeito de aliasing}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/aliasing.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{livro:sistemas-digitais}.}
+        \label{fig:efeito-aliasing}
+\end{figure}
+
+\begin{figure}[ht]
+    \caption{\label{exepretex} Espectro do sinal filtrado por um passa-baixas}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/passa-baixas.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{livro:sistemas-digitais}.}
+        \label{fig:passa-baixas}
+\end{figure}
+
+Vale ressaltar que o processo de filtragem faz parte do condicionamento do sinal, mas foi mencionado nesta subseção por decorrer dos parâmetros relevantes para amostragem.
+
+\subsection{Quantização e codificação}
+Após a discretização é realizado o processo de quantização, que consiste em converter as amostras obtidas do sinal original em valores que possam ser representados por uma quantidade finita de bits (sinal digital). Por exemplo, caso a resolução da quantização seja de 10 bits, como em \cite{ATmega3218:online}, então teoricamente pode-se mapear cada amostra em no máximo 1024 valores bem definidos, segundo a relação:
+
+\begin{equation}
+    N = 2^b,
+\end{equation}
+onde $b$ é a resolução do conversor, em bits, e $N$ é a quantidade de valores possíveis que podem representar uma amostra. Dessa forma, considerando um conversor de 5V e que seja quantizado e codificado uniformemente como no exemplo da Figura \ref{fig:quantizado-e-codificado}, tem-se:
+\begin{flalign*}
+    &N = 16\\
+    &\Delta = \frac{5V}{16} \simeq 312.5mV
+\end{flalign*}
+
+Ou seja, neste caso a menor intensidade de tensão que o conversor pode codificar, conhecida como LSB, é de 312.5mV. Porém os valores entre 0 e 312.5mV, por exemplo, serão representados pelo mesmo símbolo e portanto serão medidas com erro de resolução. Este erro também é conhecido como erro de quantização, e pode chegar a no máximo $\pm$0.5LSB.
+
+\begin{figure}[ht]
+    \caption{\label{exepretex} Sinal quantizado e representado idealmente em codificação de 4 bits}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/quantizado-e-codificado.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{livro:sistemas-digitais}.}
+        \label{fig:quantizado-e-codificado}
+\end{figure}
+
+Com isso, é notável que a quantidade de bits disponível para a conversão A/D é um fator fundamental para obtenção de medidas confiáveis. Em uma aplicação que deseja-se uma resolução na ordem de pouquíssimos milivolts, como em exames de eletrocardiograma \cite{lopes2014processo}, por exemplo, a escolha do conversor deve ser meticulosa para atender esta necessidade.
+
+Entretanto, além da resolução existem outros fatores limitantes à precisão destes conversores. Dentre estes aspectos destacam-se os erros estáticos (referentes a sinais DC), que são inerentes ao processo de quantização e podem ser classificados em quatro categorias detalhadas a seguir.
+
+\begin{itemize}
+    \item Erro de \textit{Offset}:
+    Idealmente a curva que representa a quantização dos conversores A/D é tal que as transições entre o primeiro e o segundo código é realizada exatamente em $\pm$0.5LSB. Na prática isto não acontece (Figura \ref{fig:offset-adc}) e há sempre a possibilidade de ocorrer erro de \textit{offset}, definido como:
+    \begin{equation}
+        E_o = V_{tr} - V_{ti},
+    \end{equation}
+    onde $V_{tr}$ representa a tensão real da primeira transição de símbolo (de 000 para 001 em um conversor de 3 bits), e $V_{ti}$ a tensão de transição ideal (0.5LSB).  
+    
+    \begin{figure}[ht]
+    \caption{\label{exepretex} Erro de \textit{offset}}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/erro_offset.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{Understa51:online}.}
+        \label{fig:offset-adc}
+    \end{figure}
+    
+    \item Erro de ganho:
+    Diferentemente do erro de \textit{offset}, o erro ganho está relacionado com a última transição de símbolo (de 110 para 111 para um ADC de 3 bits), e é representado por $Eg$ na Figura \ref{fig:eg-adc}.
+    
+    \begin{figure}[ht]
+    \caption{\label{exepretex} Erro de ganho}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/erro_ganho.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{ATmega3218:online}.}
+        \label{fig:eg-adc}
+    \end{figure}
+    
+    \item Erro de não linearidade diferencial (DNL):
+    Este erro é definido como a máxima diferença entre as larguras real e ideal de cada código (000 por exemplo). Ou seja, a distância existente entre cada símbolo pode ser diferente de 1LSB, e é mensurado como mostra a Figura \ref{fig:dnl-adc}.
+    
+    \begin{figure}[H]
+    \caption{\label{exepretex} Erro DNL}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/erro_dnl.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{ATmega3218:online}.}
+        \label{fig:dnl-adc}
+    \end{figure}
+    
+    \item Erro integral de não linearidade (INL):
+    Assim como o DNL, este erro também decorre das limitações tecnológicas que tornam os conversores AD sistemas não lineares. Para determiná-lo, os fabricantes geralmente comparam a máxima distância vertical entre a curva de transferência real do ADC com a curva ideal de transferência deste dispositivo (Figura \ref{fig:inl-adc}).
+    
+    \begin{figure}[H]
+    \caption{\label{exepretex} Erro INL}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/adc-inl.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Adaptado de \cite{ADCInteg19:online}.}
+        \label{fig:inl-adc}
+    \end{figure}
+\end{itemize}
+
+
+\section{Comunicação por radiofrequência}
+A etapa final necessária para os \textit{sensor nodes} de uma WSN é a transmissão dos dados para a aplicação. Como mencionado anteriormente, geralmente utiliza-se um \textit{transceiver} operando em radiofrequência para este procedimento, que se baseia em alguns conceitos e etapas detalhadas a seguir.
+
+\subsection{Radiofrequência}
+Popularmente conhecidas como ondas de RF, as ondas de rádio ou radiofrequência são ondas eletromagnéticas com frequência delimitada no espectro de rádio (baixas frequências), como mostra a Figura \ref{fig:espectro}. Tipicamente os parâmetros que descrevem estas ondas são relacionados pela equação abaixo:
+\begin{equation}
+    y(t) = A(t)sin(2\pi f(t)t + \phi (t)),
+\end{equation}
+
+\begin{figure}[ht]
+     \caption{\label{exepretex} Espectro eletromagnético para telecomunicações}
+\centering
+\includegraphics[width=0.8\textwidth]{figuras/espectro.png}
+\vspace{\baselineskip} %%% linha em branco para atendender a norma
+    \fonte{\cite{book:619676}.}
+    \label{fig:espectro}
+\end{figure}
+
+
+onde $A(t)$ representa a amplitude desta função; $f(t)$ a frequência; e $\phi (t)$ a fase, ou desvio desta senoide com relação ao início dos eixos.
+
+A partir disso, para que seja possível transmitir informações através destas ondas é necessário manipular os parâmetros que a descrevem, de forma que esta modificação seja perceptível tanto pelo transmissor, quanto pelo receptor. Isto é, assim como em uma conversa entre duas pessoas, é necessário que quem envia os dados (falante) fale o mesmo idioma que quem recebe (ouvinte). Este procedimento de manipulação sobre a onda em questão para inserção/recepção de informação é chamado de modulação/demodulação, e é descrito a seguir.
+
+\subsection{Modulação}
+Como mencionado anteriormente, o processo de modulação consiste em inserir informação em determinada onda, através da manipulação dos parâmetros que a descrevem. Por exemplo, em uma aplicação que transmita voz, como em estações de rádio, é necessário modular o sinal elétrico equivalente da fala em um sinal que possa ser transmitido pelo ar por longas distâncias. Para isso, é utilizado um sinal auxiliar, chamado de onda portadora, que tem o papel de sofrer variações em determinado parâmetro, como frequência ou amplitude, por exemplo, em função do sinal que deseja-se transmitir (sinal modulante). 
+
+Além disso, deve-se ressaltar que as ondas portadoras são fundamentais neste processo, pois permitem que a transmissão de dados pelo ar seja possível sem a necessidade de antenas gigantescas. Isto é, como os sinais enviados se dão na forma de campos eletromagnéticos, então a máxima distância que determinado sinal poderá percorrer será delimitado pelo diâmetro da antena empregada para transmissão do campo \cite{book:1681103}.
+
+% ABORDAR AM E MODULAÇÃO LORA
+\subsection{Modulação digital AM}
+Uma das técnicas de modulação digital mais simples empregadas em comunicação \textit{wireless} é a modulação ASK (\textit{Amplitude-Shift Keying}), que consiste em variar a amplitude de uma portadora conforme o sinal digital que deseja-se transmitir, de modo que a frequência e fase permaneçam constantes \cite{book:1039396}. Este tipo de modulação pode ser representado pelo diagrama de controle abaixo:
+\begin{figure}[ht]
+     \caption{\label{exepretex} Diagrama de controle de modulação ASK}
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/ask-control.png}
+\vspace{\baselineskip} %%% linha em branco para atendender a norma
+    \fonte{Autor (2018)}
+    \label{fig:ask-control}
+\end{figure}
+
+Tipicamente os bits do sinal de origem com valor 1 produzem as variações na amplitude da portadora, enquanto que os de valor 0 representam ausência de mudanças (Figura \ref{fig:modam}). 
+\begin{figure}[ht]
+     \caption{\label{exepretex} Sinal digital modulado/demodulado em amplitude}
+\centering
+\includegraphics[width=0.6\textwidth]{figuras/modulacao.png}
+\vspace{\baselineskip} %%% linha em branco para atendender a norma
+    \fonte{Adaptado de \cite{puccinelli2005wireless}.}
+    \label{fig:modam}
+\end{figure}
+Este procedimento pode ser descrito formalmente: dado um sinal digital a ser transmitido $d(t)$; sendo multiplicado por uma portadora $c(t)$; tem-se um sinal modulado $s(t)$ através da seguinte relação:
+\begin{equation}
+    s(t) = d(t)c(t),
+\end{equation}
+produzindo:
+\begin{equation}
+    s(t) =
+\begin{cases}
+    Acos(2\pi f_{c}t),& \text{sinal $d(t)$ em nível lógico 1}\\
+    0,              & \text{sinal $d(t)$ em nível lógico 0},
+\end{cases}
+\end{equation}
+onde $f_c$ é a frequência da portadora utilizada.
+
+Vale ressaltar que a amplitude $A$ do sinal modulado é tipicamente representado na literatura, como em \cite{book:1681103} e \cite{book:1039396}, através da equação \ref{eq:amplitude}, que relaciona a amplitude RMS de uma senoide com a sua energia em função do tempo de bit $T$:
+\begin{equation}\label{eq:amplitude}
+    A = \sqrt{\frac{2E}{T}}
+\end{equation}
+
+% \subsection{Modulação por espalhamento espectral}
+
+\section{LoRa}
+A tecnologia de radiofrequência LoRa, criada pela empresa Semtech e desenvolvida atualmente pela LoRa Alliance, é caracterizada por possibilitar comunicação sem fio de baixo consumo e de longo alcance, sendo categorizada como uma LPWAN. Vale ressaltar que o termo LoRa se refere à camada física do sistema, enquanto que LoRaWAN ao protocolo de acesso ao meio (MAC) mais utilizado junto a esta tecnologia.
+
+\subsection{Camada física}
+A camada física LoRa foi desenvolvida pela Semtech e se caracteriza pela utilização da modulação \textit{Lora Spread Spectrum}, baseada na \textit{Chirp Spread Spectrum}, e pela operação nas bandas não licenciadas ISM (\textit{Industrial Scientific and Medical}). Nessa modulação a informação é codificada em \textit{chirps} (\textit{compressed high intensity radar pulses}) de frequência, que variam linearmente no tempo \cite{augustin2016study}. Para transmitir dados com esta técnica, inicialmente é enviada uma série de \textit{up-chirps} (\textit{preamble}) que delimitam o início de uma mensagem (\textit{payload}), como mostra a Figura \ref{fig:lora-message}. Vale ressaltar que o preâmbulo inicia com variações crescentes de frequência e termina com os chamados \textit{down-chirps}, que são variações decrescentes da mesma.
+
+\begin{figure}[ht]
+    \caption{\label{exepretex} Espectrograma de uma mensagem enviada por um transmissor LoRa}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figuras/lora-symbols.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{\cite{lora-symbol-generation}.}
+        \label{fig:lora-message}
+\end{figure}
+
+Dentre as principais vantagens de se utilizar esta modulação baseada em variações lineares de frequência estão a alta capacidade de transmissão com baixa potência, e também alta resistência ao efeito Doppler \cite{augustin2016study}.
+
+\subsubsection{Parâmetros LoRa}
+Dispositivos LoRa foram desenvolvidos de modo que possam operar com baixo consumo energético e transmissão de longo alcance. Para isso, é necessário que se configure tais dispositivos, ajustando os seguintes parâmetros:
+
+\begin{enumerate}
+    \item Largura de Banda (BW): Este parâmetro delimita a faixa de frequência utilizada pelos \textit{chirps} ao se transmitir dados. Variações neste fator afetam diretamente a taxa de transferência de dados e também a suscetibilidade da transmissão a ruídos. Tipicamente os valores de banda utilizados são de 125kHz, 250kHz e 500kHz.
+    
+    \item Fator de Espalhamento (SF): O fator de espalhamento define o quanto cada \textit{chirp} permanece ativo no tempo. Com isso, quanto maior o valor deste parâmetro, mais tempo cada \textit{chirp} estará espalhado no tempo, o que permite maior qualidade de transmissão em longas distâncias. Este fator pode ser configurado com valores entre 7 e 12 (Figura \ref{fig:lora-sf}). Visto que um símbolo LoRa é composto por $2^{SF}$ \textit{chirps}, então pode-se determinar a taxa de transmissão de dados, em bits por segundo, conforme \cite{lora-modulation-basics}:
+    \begin{equation}
+        R_b = SF\frac{1}{\frac{2^{SF}}{BW}}
+    \end{equation}
+    
+    \begin{figure}[ht]
+    \caption{\label{exepretex} Espectrograma de diferentes SFs}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figuras/LoRa_Symbols_01.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{\cite{lora-symbol-generation}.}
+        \label{fig:lora-sf}
+    
+    \end{figure}
+    
+    \item Taxa de Codificação (CR): Devido à técnica FEC (\textit{Forwared Error Correction}) de proteção contra interferências repentinas durante à transmissão de dados, dispositivos LoRa têm uma taxa sobrecarga de redundância, chamada \textit{Coding Rate}, ou somente CR, que pode assumir os valores de 4/5, 4/6, 4/7 e 4/8.
+\end{enumerate}
+
+Além disso, existem os parâmetros regionais, como a frequência ou canal central de comunicação e potência máxima de transmissão, os quais são estabelecidos conforme as regulamentações de telecomunicações de cada país. No Brasil, por exemplo, rádios LoRa devem operar em torno da frequência de 915MHz, segundo a resolução nº 506 da Anatel \cite{ttn-frequencies}.
+
+\subsection{LoRaWAN}
+O protocolo de controle de acesso ao meio LoRaWAN, desenvolvido pela LoRa Alliance, possibilita o uso das características da camada física LoRa em aplicações que necessitem longo alcance de transmissão, porém com baixa taxa de comunicação. Dentre os principais aspectos de redes LoRaWAN estão a independência entre dispositivos finais (\textit{end-devices}) e \textit{gateways}, e também a taxa de transmissão de dados adaptativa (\textit{Adaptative Data Rate}), que propicia uma forma de ajustar dinamicamente os parâmetros LoRa anteriormente citados.
+
+% Além disso, este possui o diferencial de suportar uma taxa de transmissão de dados adaptativa, o que propicia melhor controle sobre a eficiência energética e robustez de link da conexão. 
+
+\subsubsection{Arquitetura de rede}
+\par
+A arquitetura do sistema utiliza uma topologia estrela de estrelas, e é composta por quatro componentes, como mostra a Figura \ref{fig:lora-arch}.
+\begin{figure}[H]
+    \caption{\label{exepretex} Arquitetura LoRaWAN}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figuras/what-network_diagram.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{\cite{lora-arch}}
+        \label{fig:lora-arch}
+\end{figure}
+
+\begin{enumerate}
+    \item Módulos (\textit{end-devices}): Representam os sensores e atuadores conectados à rede via a interface de radiofrequência LoRa. Neste cenário, estes dispositivos transmitem dados sem destinatário em específico, o que os torna independentes dos \textit{gateways}. Vale ressaltar que estes podem operar de três formas diferentes, categorizadas como classes A, B e C, onde cada uma determina uma maneira de obter dados (\textit{downlink}) do servidor de rede.
+    \item \textit{Gateways}: Também chamados de concentradores, estes são responsáveis pelo encaminhamento dos pacotes transmitidos pelos \textit{end-devices} aos servidores de rede. Atualmente o raio de cobertura destes fica entre 2km e 15km.
+    \item Servidores de Rede: Estes são encarregados de filtrarem pacotes duplicados; realizarem controle de segurança e taxa de comunicação de dados (\textit{mac-commands}); envio de ACKs aos \textit{gateways}; direcionamento de pacotes para aplicações; em outras palavras, implementam toda a inteligência de rede necessária.
+    \item Servidores de Aplicação: Estes servidores contém as aplicações em si. Tipicamente a obtenção de informações dos servidores de rede ocorre através de algum protocolo de comunicação de mensagens leves, como MQTT e CoAP.
+\end{enumerate}
+
+\subsubsection{Estrutura dos pacotes}
+Mensagens de \textit{uplink} e \textit{downlink} são diferentes entre si, e são estruturadas como mostram os quadros \ref{uplink-msg} e \ref{downlink-msg}. Vale ressaltar que as mensagens de \textit{uplink} podem ser repassadas por mais de um \textit{gateway}, já que o tratamento de pacotes duplicados é feito pelos servidores de rede.
+
+\begin{quadro}
+   	    \caption{Mensagem de \textit{uplink}}
+	    \centering
+	    \begin{tabular}{| c | c | c | c | c |}
+	    \hline
+	    Preamble & PHDR & PHDR\_CRC & PHYPayload & CRC \\
+	    \hline
+	    \end{tabular}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	    \fonte{Adaptado de \cite{lorawan-specification}}
+	    \label{uplink-msg}
+\end{quadro}
+
+\begin{quadro}
+   	    \caption{Mensagem de \textit{downlink}}
+	    \centering
+	    \begin{tabular}{| c | c | c | c |}
+	    \hline
+	    Preamble & PHDR & PHDR\_CRC & PHYPayload \\
+	    \hline
+	    \end{tabular}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	    \fonte{Adaptado de \cite{lorawan-specification}}
+	    \label{downlink-msg}
+\end{quadro}
+
+Nota-se que em ambos os tipos de mensagem há o preâmbulo (\textit{preamble}); LoRa \textit{physical header} (PHDR); \textit{header CRC} (PHDR\_CRC); e dados em si, ou \textit{payload} (PHYPayload). Entretanto apenas as mensagens de \textit{uplink} possuem proteção CRC, o que garante maior integridade dos dados enviados aos servidores de rede. Vale ressaltar que o campo de dados PHYPayload possui diferentes funções, como solicitação para entrada na rede ou envio de dados em si. Além disso, o identificador do dispositivo na rede é mantido no campo PHDR. A lista completa de informações sobre os pacotes LoRaWAN está disponível online em \cite{lorawan-specification}.
+
+
+\subsubsection{Segurança}
+A segurança em redes LoRaWAN é implementada em duas camadas: uma mantém a autenticação individual dos \textit{end-devices} na rede, e a outra garante que os dados dos dispositivos finais estejam protegidos \cite{lora-overview}. Para isso são utilizadas três chaves AES de 128 bits:  AppKey, NwkSKey e AppSKey. A primeira é utilizada para ativação dos dispositivos, tanto na forma OTAA (\textit{over-the-air activation}), quanto na ABP (\textit{activation-by-personalization}). O que diferencia estes dois modos de ativação é a maneira com que cada um gerencia as outras duas chaves, sendo que na ativação ABP os dispositivos ficam muito mais vulneráveis, pois dessa forma as chaves de criptografia de rede e aplicação (NwkSKey e AppSKey, respectivamente) ficam gravadas nos \textit{end-devices}.
+
+
+
+\subsection{Protocolo MQTT}
+Para obtenção de dados do servidor de rede são utilizados protocolos de conectividade entre dispositivos (M2M, do inglês \textit{Machine to Machine}). O protocolo \textit{Message Queue Telemetry Transport} (MQTT), originalmente desenvolvido pela IBM, é um destes, tendo como principal característica a utilização do paradigma \textit{publish}/\textit{subscribe} para troca de mensagens leves (Figura \ref{fig:mqtt-topico}).
+\begin{figure}[H]
+    \caption{\label{exepretex} Paradigma \textit{publish/subscribe}}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figuras/publish-subscribe.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{Autor (2018)}
+        \label{fig:mqtt-topico}
+\end{figure}
+
+O funcionamento deste protocolo ocorre da seguinte forma: elementos que desejam receber algum dado de determinado tópico, se subscrevem a este; depois, a interface de comunicação, chamada de \textit{broker}, é responsável por encaminhar e gerenciar mensagens publicadas neste tópico. No caso de sistemas compostos por uma rede de sensores, por exemplo, os dados (\textit{payload}) são enviados para o gateway, sem distinção de tópicos neste momento; a partir disso, o gateway encaminha os dados ao servidor de rede afim de separá-los em tópicos relevantes, como "temperatura" ou "umidade do ar"; depois, alguma aplicação que deseja receber informações de temperatura, por exemplo, pode inscrever-se neste tópico; com isso, o \textit{broker} do servidor verifica os inscritos deste tópico, e os encaminha as mensagens publicadas pelos \textit{publishers}. 
+
+
+
+
+\chapter{APLICAÇÃO DESENVOLVIDA}
+Neste capítulo é descrito o projeto do sistema num todo, desde a definição dos componentes a serem utilizados, até como é feita a transmissão dos dados.
+
+    \section{DESENVOLVIMENTO}
+    O desenvolvimento desta aplicação se pautou em duas etapas: inicialmente foi realizado o projeto dos \textit{sensor nodes}, abrangendo desde o esquema elétrico à transmissão de pacotes; depois foi projetado o sistema \textit{sink node}, ou central; e por fim foi desenvolvida a aplicação que mostra a disponibilidade de vagas no local. A seguir são detalhados estes sistemas.
+    
+    \subsection{Projeto dos \textit{sensor nodes}}
+    O projeto destes dispositivos foi feito com o objetivo de se ter um sistema capaz de informar o estado atual das vagas a cada 1 minuto, de modo que o consumo energético fosse reduzido ao máximo. Para isso, primeiramente foi estabelecido um fluxograma contendo cada etapa de operação deste sistema (Figura \ref{fig:flux-sensor-node}).
+    
+    \begin{figure}[ht]
+     	    \caption{\label{exepretex} Fluxograma dos \textit{sensor nodes}}
+            \centering
+            \includegraphics[width=0.6\textwidth]{figuras/funcionamento-sensor-node.png}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+                \label{fig:flux-sensor-node}
+    \end{figure}
+    
+    \begin{itemize}
+        \item Modo de baixo consumo: Neste modo de operação o sistema mantém grande parte dos subsistemas desligados, como conversor AD e \textit{timers}, visando baixo consumo energético.
+        \item Leitura do sensor: Nesta etapa são realizadas as medidas do estado atual da vaga.
+        \item Transmissão de dados: Por fim o estado da vaga atual é enviado ao \textit{sink node}.
+        
+    \end{itemize}
+    
+    A partir disso foi feita a escolha dos componentes, visando baixo custo e baixo consumo energético.
+    
+    \subsubsection{Componentes}
+    Tendo em vista a disponibilidade e praticidade para desenvolvimento deste sistema, foram utilizados os seguintes componentes de \textit{hardware}:
+    \begin{itemize}
+        \item Microcontrolador: ATmega328/P
+        \item Sensor: LDR GL5528 
+        \item Módulo RF: MX-FS-03V
+        \item Bateria: 3 pilhas AA
+        \item Resistor de \textit{pull down}: 10k$\Omega$
+    \end{itemize}
+    
+    Ainda que a escolha destes dispositivos tenha se concentrado em prolongar o tempo de duração das baterias, também foi necessário avaliar a robustez na obtenção de medidas por parte do circuito de sensoriamento. Isto é, o resistor de \textit{pull down} teve de ser selecionado de modo que pequenas varições luminosas fossem percebidas, mas que também tivessem pouco impacto no consumo médio. Para isso, foram avaliados os seguintes resistores:
+    
+    \begin{quadro}\label{quadro:resistores-pd}
+   	    \caption{Avaliação de resistores de \textit{pull down}}
+	    \centering
+	    \begin{tabular}{| c |c |c |}
+	    \hline
+	    Resistor & Consumo máximo & Precisão \\
+	    \hline
+	    10k$\Omega$ & 250$\mu A$ & 0.0024V\\
+	    \hline
+	    100k$\Omega$ & 45$\mu A$ & 0.004V\\
+	    \hline
+	    \end{tabular}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	    \fonte{Autor (2018)}
+    \end{quadro}
+    
+    Dessa forma, ainda que o resistor de 10k$\Omega$ tenha um consumo máximo cinco vezes maior que o de 100k$\Omega$, a precisão para casos de menor luminosidade é essencial para distinguir se determinada vaga está ou não ocupada, e portanto o seleciona para a aplicação.
+    
+    Com o circuito montado (ver Anexo \textbf{x}), foram realizados os cálculos necessários para determinar qual fonte de alimentação seria utilizada. Diante disso foi necessário estimar o consumo médio de corrente de cada parte deste sistema, como gastos em transmissão e leitura do conversor A/D. Para tanto
+    foi utilizada uma relação que leva em conta dois fatores: o tempo para realizar determinada ação, e o consumo médio desta. Dessa forma, pode-se obter o consumo médio de corrente durante um ciclo de operação dos \textit{sensor nodes}, como pode ser observado na Equação \ref{eq:consumo-medio}.
+    % EQUAÇÕES PARA DETERMINAR CONSUMO MÉDIO
+    \begin{equation}\label{eq:consumo-medio}
+        \overline{i}_{ciclo} = \frac{T_{off}\times i_{off} + T_{on}\times i_{on}}{T_{off}+T_{on}},
+    \end{equation}
+    onde $T_{off}$ e $i_{off}$ representam tempo e consumo médio de corrente durante o modo de baixo consumo, e $T_{on}$ e $i_{on}$ são relativos ao tempo e consumo médio de corrente quando o circuito está em operação de fato. Vale ressaltar que o tempo e corrente necessária quando o circuito está realizando alguma ação é descrito pelas relações abaixo:
+    
+    \begin{equation}
+        T_{on} = T_{tx} + T_{sensor}
+    \end{equation}
+    
+    \begin{equation}
+        i_{on} = i_{tx} + i_{sensor}
+    \end{equation}
+    
+    Ou seja, $T_{on}$ é o tempo necessário tanto para ler e processar os valores do sensor ($T_{sensor}$), quanto para transmiti-los ($T_{tx}$). Para determinar estes valores foram realizados dois procedimentos:
+    
+    \begin{enumerate}
+        \item Medições de tempo: Para esta etapa foram desenvolvidos códigos que pudessem aproximar o tempo gasto em cada operação (Quadro \ref{quadro:tempos}). 
+        
+        \item Medições de corrente: As medições do consumo médio se deram através de um multímetro em escala de corrente, em $\mu A$ (\textbf{osciloscópio?}) (Quadro \ref{quadro:consumos}).
+    \end{enumerate}
+    
+    \begin{quadro}
+   	    \caption{Tempo médio utilizado por operação (em milisegundos)}
+	    \centering
+	    \begin{tabular}{| c |c |c |c |}
+	    \hline
+	    $T_{sensor}$ & $T_{tx}$ & $T_{on}$ & $T_{off}$ \\
+	    \hline
+	    100 & 200 & 300 & 64000\\
+	    \hline
+	    \end{tabular}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	    \fonte{Autor (2018)}
+	    \label{quadro:tempos}
+    \end{quadro}
+    
+    \begin{quadro}
+   	    \caption{Consumo médio por operação (em mA)}
+	    \centering
+	    \begin{tabular}{| c |c |c |c |}
+	    \hline
+	    $i_{sensor}$ & $i_{tx}$ & $i_{on}$ & $i_{off}$ \\
+	    \hline
+	     & 12 &  & 0.006\\
+	    \hline
+	    \end{tabular}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	    \fonte{Autor (2018)}
+	    \label{quadro:consumos}
+    \end{quadro}
+    
+    Vale ressaltar que estes valores de consumo médio por operação foram baseados no pior caso, ou seja, para casos de máximo consumo de corrente possível. Por exemplo, quando há muita luz incidente no sensor, este baixa sua resistência de modo que haja maior circulação de corrente pelo circuito, o que pode resultar em 250$\mu$A de consumo por parte do sensor (resistência mínima  de 10k$\Omega$ informada pelo fabricante). Dessa forma, obteve-se o consumo médio de corrente gasto pelo circuito em um ciclo:
+    
+    \begin{equation*}
+        \overline{i}_{ciclo} = 0.05mA
+    \end{equation*}
+    
+    % RESULTADOS - CORRENTE
+    % \begin{equation}
+    %     i_{sensor}MAX = \frac{Vcc}{R_{ldr}MIN + R_{pd}} = 250 \mu A
+    % \end{equation}
+    
+    % \begin{equation}
+    %     i_{tx}MAX = 12mA
+    % \end{equation}
+    
+    % \begin{equation}
+    %     i_{sleeping} = 0.006mA
+    % \end{equation}
+    
+    % \begin{equation}
+    %     i_{sensor} = 0.4mA
+    % \end{equation}
+    
+    % % RESULTADOS - TEMPO
+    % \begin{equation}
+    %     T_{tx}MAX = 200ms
+    % \end{equation}
+    
+    % \begin{equation}
+    %     T_{sensor}MAX = 100ms
+    % \end{equation}
+    
+    % \begin{equation}
+    %     T_{sleeping} = 64e3ms
+    % \end{equation}
+    
+    \textbf{TERMINAR AQUI}
+    
+    \subsubsection{Leitura do sensor}
+    Nesta etapa é realizada a coleta de dados que indicam o estado atual das vagas. Para isso é utilizado o conversor A/D do microcontrolador, realizando medições do sensor LDR. Como pode ser visto no \textbf{ANEXO DO CÓDIGO DO SENSOR NODE}, é feita uma média de quinhentas medidas de luminosidade para aumentar a assertividade da presença ou não de um veículo no local.
+    
+    \subsubsection{Transmissão dos dados}
+    Após a definição de presença ou ausência de veículo sobre a vaga, são enviadas mensagens com essa informação ao \textit{sink node}. Para tanto, foi empregado o módulo MX-FS-03V que opera em 315MHz e utiliza modulação ASK para comunicação de dados. Vale ressaltar que devido a este dispositivo ser apenas emissor, não é possível receber confirmação (ACK) de recebimento dos pacotes por parte da central. Após a transmissão do pacote o sistema volta ao modo de baixo consumo, como pode ser visto no \textbf{ANEXO TAL}.
+    
+    % \section{Metodologia de coleta de dados}
+    % Para a aplicação proposta foi desenvolvida uma metodologia dividida em algumas etapas: inicialmente foram coletados e analisados dados referentes à luminosidade incidente sobre os sensores LDR em diversas situações, como dias nublados e dias bem iluminados; depois, com o circuito completo e o sensor devidamente calibrado, verificou-se a eficiência de comunicação entre os nós da rede e a central; e por fim, foi analisada o envio de informações do \textit{sink node} para o \textit{gateway}. 
+    
+    \subsection{Coleta de dados dos sensores LDR}
+    Para que esta aplicação tenha algum valor, é necessário que os dados brutos obtidos pelos sensores estejam calibrados e consigam informar com certa precisão a presença ou não dos veículos sobre as vagas. Dessa forma, foram realizados diversos testes com o seguinte objetivo: verificar a resposta dos sensores sob diferentes condições, e com isso definir os limites de luminosidade que indicam ou não a presença de veículos nas vagas. O procedimento adotado para obtenção dos dados foi o mesmo para todas as situações, e consistiu em colocar em operação o circuito \textbf{REFERENCIAR ANEXO???} no centro das vagas afim de ler continuamente dados do sensor. Para isso foi utilizado um \textit{datalogger} capturando o valor médio dos últimos 10 dados brutos do sensor durante períodos de 2 minutos, ou seja, cada ponto no gráfico representa esta média. A seguir são apresentadas medidas resultantes dos testes realizados em um estacionamento próximo à reitoria da UFSM.
+    
+    \subsubsection{Medições sem veículos}
+    Estas medidas são referentes às situações de vagas desocupadas, e foram realizadas com o intuito de verificar se os valores obtidos pelo sensor são próximos ou iguais aos valores de quando há um veículo estacionado no local. Dessa forma, foram selecionados casos em que houvesse sombra ou pouca incidência solar sobre as vagas, como em dias nublados, por exemplo. Abaixo estão as medidas obtidas.
+    
+        \begin{grafico}[ht]
+         	    \caption{\label{exepretex1}Medidas realizadas entre 16:30 e 17h}
+    	    \centering
+    	    \includegraphics[width=0.8\textwidth]{figuras/sem_carro_tarde.png}
+    	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+                \label{graph:medidas-tarde}
+        \end{grafico}
+    
+    No gráfico \ref{graph:medidas-tarde} são demonstrados os resultados de quatro testes: 
+    \begin{enumerate}
+        \item Com sol: Neste teste o circuito estava exposto à incidência solar, sem sombras no local. 
+        \begin{figure}[ht]
+     	    \caption{\label{exepretex} Teste sob incidência solar direta}
+            \centering
+            \includegraphics[width=0.8\textwidth]{figuras/teste4.png}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+        \end{figure}
+        
+        \item Sombra ao lado de carro: Neste caso havia um veículo estacionado ao lado da vaga em que estava o sensor. Dessa forma, o carro produzia uma sombra sobre o circuito.
+        
+        \begin{figure}[ht]
+     	    \caption{\label{exepretex} Teste ao lado de veículo (com sombra)}
+            \centering
+            \includegraphics[width=0.8\textwidth]{figuras/teste5.jpg}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+        \end{figure}
+        
+        \item Ao lado de carro com sol: Nesta situação havia sombra no local de teste, porém o céu também estava limpo, de modo que o sol incidia diretamente.
+        
+        \begin{figure}[ht]
+     	    \caption{\label{exepretex} Teste sob incidência solar direta}
+            \centering
+            \includegraphics[width=0.8\textwidth]{figuras/teste6.jpg}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+        \end{figure}
+    \end{enumerate}
+    
+    \subsubsection{Medições com veículos}
+    Estes testes se concentraram em analisar a resposta do sensor quando a vaga em questão estava ocupada. Nos gráficos \ref{graph:medidas-manha-nublada} e \ref{graph:medidas-vaga-ocupada-tarde} são apresentadas as medidas obtidas nas seguintes condições:
+    \begin{enumerate}
+        \item Manhã nublada: Seguindo a metodologia estabelecida, foi verificada a situação de um dia nublado, com baixa incidência solar sobre a vaga ocupada (Gráfico \ref{graph:medidas-manha-nublada}). 
+        
+        \begin{grafico}[H]
+        
+            \caption{\label{exepretex1}Medidas realizadas entre 8:30 e 9h}
+    	    \centering
+    	    \includegraphics[width=0.8\textwidth]{figuras/carros_manha_2.png}
+    	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+                \label{graph:medidas-manha-nublada}
+        \end{grafico}
+        
+        \item Diferentes situações à tarde: Nestes testes foram visualizadas as respostas do sensor em casos específicos, como quando havia carro na vaga, mas que ao lado houvesse uma sombra que pudesse ser confundida com a presença do veículo (pontos em vermelho no Gráfico \ref{graph:medidas-vaga-ocupada-tarde}). 
+        
+        \begin{grafico}[ht]
+         	    \caption{\label{exepretex1}Medidas realizadas entre 16:30 e 17h}
+    	    \centering
+    	    \includegraphics[width=0.8\textwidth]{figuras/carros_tarde.png}
+    	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+                \label{graph:medidas-vaga-ocupada-tarde}
+        \end{grafico}
+        
+    \end{enumerate}
+    
+    \subsection{Definições dos limites de luminosidade}
+    Como retratado na seção anterior, os valores de luminosidade foram obtidos com base em testes sob situações específicas, de modo que estas retratassem casos em que vagas desocupadas pudessem ser confundidas com ocupadas. Ou seja, foram selecionadas situações com baixa incidência solar, ou com sombreamento no local, pois assim retratariam um caso parecido com quando há um veículo estacionado sobre o sensor (baixa luminosidade). Dessa forma obteve-se os seguintes valores:
+    
+    \begin{quadro}\label{quadro:valores-vaga-desocupada}
+   	    \caption{Valores de luminosidade sob diferentes situações - vaga desocupada}
+	    \centering
+	    \begin{tabular}{| c | c |c |c |c |}
+	    \hline
+	    Medida & Com sol & Ao lado de sombra & Bem nublado\\
+	    \hline
+	    Valor mínimo & 742.10 & 728.50 & 736.20\\
+	    \hline
+	    Valor médio & 743.89 & 730.57 & 740.39\\
+	    \hline
+	    Valor máximo & 745.60 & 732.40 & 741.60\\
+	    \hline
+	    Desvio Padrão & 0.75 & 0.90 & 0.89\\
+	    \hline
+	    \end{tabular}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	    \fonte{Autor (2018)}
+    \end{quadro}
+    
+    \begin{quadro}[H]\label{quadro:valores-vaga-ocupada}
+   	    \caption{Valores de luminosidade sob diferentes situações - vaga ocupada}
+	    \centering
+	    \begin{tabular}{| c | c |c |c |c |}
+	    \hline
+	    Medida & Com sol & Ao lado de sombra & Bem nublado\\
+	    \hline
+	    Valor mínimo & 521.60 & 622.80 & 668.40\\
+	    \hline
+	    Valor médio & 528.86 & 648.81 & 670.06\\
+	    \hline
+	    Valor máximo & 539.80 & 651.10 & 671.80\\
+	    \hline
+	    Desvio Padrão & 5.31 & 2.78 & 0.79\\
+	    \hline
+	    \end{tabular}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	    \fonte{Autor (2018)}
+    \end{quadro}
+    
+    Com isso, pode-se verificar que valores abaixo de 671.80 (máximo valor obtido em um dia nublado) representarão uma vaga ocupada. Ou seja, este número é considerado um \textit{threshold}, ou valor de limiar, e é utilizado para determinar o estado de determinada vaga. Além disso, o menor valor obtido para vaga desocupada acontece em torno de 728.50, indicando que medidas acima deste parâmetro indicarão ausência de veículo.
+    
+    
+    \subsection{Projeto do \textit{sink node}}
+    A central deste sistema foi projetada com o intuito de disponibilizar as informações recebidas dos \textit{sensor nodes} para a aplicação. Para encaminhar os dados à aplicação foi escolhida a tecnologia LoRa devido à capacidade de transmissão de dados em longas distâncias, permitindo que estacionamentos em áreas remotas, como em alguns lugares da UFSM, pudessem ser monitorados sem a necessidade de roteadores, caso fosse utilizado Wi-Fi, por exemplo. Além disso, por utilizar uma faixa de frequência não licenciada, esta tecnologia se tornou ainda mais atrativa. E por fim, é possível expandir este sistema sem a necessidade de reprojetá-lo para comportar mais estacionamentos, vide a facilidade de se obter dados de dispositivos LoRa cadastrados na plataforma \textit{The Things Network}. A operação deste sistema está brevemente descrita no fluxograma da Figura \ref{fig:flux-sink-node}.
+    
+    \begin{figure}[ht]
+     	    \caption{\label{exepretex} Fluxograma do \textit{sink node}}
+            \centering
+            \includegraphics[width=0.6\textwidth]{figuras/central.png}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+            \label{fig:flux-sink-node}
+    \end{figure}
+    
+    \begin{enumerate}
+        \item \textit{Setup}: Nesta etapa são definidas as configurações utilizadas no código.
+        \item Recebimento dos dados: Este é \textit{loop} que aguarda novos dados. 
+        \item Estado de alguma vaga atualizado: Caso o estado de alguma das vagas tenha sido alterado, a central atualiza o número de vagas disponíveis.
+        \item Transmissão dos dados: Finalmente a quantia de vagas disponíveis é enviada à aplicação.
+    \end{enumerate}
+    
+    \subsubsection{Componentes}
+    Foram utilizados os seguintes componentes de \textit{hardware}:
+    \begin{itemize}
+        \item Arduino Nano
+        \item Recepetor AM MX-05V
+        \item Módulo LoRa RFM95W
+        \item Carregador de celular
+        \item Cabo USB
+    \end{itemize}
+    
+    Foi escolhido alimentar o sistema através de um carregador de celular devido à praticidade que este dispositivo proporciona. Entretanto, é evidente que para funcionar é necessário conectá-lo a uma tomada, o que pode ser um complicador em áreas extremamente remotas.
+    
+    \subsubsection{Funcionamento}
+    Como mencionado anteriormente, o sistema permanece em um \textit{loop} aguardando dados transmitidos pelos \textit{sensor nodes}.
+    Assim como nos \textit{sensor nodes}, também foi utilizada a biblioteca RadioHead para recebimento dos dados. Quando chega uma nova informação, a central verifica com base no identificador do nodo remetente, se o estado da vaga em questão foi modificado, e então atualiza o contador de vagas disponíveis na área de cobertura do \textit{sink node}. Depois, é realizado o envio desta quantia, através da biblioteca LMIC, que implementa as funcionalidades necessárias para utilizar o protocolo LoRaWAN. O destinatário destas mensagens é um \textit{gateway} LoRa instalado na reitoria da Universidade Federal de Santa Maria, previamente testado e utilizado em \cite{tcc:matheus-neis}.
+    
+    
+    \subsection{Aplicação final}
+    A aplicação final do sistema consiste em dois subsistemas: \textit{backend} e \textit{frontend}. O primeiro é responsável por obter os dados do servidor de rede \textit{The Things Network} e encaminha-los ao servidor de aplicação, através do protocolo MQTT. Já o segundo busca as informações do servidor de aplicação, através de um cliente MQTT, e as mostra ao usuário.
+    A seguir estão descritos estes dois subsistemas.
+    
+    \subsubsection{\textit{Backend}}
+    Inicialmente, foi definido o servidor de rede \textit{The Things Network} para ser usado na aplicação, pois o \textit{gateway} utilizado já estava vinculado ao sistema e também por ser prático na criação e gerenciamento de aplicações. Depois, foi desenvolvido um código na linguagem Python para obter os dados do servidor. Para isso, foi utilizada a biblioteca de código aberto \textit{Eclipse Paho MQTT Python Client}, que oferece métodos de acesso através do protocolo MQTT. 
+    
+    \subsubsection{\textit{Frontend}}
+    Neste módulo é apresentado quantas vagas estão disponíveis no estacionamento sob monitoramento. Para isso, foi desenvolvido um código em Javascript que tem duas funções: obter os dados do \textit{backend}, utilizando a versão Javascript da mesma biblioteca \textit{opensource} \textit{Eclipse Paho MQTT}, e depois mostrá-los na tela. 
+    
+\chapter{RESULTADOS}
+
+\chapter{CONCLUSÕES}
+	 
+
+        
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % FIM DAS PAGINAS TEXTUAIS % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
+% % % % % % % % % % % % % BIBLIOGRAFIA  % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
+
+\bibliografia{referencias}  %%%%% BIBLIOGRAFIA -> INCLUIR NAS CHAVES O NOME DO ARQUIVO *.BIB	
+	
+	
+	
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
+% % % % % % % % % % % % % APENDICES % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
+	\apendice %%%% TEXTOS A PARIR DESTE PONTO SERAO CONSIDERADOS APENDICES
+
+\chapter{Demonstração de algo}
+        \par Algo como apêndice.  
+        \par \begin{figure}[ht]
+ 	    \caption{\label{exepretex} Fluxograma do \textit{sink node}}
+        \centering
+        \includegraphics[width=0.6\textwidth]{figuras/sensor_node_v2-1.png}
+        \vspace{\baselineskip} %%% linha em branco para atendender a norma
+            \fonte{Autor (2018)}
+\end{figure}
+
+        
+        
+        
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
+% % % % % % % % % % % % % % % ANEXOS  % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
+        \anexo    %%%% TEXTOS A PARIR DESTE PONTO SERAO CONSIDERADOS ANEXOS
+        
+\chapter{Algo interessante que alguém fez}
+         \par Algo como anexo.
+         
+          \begin{verbatim}
+	    \begin{ilustracao}[ht]
+		\centering
+		\includegraphics[width=0.6\textwidth]{figuras/pretextuais.png}
+		\caption{\label{exepretex} Sequência dos elementros pré-testuais da MDT-UFSM}
+		\vspace{\baselineskip} %%% linha em branco para atendender a norma
+		\fonte{Adaptado de \citeonline{man:MDTUFSM2012}.}
+	    \end{ilustracao}
+         \end{verbatim}
+         
+         \begin{grafico}[ht]
+     	    \caption{\label{exepretex1} Sequência dos elementros pré-testuais da MDT-UFSM}
+	    \centering
+	    \includegraphics[width=0.6\textwidth]{figuras/pretextuais.png}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+            \fonte{Adaptado de \citeonline{man:MDTUFSM2012}.}
+         \end{grafico}
+         
+         
+         \section*{Teste de seção dentro do anexo}
+
+
+\end{document}
+
