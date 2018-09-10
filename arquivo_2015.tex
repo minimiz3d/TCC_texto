@@ -342,7 +342,7 @@ A disponibilização automatizada de informações acerca de objetos e locais po
 
 Dessa forma, para que cidades inteligentes ou “infraestruturas em rede para melhorar a eficiência econômica e política, e possibilitar o desenvolvimento social, cultural e urbano” \cite{hollands2008will} não sejam apenas um conceito pelo mundo, é preciso que soluções inovadoras se pautem nas adversidades mais evidentes destas. No Brasil, por exemplo, problemas de mobilidade urbana como engarrafamentos cada vez mais constantes, estão atrelados à grande frota de veículos no país, que conforme dados apresentados pela Confederação Nacional do Transporte em 2017, já chega a 51.2 milhões de automóveis \cite{site:cnt}. Neste sentido, segundo dezesseis estudos realizados entre os anos de 1927 e 2001, em média 30\% dos motoristas em congestionamentos estavam em busca de uma vaga para estacionarem seus veículos \cite{shoup2006cruising}. Ou seja, ainda que tenham ocorrido inúmeras mudanças nas cidades desde que estes dados foram coletados, é evidente que procurar às cegas pela disponibilidade destes locais ainda contribui significativamente para tornar o trânsito mais lento. 
 
-Neste contexto, soluções baseadas em ferramentas como redes de sensores podem ser utilizadas, onde o objetivo destas seja indicar de forma automatizada a disponibilidade de vagas em determinado local, contribuindo assim para tornar as cidades mais informatizadas, e portanto mais inteligentes. No entanto, ainda que o uso destas redes apresente diversos benefícios em inúmeras áreas, cenários compostos por WSNs (\textit{Wireless Sensor Networks}) apresentam vários complicadores em sua implementação, como a necessidade de empregar fontes de alimentação capazes de disponibilizar energia de forma segura durante longos períodos de tempo; proteção dos elementos perceptores, que podem não ser resistentes à água ou altas e baixas temperaturas, por exemplo; robustez e segurança na comunicação para que se tenha integridade dos dados; entre outros desafios que impedem um desenvolvimento mais acelerado destes sistemas \cite{puccinelli2005wireless}. 
+Neste contexto, soluções baseadas em ferramentas como redes de sensores podem ser utilizadas, onde o objetivo destas seja indicar de forma automatizada a disponibilidade de vagas em determinado local, contribuindo assim para tornar as cidades mais informatizadas, e portanto mais inteligentes. No entanto, implementar estas redes de forma robusta é um grande desafio, pois são sensíveis a diversos fatores como a necessidade de empregar fontes de alimentação capazes de disponibilizar energia de forma segura durante longos períodos de tempo; proteção dos elementos perceptores, que podem não ser resistentes à água ou altas e baixas temperaturas, por exemplo; robustez e segurança na comunicação para que se tenha integridade dos dados; entre outros aspectos que impedem um desenvolvimento mais acelerado destes sistemas \cite{puccinelli2005wireless}. 
 
 Com isso, a cada ano estão surgindo soluções no campo de IoT para os complicadores anteriormente citados. A tecnologia de comunicação sem fio LoRa é um bom exemplo por ser recente e ter como objetivo contribuir na implementação de WSNs de baixo consumo de energia e longo alcance de transmissão. Características como estas são essenciais para que iniciativas baseadas em redes LoRaWAN, como a Digital Living Lab, situada em Wollongong na Austrália \cite{site:dll}, sejam realizadas de modo que as pessoas da região entendam e possam contribuir no desenvolvimento de aplicações que ajudem na transformação de cidades mais inteligentes. Dessa forma, projetos que auxiliem de alguma forma a comunidade local são incentivados, como por exemplo a implantação de uma rede de sensores sem fio que possa mapear os hidrantes da cidade, ou possíveis pontos suscetíveis a deslizamentos de terra, e com isso ser útil para serviços de emergência.
 
@@ -355,12 +355,12 @@ A estrutura deste trabalho está dividida da seguinte forma: no Capítulo 2 é r
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \chapter{REVISÃO DE LITERATURA}
-Este capítulo tem como objetivo abordar brevemente diferentes soluções possíveis para o mesmo problema, isto é, aplicações que visem monitorar o estado das vagas de um estacionamento ao ar livre.
+Este capítulo tem como objetivo abordar brevemente diferentes possíveis soluções para o mesmo problema, isto é, aplicações que visem monitorar o estado das vagas de um estacionamento ao ar livre.
 
 \section{Detecção de veículos em estacionamentos}
 A etapa primordial para se informatizar o estado das vagas de um estacionamento é a maneira com que se detecta a disponibilidade das mesmas. Geralmente utilizam-se sensores dispostos no local, como magnetômetros \cite{barton2007d} e sensores ultrassônicos \cite{lee2008intelligent}. Entretanto, a instalação e manutenção destes sistemas se torna cara em ambientes com um grande número de vagas a serem monitoradas. Para isso, soluções que utilizam processamento de imagens, como apresentado em \cite{ichihashi2009vacant}, se mostram vantajosas tanto na capacidade de detecção simultânea de várias vagas, como na não intrusividade sobre o local em si, por não afetarem diretamente a superfície. Ainda que apresente diversas vantagens, sistemas dependentes de câmeras exigem alto consumo energético, quando comparadas a sensores, e também acabam gerando grandes volumes de dados \cite{wu2007robust}.
 
-Dessa forma, fica claro que há inúmeras dificuldades em se empregar um sistema que seja vantajoso em muitos aspectos. A seguir serão apresentados os tipos mais comuns de sensores utilizados para este tipo de aplicação, sendo descritos pontos positivos e negativos de cada um.
+Dessa forma, empregar um sistema que seja vantajoso em muitos aspectos é uma tarefa complicada. A seguir serão apresentados os tipos mais comuns de sensores utilizados para este tipo de aplicação, sendo descritos pontos positivos e negativos de cada um.
 
 \subsubsection{Magnetômetros} 
 Este tipo de sensor opera baseando-se nas variações de campo magnético da Terra. Portanto, quando há perturbações em alguma direção do campo, a corrente e consequentemente o fluxo de elétrons também são afetados. Medindo-se estas mudanças é possível determinar, por exemplo, a existência de materiais ferromagnéticos próximos, o que indicaria a presença de um carro. 
@@ -375,6 +375,11 @@ Este tipo de sensor opera baseando-se nas variações de campo magnético da Ter
 \end{figure}
 
 Pode-se citar como principal vantagem o funcionamento em largas faixas de temperatura (entre -30°C e 85°C no caso do sensor mostrado acima) e também a alta confiabilidade das medidas. Entretanto, estes possuem uma área de sensibilidade baixa, o que leva ao problema anteriormente citado da necessidade de instalação de uma unidade por vaga.
+
+Atualmente há algumas soluções no mercado baseadas em sensores magnéticos, como o PlacePod desenvolvido pela PNI Sensor, destacando-se a alta precisão na detecção dos veículos e a durabilidade de até 10 anos das baterias \cite{placepod}. Entretanto, o preço nada atrativo de U\$200 é um fator extremamente limitante, pois inviabiliza a escalabilidade desta solução. Há também empresas como a Libelium e a Paradox Engineering desenvolvendo produtos semelhantes, com precisão e durabilidade das bateriais semelhante, porém o preço destes não está disponível.
+
+Além destes há o projeto de larga escala SFPark, iniciado em Abril de 2011 na cidade de São Francisco - CA, que foi implantado com o intuito de maximizar o número de vagas de estacionamento disponíveis. Para isso são utilizados em conjunto um sistema de detecção de veículos baseado em sensores magnéticos, com os parquímetros, afim de designar dinamicamente o preço das vagas conforme a disponibilidade, horário, e local. Dessa forma é possível saber em tempo real locais e preços de estacionamentos \cite{site:mobilize}.
+
 
 \subsubsection{Sensores Ultrassônicos}
 O princípio de funcionamento destes está relacionado à forma com que um sinal transmitido é refletido de volta ao entrar em contato com determinada superfície. Para tanto, pulsos de alta frequência são emitidos na direção do que se pretende analisar; depois a energia recebida de volta deve ser processada; e a partir disto é possível verificar, por exemplo, a que distância está um objeto ou também que tipo de material o elemento em questão é composto.
@@ -857,7 +862,7 @@ Dispositivos LoRa foram desenvolvidos de modo que possam operar com baixo consum
     
     \end{figure}
     
-    \item Taxa de Codificação (CR): Devido à técnica FEC (\textit{Forwared Error Correction}) de proteção contra interferências repentinas durante à transmissão de dados, dispositivos LoRa têm uma taxa sobrecarga de redundância, chamada \textit{Coding Rate}, ou somente CR, que pode assumir os valores de 4/5, 4/6, 4/7 e 4/8.
+    \item Taxa de Codificação (CR): Devido à técnica FEC (\textit{Forwared Error Correction}) de proteção contra interferências repentinas durante à transmissão de dados, dispositivos LoRa têm uma taxa de sobrecarga de redundância, chamada \textit{Coding Rate}, ou somente CR, que pode assumir os valores de 4/5, 4/6, 4/7 e 4/8.
 \end{enumerate}
 
 Além disso, existem os parâmetros regionais, como a frequência ou canal central de comunicação e potência máxima de transmissão, os quais são estabelecidos conforme as regulamentações de telecomunicações de cada país. No Brasil, por exemplo, rádios LoRa devem operar em torno da frequência de 915MHz, segundo a resolução nº 506 da Anatel \cite{ttn-frequencies}.
@@ -1265,6 +1270,28 @@ Neste capítulo é descrito o projeto do sistema num todo, desde a definição d
     Neste módulo é apresentado quantas vagas estão disponíveis no estacionamento sob monitoramento. Para isso, foi desenvolvido um código em Javascript que tem duas funções: obter os dados do \textit{backend}, utilizando a versão Javascript da mesma biblioteca \textit{opensource} \textit{Eclipse Paho MQTT}, e depois mostrá-los na tela. 
     
 \chapter{RESULTADOS}
+
+DEMONSTRAR COMO FOI FEITA A COLETA DE RESULTADOS. MOSTRAR COMO ERA O CENÁRIO, INDICANDO TEMPOS E QUANTIA ESPERADAS DE DADOS TRANSMITIDOS E QUANTIAS RESULTANTES APÓS OS TESTES. 
+
+\textbf{****TESTES - SENSOR TO SINK****}
+
+1. O SISTEMA FOI CAPAZ DE MODIFICAR O NÚMERO DE VAGAS DISPONÍVEIS QUANDO AS VAGAS TROCAVAM DE ESTADO? (avaliação qualitativa + avaliação quantitativa: em quais circunstâncias?  efetividade do monitoramento em si - supondo transmissão com sucesso).
+
+2. QUAL PORCENTAGEM DAS VEZES? (avaliação quantitativa - definir o número de testes a serem realizados, sob diferentes circunstâncias, como horário e condição climática)
+
+2.1. SE SIM, EM QUANTO TEMPO ISSO FOI FEITO? (avaliação quantitativa da transmissão sensor node -> sink node. SINK NODE DEVE SER CAPAZ DE SALVAR O MOMENTO EM QUE RECEBEU A TRANSMISSÃO. COMO FAZER ISSO?)
+
+
+\textbf{****TESTES - SINK TO APPLICATION****}
+
+1. A TTN RECEBEU OS DADOS NO MOMENTO ESPERADO? (avaliação qualitativa + quantitativa: em quais circustâncias - definir as quantias que definirão os resultados)
+
+2. O APLICATIVO FOI CAPAZ DE RECEBER OS DADOS NO MOMENTO ESPERADO (avaliação qualitativa + quantitativa: em quais circunstâncias)
+
+\textbf{****TESTES FINAIS****}
+
+1. O APLICATIVO RECEBEU OS DADOS QUANDO A VAGA ALTEROU O ESTADO? (quantitativa + qualitativa: em que circunstâncias - definir bateria de testes)
+
 
 \chapter{CONCLUSÕES}
 	 
