@@ -948,7 +948,7 @@ O funcionamento deste protocolo ocorre da seguinte forma: elementos que desejam 
 Neste capítulo é descrito o projeto do sistema num todo, desde a definição dos componentes a serem utilizados, até como é feita a transmissão dos dados.
 
     \section{DESENVOLVIMENTO}
-    O desenvolvimento desta aplicação se pautou em duas etapas: inicialmente foi realizado o projeto dos \textit{sensor nodes}, abrangendo desde o esquema elétrico à transmissão de pacotes; depois foi projetado o sistema \textit{sink node}, ou central; e por fim foi desenvolvida a aplicação que mostra a disponibilidade de vagas no local. A seguir são detalhados estes sistemas.
+    O desenvolvimento desta aplicação se pautou em três etapas: inicialmente foi realizado o projeto dos \textit{sensor nodes}, abrangendo desde o esquema elétrico à transmissão de pacotes; depois foi projetado o sistema \textit{sink node}, ou central; e por fim foi desenvolvida a aplicação que mostra a disponibilidade de vagas no local. A seguir são detalhados estes sistemas.
     
     \subsection{Projeto dos \textit{sensor nodes}}
     O projeto destes dispositivos foi feito com o objetivo de se ter um sistema capaz de informar o estado atual das vagas a cada 1 minuto, de modo que o consumo energético fosse reduzido ao máximo. Para isso, primeiramente foi estabelecido um fluxograma contendo cada etapa de operação deste sistema (Figura \ref{fig:flux-sensor-node}).
@@ -1102,125 +1102,125 @@ Neste capítulo é descrito o projeto do sistema num todo, desde a definição d
     % \section{Metodologia de coleta de dados}
     % Para a aplicação proposta foi desenvolvida uma metodologia dividida em algumas etapas: inicialmente foram coletados e analisados dados referentes à luminosidade incidente sobre os sensores LDR em diversas situações, como dias nublados e dias bem iluminados; depois, com o circuito completo e o sensor devidamente calibrado, verificou-se a eficiência de comunicação entre os nós da rede e a central; e por fim, foi analisada o envio de informações do \textit{sink node} para o \textit{gateway}. 
     
-    \subsection{Coleta de dados dos sensores LDR}
-    Para que esta aplicação tenha algum valor, é necessário que os dados brutos obtidos pelos sensores estejam calibrados e consigam informar com certa precisão a presença ou não dos veículos sobre as vagas. Dessa forma, foram realizados diversos testes com o seguinte objetivo: verificar a resposta dos sensores sob diferentes condições, e com isso definir os limites de luminosidade que indicam ou não a presença de veículos nas vagas. O procedimento adotado para obtenção dos dados foi o mesmo para todas as situações, e consistiu em colocar em operação o circuito \textbf{REFERENCIAR ANEXO???} no centro das vagas afim de ler continuamente dados do sensor. Para isso foi utilizado um \textit{datalogger} capturando o valor médio dos últimos 10 dados brutos do sensor durante períodos de 2 minutos, ou seja, cada ponto no gráfico representa esta média. A seguir são apresentadas medidas resultantes dos testes realizados em um estacionamento próximo à reitoria da UFSM.
+    % \subsection{Coleta de dados dos sensores LDR}
+    % Para que esta aplicação tenha algum valor, é necessário que os dados brutos obtidos pelos sensores estejam calibrados e consigam informar com certa precisão a presença ou não dos veículos sobre as vagas. Dessa forma, foram realizados diversos testes com o seguinte objetivo: verificar a resposta dos sensores sob diferentes condições, e com isso definir os limites de luminosidade que indicam ou não a presença de veículos nas vagas. O procedimento adotado para obtenção dos dados foi o mesmo para todas as situações, e consistiu em colocar em operação o circuito \textbf{REFERENCIAR ANEXO???} no centro das vagas afim de ler continuamente dados do sensor. Para isso foi utilizado um \textit{datalogger} capturando o valor médio dos últimos 10 dados brutos do sensor durante períodos de 2 minutos, ou seja, cada ponto no gráfico representa esta média. A seguir são apresentadas medidas resultantes dos testes realizados em um estacionamento próximo à reitoria da UFSM.
     
-    \subsubsection{Medições sem veículos}
-    Estas medidas são referentes às situações de vagas desocupadas, e foram realizadas com o intuito de verificar se os valores obtidos pelo sensor são próximos ou iguais aos valores de quando há um veículo estacionado no local. Dessa forma, foram selecionados casos em que houvesse sombra ou pouca incidência solar sobre as vagas, como em dias nublados, por exemplo. Abaixo estão as medidas obtidas.
+    % \subsubsection{Medições sem veículos}
+    % Estas medidas são referentes às situações de vagas desocupadas, e foram realizadas com o intuito de verificar se os valores obtidos pelo sensor são próximos ou iguais aos valores de quando há um veículo estacionado no local. Dessa forma, foram selecionados casos em que houvesse sombra ou pouca incidência solar sobre as vagas, como em dias nublados, por exemplo. Abaixo estão as medidas obtidas.
     
-        \begin{grafico}[ht]
-         	    \caption{\label{exepretex1}Medidas realizadas entre 16:30 e 17h}
-    	    \centering
-    	    \includegraphics[width=0.8\textwidth]{figuras/sem_carro_tarde.png}
-    	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
-                \fonte{Autor (2018)}
-                \label{graph:medidas-tarde}
-        \end{grafico}
+    %     \begin{grafico}[ht]
+    %      	    \caption{\label{exepretex1}Medidas realizadas entre 16:30 e 17h}
+    % 	    \centering
+    % 	    \includegraphics[width=0.8\textwidth]{figuras/sem_carro_tarde.png}
+    % 	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+    %             \fonte{Autor (2018)}
+    %             \label{graph:medidas-tarde}
+    %     \end{grafico}
     
-    No gráfico \ref{graph:medidas-tarde} são demonstrados os resultados de quatro testes: 
-    \begin{enumerate}
-        \item Com sol: Neste teste o circuito estava exposto à incidência solar, sem sombras no local. 
-        \begin{figure}[ht]
-     	    \caption{\label{exepretex} Teste sob incidência solar direta}
-            \centering
-            \includegraphics[width=0.8\textwidth]{figuras/teste4.png}
-            \vspace{\baselineskip} %%% linha em branco para atendender a norma
-                \fonte{Autor (2018)}
-        \end{figure}
+    % No gráfico \ref{graph:medidas-tarde} são demonstrados os resultados de quatro testes: 
+    % \begin{enumerate}
+    %     \item Com sol: Neste teste o circuito estava exposto à incidência solar, sem sombras no local. 
+    %     \begin{figure}[ht]
+    %  	    \caption{\label{exepretex} Teste sob incidência solar direta}
+    %         \centering
+    %         \includegraphics[width=0.8\textwidth]{figuras/teste4.png}
+    %         \vspace{\baselineskip} %%% linha em branco para atendender a norma
+    %             \fonte{Autor (2018)}
+    %     \end{figure}
         
-        \item Sombra ao lado de carro: Neste caso havia um veículo estacionado ao lado da vaga em que estava o sensor. Dessa forma, o carro produzia uma sombra sobre o circuito.
+    %     \item Sombra ao lado de carro: Neste caso havia um veículo estacionado ao lado da vaga em que estava o sensor. Dessa forma, o carro produzia uma sombra sobre o circuito.
         
-        \begin{figure}[ht]
-     	    \caption{\label{exepretex} Teste ao lado de veículo (com sombra)}
-            \centering
-            \includegraphics[width=0.8\textwidth]{figuras/teste5.jpg}
-            \vspace{\baselineskip} %%% linha em branco para atendender a norma
-                \fonte{Autor (2018)}
-        \end{figure}
+    %     \begin{figure}[ht]
+    %  	    \caption{\label{exepretex} Teste ao lado de veículo (com sombra)}
+    %         \centering
+    %         \includegraphics[width=0.8\textwidth]{figuras/teste5.jpg}
+    %         \vspace{\baselineskip} %%% linha em branco para atendender a norma
+    %             \fonte{Autor (2018)}
+    %     \end{figure}
         
-        \item Ao lado de carro com sol: Nesta situação havia sombra no local de teste, porém o céu também estava limpo, de modo que o sol incidia diretamente.
+    %     \item Ao lado de carro com sol: Nesta situação havia sombra no local de teste, porém o céu também estava limpo, de modo que o sol incidia diretamente.
         
-        \begin{figure}[ht]
-     	    \caption{\label{exepretex} Teste sob incidência solar direta}
-            \centering
-            \includegraphics[width=0.8\textwidth]{figuras/teste6.jpg}
-            \vspace{\baselineskip} %%% linha em branco para atendender a norma
-                \fonte{Autor (2018)}
-        \end{figure}
-    \end{enumerate}
+    %     \begin{figure}[ht]
+    %  	    \caption{\label{exepretex} Teste sob incidência solar direta}
+    %         \centering
+    %         \includegraphics[width=0.8\textwidth]{figuras/teste6.jpg}
+    %         \vspace{\baselineskip} %%% linha em branco para atendender a norma
+    %             \fonte{Autor (2018)}
+    %     \end{figure}
+    % \end{enumerate}
     
-    \subsubsection{Medições com veículos}
-    Estes testes se concentraram em analisar a resposta do sensor quando a vaga em questão estava ocupada. Nos gráficos \ref{graph:medidas-manha-nublada} e \ref{graph:medidas-vaga-ocupada-tarde} são apresentadas as medidas obtidas nas seguintes condições:
-    \begin{enumerate}
-        \item Manhã nublada: Seguindo a metodologia estabelecida, foi verificada a situação de um dia nublado, com baixa incidência solar sobre a vaga ocupada (Gráfico \ref{graph:medidas-manha-nublada}). 
+    % \subsubsection{Medições com veículos}
+    % Estes testes se concentraram em analisar a resposta do sensor quando a vaga em questão estava ocupada. Nos gráficos \ref{graph:medidas-manha-nublada} e \ref{graph:medidas-vaga-ocupada-tarde} são apresentadas as medidas obtidas nas seguintes condições:
+    % \begin{enumerate}
+    %     \item Manhã nublada: Seguindo a metodologia estabelecida, foi verificada a situação de um dia nublado, com baixa incidência solar sobre a vaga ocupada (Gráfico \ref{graph:medidas-manha-nublada}). 
         
-        \begin{grafico}[H]
+    %     \begin{grafico}[H]
         
-            \caption{\label{exepretex1}Medidas realizadas entre 8:30 e 9h}
-    	    \centering
-    	    \includegraphics[width=0.8\textwidth]{figuras/carros_manha_2.png}
-    	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
-                \fonte{Autor (2018)}
-                \label{graph:medidas-manha-nublada}
-        \end{grafico}
+    %         \caption{\label{exepretex1}Medidas realizadas entre 8:30 e 9h}
+    % 	    \centering
+    % 	    \includegraphics[width=0.8\textwidth]{figuras/carros_manha_2.png}
+    % 	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+    %             \fonte{Autor (2018)}
+    %             \label{graph:medidas-manha-nublada}
+    %     \end{grafico}
         
-        \item Diferentes situações à tarde: Nestes testes foram visualizadas as respostas do sensor em casos específicos, como quando havia carro na vaga, mas que ao lado houvesse uma sombra que pudesse ser confundida com a presença do veículo (pontos em vermelho no Gráfico \ref{graph:medidas-vaga-ocupada-tarde}). 
+    %     \item Diferentes situações à tarde: Nestes testes foram visualizadas as respostas do sensor em casos específicos, como quando havia carro na vaga, mas que ao lado houvesse uma sombra que pudesse ser confundida com a presença do veículo (pontos em vermelho no Gráfico \ref{graph:medidas-vaga-ocupada-tarde}). 
         
-        \begin{grafico}[ht]
-         	    \caption{\label{exepretex1}Medidas realizadas entre 16:30 e 17h}
-    	    \centering
-    	    \includegraphics[width=0.8\textwidth]{figuras/carros_tarde.png}
-    	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
-                \fonte{Autor (2018)}
-                \label{graph:medidas-vaga-ocupada-tarde}
-        \end{grafico}
+    %     \begin{grafico}[ht]
+    %      	    \caption{\label{exepretex1}Medidas realizadas entre 16:30 e 17h}
+    % 	    \centering
+    % 	    \includegraphics[width=0.8\textwidth]{figuras/carros_tarde.png}
+    % 	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+    %             \fonte{Autor (2018)}
+    %             \label{graph:medidas-vaga-ocupada-tarde}
+    %     \end{grafico}
         
-    \end{enumerate}
+    % \end{enumerate}
     
-    \subsection{Definições dos limites de luminosidade}
-    Como retratado na seção anterior, os valores de luminosidade foram obtidos com base em testes sob situações específicas, de modo que estas retratassem casos em que vagas desocupadas pudessem ser confundidas com ocupadas. Ou seja, foram selecionadas situações com baixa incidência solar, ou com sombreamento no local, pois assim retratariam um caso parecido com quando há um veículo estacionado sobre o sensor (baixa luminosidade). Dessa forma obteve-se os seguintes valores:
+    % \subsection{Definições dos limites de luminosidade}
+    % Como retratado na seção anterior, os valores de luminosidade foram obtidos com base em testes sob situações específicas, de modo que estas retratassem casos em que vagas desocupadas pudessem ser confundidas com ocupadas. Ou seja, foram selecionadas situações com baixa incidência solar, ou com sombreamento no local, pois assim retratariam um caso parecido com quando há um veículo estacionado sobre o sensor (baixa luminosidade). Dessa forma obteve-se os seguintes valores:
     
-    \begin{quadro}\label{quadro:valores-vaga-desocupada}
-   	    \caption{Valores de luminosidade sob diferentes situações - vaga desocupada}
-	    \centering
-	    \begin{tabular}{| c | c |c |c |c |}
-	    \hline
-	    Medida & Com sol & Ao lado de sombra & Bem nublado\\
-	    \hline
-	    Valor mínimo & 742.10 & 728.50 & 736.20\\
-	    \hline
-	    Valor médio & 743.89 & 730.57 & 740.39\\
-	    \hline
-	    Valor máximo & 745.60 & 732.40 & 741.60\\
-	    \hline
-	    Desvio Padrão & 0.75 & 0.90 & 0.89\\
-	    \hline
-	    \end{tabular}
-	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
-	    \fonte{Autor (2018)}
-    \end{quadro}
+    % \begin{quadro}\label{quadro:valores-vaga-desocupada}
+   	%     \caption{Valores de luminosidade sob diferentes situações - vaga desocupada}
+	   % \centering
+	   % \begin{tabular}{| c | c |c |c |c |}
+	   % \hline
+	   % Medida & Com sol & Ao lado de sombra & Bem nublado\\
+	   % \hline
+	   % Valor mínimo & 742.10 & 728.50 & 736.20\\
+	   % \hline
+	   % Valor médio & 743.89 & 730.57 & 740.39\\
+	   % \hline
+	   % Valor máximo & 745.60 & 732.40 & 741.60\\
+	   % \hline
+	   % Desvio Padrão & 0.75 & 0.90 & 0.89\\
+	   % \hline
+	   % \end{tabular}
+	   % \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	   % \fonte{Autor (2018)}
+    % \end{quadro}
     
-    \begin{quadro}[H]\label{quadro:valores-vaga-ocupada}
-   	    \caption{Valores de luminosidade sob diferentes situações - vaga ocupada}
-	    \centering
-	    \begin{tabular}{| c | c |c |c |c |}
-	    \hline
-	    Medida & Com sol & Ao lado de sombra & Bem nublado\\
-	    \hline
-	    Valor mínimo & 521.60 & 622.80 & 668.40\\
-	    \hline
-	    Valor médio & 528.86 & 648.81 & 670.06\\
-	    \hline
-	    Valor máximo & 539.80 & 651.10 & 671.80\\
-	    \hline
-	    Desvio Padrão & 5.31 & 2.78 & 0.79\\
-	    \hline
-	    \end{tabular}
-	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
-	    \fonte{Autor (2018)}
-    \end{quadro}
+    % \begin{quadro}[H]\label{quadro:valores-vaga-ocupada}
+   	%     \caption{Valores de luminosidade sob diferentes situações - vaga ocupada}
+	   % \centering
+	   % \begin{tabular}{| c | c |c |c |c |}
+	   % \hline
+	   % Medida & Com sol & Ao lado de sombra & Bem nublado\\
+	   % \hline
+	   % Valor mínimo & 521.60 & 622.80 & 668.40\\
+	   % \hline
+	   % Valor médio & 528.86 & 648.81 & 670.06\\
+	   % \hline
+	   % Valor máximo & 539.80 & 651.10 & 671.80\\
+	   % \hline
+	   % Desvio Padrão & 5.31 & 2.78 & 0.79\\
+	   % \hline
+	   % \end{tabular}
+	   % \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	   % \fonte{Autor (2018)}
+    % \end{quadro}
     
-    Com isso, pode-se verificar que valores abaixo de 671.80 (máximo valor obtido em um dia nublado) representarão uma vaga ocupada. Ou seja, este número é considerado um \textit{threshold}, ou valor de limiar, e é utilizado para determinar o estado de determinada vaga. Além disso, o menor valor obtido para vaga desocupada acontece em torno de 728.50, indicando que medidas acima deste parâmetro indicarão ausência de veículo.
+    % Com isso, pode-se verificar que valores abaixo de 671.80 (máximo valor obtido em um dia nublado) representarão uma vaga ocupada. Ou seja, este número é considerado um \textit{threshold}, ou valor de limiar, e é utilizado para determinar o estado de determinada vaga. Além disso, o menor valor obtido para vaga desocupada acontece em torno de 728.50, indicando que medidas acima deste parâmetro indicarão ausência de veículo.
     
     
     \subsection{Projeto do \textit{sink node}}
@@ -1269,28 +1269,73 @@ Neste capítulo é descrito o projeto do sistema num todo, desde a definição d
     \subsubsection{\textit{Frontend}}
     Neste módulo é apresentado quantas vagas estão disponíveis no estacionamento sob monitoramento. Para isso, foi desenvolvido um código em Javascript que tem duas funções: obter os dados do \textit{backend}, utilizando a versão Javascript da mesma biblioteca \textit{opensource} \textit{Eclipse Paho MQTT}, e depois mostrá-los na tela. 
     
+    \section{Testes Realizados}
+    Para avaliar a efetividade do sistema, foram testados isoladamente cada subsistema, como os sistemas de detecção e transmissão. Dessa forma, foi possível verificar primeiramente se os \textit{sensor nodes} realizam as medidas adequadamente no tempo esperado, e também se a comunicação, tanto dos nós para a central, quanto da central para o \textit{gateway} eram robustas para a aplicação. Por fim, com o sistema completo em operação, foram obtidos os resultados finais.
+
+    \subsection{Medições do sensor LDR}
+    Afim de verificar o quão precisas eram as medidas do sensor ao longo do dia, foram realizados testes no período das 8h às 18h, entre os dias 25, 26 e 28 de Setembro de 2018. Estes consistiram em colocar em operação um dos \textit{sensor nodes} no centro de 10 vagas, onde 5 destas estavam ocupadas, e as outras 5 livres, em um dos estacionamentos ao lado da Reitoria da UFSM. 
+    
+    \subsubsection{Testes de intensidade luminosa}
+    Primeiramente foram obtidas medidas dos níveis de luminosidade sobre as vagas, afim de definir um valor de limiar (\textit{threshold}) que dita a presença ou ausência de veículos. Neste caso, foi utilizado um led em conjunto com o circuito original para indicar o nível de luminosidade sobre determinado local (Figura \ref{fig:led-indicator}).
+    
+    \begin{figure}[H]
+     	    \caption{\label{exepretex} Circuito indicador de intensidade luminosa}
+            \centering
+            \includegraphics[width=0.6\textwidth]{figuras/indicador.jpg}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+            \label{fig:led-indicator}
+    \end{figure}
+    
+    Para cada horário, foram realizadas 10 medições por vaga, sendo 10 medidas a cada 10 segundos, resultando em um total de 50 medidas em vagas ocupadas e 50 medidas nas vagas disponíveis. Essas medidas correspondem ao valor cru obtido na leitura do sensor através do conversor AD do microcontrolador, utilizando a referência de tensão externa, afim de evitar que flutuações no nível de tensão da fonte influenciem no resultado. A partir disso, foram estabelecidas estimativas de níveis de intensidade luminosa esperadas para as duas possíveis ocasiões (vaga disponível ou vaga ocupada) em cada horário, baseando-se na média aritmética normalizada das medidas em cada situação. 
+    
+    \subsubsection{Precisão do sensor}
+    Com base nas estimativas de nível de intensidade luminosa, foi avaliada a precisão do sensor em indicar o estado de uma vaga escolhida aleatoriamente no mesmo estacionamento. Assim como nos testes anteriores, foram realizadas 10 medidas por vaga, nos mesmos horários, porém em dias diferentes. 
+    
+    \begin{figure}[H]
+     	    \caption{\label{exepretex} Visão do estacionamento}
+            \centering
+            \includegraphics[width=0.6\textwidth]{figuras/estacionamento_visao.jpg}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+            \label{fig:estac-visao}
+    \end{figure}
+    
+    \begin{figure}[H]
+     	    \caption{\label{exepretex} Teste em uma vaga ocupada}
+            \centering
+            \includegraphics[width=0.6\textwidth]{figuras/ocupada.png}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+            \label{fig:ocupada}
+    \end{figure}
+    
+    \begin{figure}[H]
+     	    \caption{\label{exepretex} Teste em uma vaga disponível}
+            \centering
+            \includegraphics[width=0.6\textwidth]{figuras/disponivel.jpg}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+            \label{fig:disponivel}
+    \end{figure}
+    
+    \begin{grafico}[H]
+     	    \caption{\label{exepretex} Avaliação das medições do LDR ao longo do tempo}
+            \centering
+            \includegraphics[width=0.8\textwidth]{figuras/ldr_graph.jpg}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+            \label{graph:ldr-aval}
+    \end{grafico}
+    
+    \subsection{Comunicação entre \textit{sensor node} e \textit{sink node}}
+    
+    \subsection{Comunicação entre \textit{sink node} e \textit{gateway} LoRa}
+    
+    
 \chapter{RESULTADOS}
 
-DEMONSTRAR COMO FOI FEITA A COLETA DE RESULTADOS. MOSTRAR COMO ERA O CENÁRIO, INDICANDO TEMPOS E QUANTIA ESPERADAS DE DADOS TRANSMITIDOS E QUANTIAS RESULTANTES APÓS OS TESTES. 
 
-\textbf{****TESTES - SENSOR TO SINK****}
-
-1. O SISTEMA FOI CAPAZ DE MODIFICAR O NÚMERO DE VAGAS DISPONÍVEIS QUANDO AS VAGAS TROCAVAM DE ESTADO? (avaliação qualitativa + avaliação quantitativa: em quais circunstâncias?  efetividade do monitoramento em si - supondo transmissão com sucesso).
-
-2. QUAL PORCENTAGEM DAS VEZES? (avaliação quantitativa - definir o número de testes a serem realizados, sob diferentes circunstâncias, como horário e condição climática)
-
-2.1. SE SIM, EM QUANTO TEMPO ISSO FOI FEITO? (avaliação quantitativa da transmissão sensor node -> sink node. SINK NODE DEVE SER CAPAZ DE SALVAR O MOMENTO EM QUE RECEBEU A TRANSMISSÃO. COMO FAZER ISSO?)
-
-
-\textbf{****TESTES - SINK TO APPLICATION****}
-
-1. A TTN RECEBEU OS DADOS NO MOMENTO ESPERADO? (avaliação qualitativa + quantitativa: em quais circustâncias - definir as quantias que definirão os resultados)
-
-2. O APLICATIVO FOI CAPAZ DE RECEBER OS DADOS NO MOMENTO ESPERADO (avaliação qualitativa + quantitativa: em quais circunstâncias)
-
-\textbf{****TESTES FINAIS****}
-
-1. O APLICATIVO RECEBEU OS DADOS QUANDO A VAGA ALTEROU O ESTADO? (quantitativa + qualitativa: em que circunstâncias - definir bateria de testes)
 
 
 \chapter{CONCLUSÕES}
