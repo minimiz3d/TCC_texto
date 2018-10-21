@@ -933,25 +933,45 @@ Para obtenção de dados do servidor de rede são utilizados protocolos de conec
 \begin{figure}[H]
     \caption{\label{exepretex} Paradigma \textit{publish/subscribe}}
     \centering
-    \includegraphics[width=0.6\textwidth]{figuras/publish-subscribe.png}
+    \includegraphics[width=0.8\textwidth]{figuras/publish-subscribe.png}
     \vspace{\baselineskip} %%% linha em branco para atender a norma
-        \fonte{Autor (2018)}
+        \fonte{\cite{mqtt-diagram}}
         \label{fig:mqtt-topico}
 \end{figure}
 
-O funcionamento deste protocolo ocorre da seguinte forma: elementos que desejam receber algum dado de determinado tópico, se subscrevem a este; depois, a interface de comunicação, chamada de \textit{broker}, é responsável por encaminhar e gerenciar mensagens publicadas neste tópico. No caso de sistemas compostos por uma rede de sensores, por exemplo, os dados (\textit{payload}) são enviados para o gateway, sem distinção de tópicos neste momento; a partir disso, o gateway encaminha os dados ao servidor de rede afim de separá-los em tópicos relevantes, como "temperatura" ou "umidade do ar"; depois, alguma aplicação que deseja receber informações de temperatura, por exemplo, pode inscrever-se neste tópico; com isso, o \textit{broker} do servidor verifica os inscritos deste tópico, e os encaminha as mensagens publicadas pelos \textit{publishers}. 
+O funcionamento deste protocolo ocorre da seguinte forma: elementos que desejam receber algum dado de determinado tópico, se subscrevem a este; depois, a interface de comunicação, chamada de \textit{broker}, é responsável por gerenciar e encaminhar mensagens publicadas neste tópico. No caso de sistemas compostos por uma rede de sensores, por exemplo, os dados (\textit{payload}) são enviados para o gateway, sem distinção de tópicos neste momento; a partir disso, o gateway encaminha os dados ao servidor de rede afim de separá-los em tópicos relevantes, como "temperatura" ou "umidade do ar"; depois, alguma aplicação que deseja receber informações de temperatura, por exemplo, pode inscrever-se neste tópico; com isso, o \textit{broker} do servidor verifica os inscritos deste tópico, e os encaminha as mensagens publicadas pelos \textit{publishers}. 
 
 
 
 
 \chapter{APLICAÇÃO DESENVOLVIDA}
-Neste capítulo é descrito o projeto do sistema num todo, desde a definição dos componentes a serem utilizados, até como é feita a transmissão dos dados.
-
+Como mencionado nos capítulos anteriores, a busca às cegas por vagas de estacionamento disponíveis nas ruas é parcialmente responsável por problemas como congestionamentos e queimas desnecessárias de combustível. Partindo desta motivação, foi pensada e prototipada uma solução baseada em uma rede de sensores sem fio de baixo custo. 
+Neste capítulo é descrito o sistema num todo, desde a definição dos componentes utilizados no projeto, até como é feita a transmissão dos dados.
+    
+    \section{VISÃO GERAL}
+    Apesar de existirem algumas soluções no mercado para a informatização da disponibilidade de vagas de estacionamentos, geralmente as que se dão através de redes de sensores são caras, e portanto tornam-se inviáveis para um grande número de locais a serem monitorados. Dessa forma, o sistema proposto teve foco no uso de componentes de baixo custo e numa arquitetura de comunicação sem fio (...)
+    
+    Como pode ser visto na Figura \ref{fig:visao-geral}, o sistema é composto por cinco etapas. Na primeira é realizada a verificação do estado das vagas, através de sensores LDR independentes (\textit{sensor nodes}); depois, essa informação é propagada para o \textit{sink node} utilizando módulos de rádio AM; por sua vez, a central encaminha estes dados ao \textit{gateway} por intermédio de um rádio LoRa; diante disso o servidor de rede TTN obtém e disponibiliza o estado das vagas a um \textit{broker} MQTT; e por fim, uma página disponibiliza estas informações utilizando comunicação via MQTT com o \textit{broker}.
+    
+    \begin{figure}[ht]
+     	   \caption{\label{exepretex} Visão geral do sistema}
+            \centering
+            \includegraphics[width=0.8\textwidth]{figuras/funcionamento.png}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+                \label{fig:visao-geral}
+    \end{figure}
+    
+    A arquitetura de rede adotada consiste em uma rede estrela de estrelas, com duas camadas de comunicação sem fio. O motivo desta escolha se deu com o intuito de minimizar os custos da aplicação para que seja possível escalabilizar o sistema, isto é, para monitorar um número elevado de vagas, em diversos estacionamentos, é necessário que o preço unitário dos nós sensores seja baixo. Dessa forma, foram escolhidos módulos de rádio AM com um alcance razoável e de baixíssimo custo, de maneira que se utilize apenas um módulo LoRa (ainda muito caro no Brasil) para encaminhar o estado de várias vagas em determinado estacionamento. 
+    
+    % seria inviável a utilização de rádios LoRa em cada unidade dos nós, pois
+    
+    
     \section{DESENVOLVIMENTO}
     O desenvolvimento desta aplicação se pautou em três etapas: inicialmente foi realizado o projeto dos \textit{sensor nodes}, abrangendo desde o esquema elétrico à transmissão de pacotes; depois foi projetado o sistema \textit{sink node}, ou central; e por fim foi desenvolvida a aplicação que mostra a disponibilidade de vagas no local. A seguir são detalhados estes sistemas.
     
     \subsection{Projeto dos \textit{sensor nodes}}
-    O projeto destes dispositivos foi feito com o objetivo de se ter um sistema capaz de informar o estado atual das vagas a cada 1 minuto, de modo que o consumo energético fosse reduzido ao máximo. Para isso, primeiramente foi estabelecido um fluxograma contendo cada etapa de operação deste sistema (Figura \ref{fig:flux-sensor-node}).
+    O projeto destes dispositivos foi feito com o objetivo de se ter um sistema barato capaz de informar o estado atual das vagas a cada 1 minuto, de modo que o consumo energético fosse reduzido ao máximo. Para isso, primeiramente foi estabelecido um fluxograma indicando cada etapa de operação deste sistema (Figura \ref{fig:flux-sensor-node}).
     
     \begin{figure}[ht]
      	    \caption{\label{exepretex} Fluxograma dos \textit{sensor nodes}}
