@@ -86,7 +86,7 @@
 % % CURSO DA UFSM
 \nivelensino{Graduação}  %%%%%%% NIVEL DE ENSINO 
 \curso{Engenharia de Computação}   %%%%% NOME POR EXTENSO
-\ppg{PPGALGO}   %%%%%% SIGLA
+% \ppg{PPGALGO}   %%%%%% SIGLA
 \statuscurso{Curso}  %%%% STATUS= {Programa} ou {Curso}
 
 
@@ -95,16 +95,16 @@
 \sexo{M} %%%% SEXO DO AUTOR -> M=masculino   F=feminino (IMPORTANTE PARA AJUSTAR PAGINAS PRE-TEXTUAIS)
 \grauensino{Graduação}    %%%%%%%% GRAU DE ENSINO A SER CONCLUIDO
 \grauobtido{Bacharel}    %%%%% TITULO OBTIDO
-\email{lalala@uhul.com}   %%%% E-MAIL PARA CATALOGRAFICA (COPYRIGHT) - OBRIGATORIO
-\endereco{Rua das abobrinhas, n. 666} %%%% TELEFONE PARA CATALOGRAFICA (COPYRIGHT) (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
-\fone{11 2222 3333}   %%%% TELEFONE PARA CATALOGRAFICA (COPYRIGHT) FORMATO {11 2222 3333} (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
-\fax{11 2222 3333}   %%%% FAX PARA CATALOGRAFICA (COPYRIGHT) FORMATO {11 2222 3333} (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
+\email{arthur.pinheiro@ecomp.ufsm.br}   %%%% E-MAIL PARA CATALOGRAFICA (COPYRIGHT) - OBRIGATORIO
+\endereco{Rua Coronel Niederauer, n. 913} %%%% TELEFONE PARA CATALOGRAFICA (COPYRIGHT) (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
+\fone{55 99652 9772}   %%%% TELEFONE PARA CATALOGRAFICA (COPYRIGHT) FORMATO {11 2222 3333} (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
+% \fax{11 2222 3333}   %%%% FAX PARA CATALOGRAFICA (COPYRIGHT) FORMATO {11 2222 3333} (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
 
 
 % % % % % % % % % % INFORMACOES DA BANCA % % % % % % % % % % 
 % OBSERVACOES: O CAMPO ORIENTADOR EH OBRIGATORIO E NAO DEVE SER COMENTADO
 % % % % % %    OS DEMAIS MEMBROS DA BANCA (COOREIENTADOR E DEMAIS PROFESSORES) QUANDO COMENTADOS NAO APARECEM NA FOLHA DE APROVACAO (O LAYOUT DA FOLHA DE APROVACAO ESTA PREPARADO PARA O ORIENTADOR E ATE MAIS 4 MEMBROS NA BANCA
-\orientador{Carlos Henrique Barriquello}{Dr}{AAAA}{M}{P}  %%%INFORMACOES SOBRE ORIENTADOR: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
+\orientador{Carlos Henrique Barriquello}{Dr}{UFSM}{M}{P}  %%%INFORMACOES SOBRE ORIENTADOR: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
 % \coorientador{TALVEZ!!!}{Dra}{AAAA}{F}{M} %%%INFORMACOES SOBRE CO-ORIENTADOR: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
 \bancaum{Banca Um}{Dr}{AAAA}{F}{M}  %%%INFORMACOES SOBRE PRIMEIRO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
 
@@ -146,15 +146,18 @@
 % % % % %  ALGUMAS ENTRADAS PRE-TEXTUAIS
 % % % % CASO NAO QUEIRA UTILIZA-LAS COMENTE A LINHA DE COMANDO
 % % % EPIGRAFE
-\epigrafe{O livro é uma criatura frágil, ele sofre o desgaste do tempo, ele teme os roedores, os elementos e mãos desajeitadas. Então o livreiro proteje os livros não apenas da humanidade, mas também da natureza e devota sua vida a uma guerra contra as forças do esquecimento.}{Umberto Eco} %ESTRUTURA DE CAMPOS -> {Texto}{Autor}
+% \epigrafe{O livro é uma criatura frágil, ele sofre o desgaste do tempo, ele teme os roedores, os elementos e mãos desajeitadas. Então o livreiro proteje os livros não apenas da humanidade, mas também da natureza e devota sua vida a uma guerra contra as forças do esquecimento.}{Umberto Eco} %ESTRUTURA DE CAMPOS -> {Texto}{Autor}
 % % % DEDICATORIA
-\dedicatoria{Ao Rei da Espanha!}
+% \dedicatoria{Ao Rei da Espanha!}
+
+% TODO
 % % % %  AGRADECIMENTOS
 \agradecimentos{
 A mim!
 }
 
 % % % % %  RESUMO E PALAVRAS CHAVE DO RESUMO - OBRIGATORIO PARA MDT-UFSM
+% TODO: Melhorar
 \resumo{
 O crescimento do número de veículos em circulação no país gera diversos inconvenientes, como engarrafamentos e altos índices de poluição. Neste contexto, uma das principais causas de lentidão no trânsito é a busca às cegas por vagas de estacionamento, que se dá pela falta de informatização destes locais.
 Diante disso, o objetivo deste trabalho é verificar a efetividade de uma aplicação que detecta vagas disponíveis em um estacionamento ao ar livre. Para isso foi desenvolvido um protótipo de uma rede de sensores sem fio, que utiliza sensores LDR de baixo custo para detectar a disponibilidade das vagas e comunicação por radiofrequência nas transmissões. O sistema está estruturado em uma topologia de rede em estrela, onde os \textit{sensor-nodes} transmitem individualmente o estado de determinada vaga a uma central (\textit{sink-node}) através de módulos de comunicação AM. Por fim, o \textit{sink-node} disponibiliza a quantia de vagas disponíveis para a aplicação, através da tecnologia LoRa.
@@ -248,7 +251,7 @@ Diante disso, o objetivo deste trabalho é verificar a efetividade de uma aplica
 
 
 % % FICHA CATALOGRAFICA
-% \semcatalografica  %%%%  (QUANDO ATIVIDA NAO EXIBE A FICHA CATALOGRAFICA NECESSITA DO ARQUIVO DA FICHA: ficha_catalografica.pdf
+\semcatalografica  %%%%  (QUANDO ATIVIDA NAO EXIBE A FICHA CATALOGRAFICA NECESSITA DO ARQUIVO DA FICHA: ficha_catalografica.pdf
 % % % A FICHA CATALOGRAFICA FORNECIDA PELA UFSM EH UM PDF DO TAMANHO A4
 % % % OS COMANDOS ABAIXO DEFINEM AS MARGENS PARA CORTAR A FICHA FORNECIDA E COLOCA-LA COMO UMA FIGURA NO DOCUMENTO LATEX
 \margemesquerda{4}   %%%% CORTE DE MARGEM ESQUERDA EM CM
@@ -264,13 +267,13 @@ Diante disso, o objetivo deste trabalho é verificar a efetividade de uma aplica
 % % para não utilizar comente as linhas abaixo.
 % % deve ser preenchida como um ambiente tabular de quatro colunas:
 % % pagina & linha & onde se le & leia-a se \\
-\errata{
-10   &    10    & errado   & certo \\
-\hline
-12    &    5     & errado com um texto mais longo & certo agora com um texto mais longo\\
-\hline
-13   &    3    & $x^2$   & $2x$\\
-}
+% \errata{
+% 10   &    10    & errado   & certo \\
+% \hline
+% 12    &    5     & errado com um texto mais longo & certo agora com um texto mais longo\\
+% \hline
+% 13   &    3    & $x^2$   & $2x$\\
+% }
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 
@@ -333,36 +336,35 @@ Diante disso, o objetivo deste trabalho é verificar a efetividade de uma aplica
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % % % % % INTRODUCAO % % % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-\introducao{%
-% Problemas de mobilidade urbana no Brasil estão diretamente ligados ao aumento no número da frota de veículos no país. Um destes principais contratempos são os engarrafamentos cada vez maiores e constantes no dia a dia do povo. Segundo uma pesquisa do G1 baseada em dados do Departamento Nacional de Trânsito (Denatran), somente em 2014 se constatou que havia o equivalente a um carro para cada quatro habitantes do país \cite{site:g1}. Já em 2017, este indicador aumentou e já representa pelo menos 51.2 milhões de automóveis em circulação \cite{site:cnt}. 
+\introducao{
+A disponibilização automatizada de informações acerca de objetos e locais, através de sensores e comunicação \textit{wireless}, pode ser considerada um dos pilares do conceito de internet das coisas (IoT, do inglês \textit{Internet of Things}).
+Neste sentido, estima-se que o número de dispositivos conectados à Internet no ano de 2020 esteja próximo de 30 bilhões \cite{nordrum2016popular}, ou seja, monitorar parâmetros como umidade relativa do ar \cite{oliveira2011wireless}; nível de lixo em containers \cite{joshi2016cloud}; e qualidade do solo e do cultivo na agricultura de precisão \cite{ojha2015wireless} serão algumas das aplicações cada vez mais frequentes nos próximos anos.
 
-% Além disso, estima-se que em média 30\% dos motoristas em congestionamentos estão em busca de uma vaga para estacionarem seus carros \cite{shoup2006cruising}. Ou seja, a falta informação acerca da disponibilidade de vagas nas ruas é parcialmente responsável por diversos inconvenientes que engarrafamentos causam, como atrasos e gastos desnecessários de combustível. 
+Dessa forma, para que cidades inteligentes ou “infraestruturas em rede para melhorar a eficiência econômica e política, e possibilitar o desenvolvimento social, cultural e urbano” \cite{hollands2008will} não sejam apenas um conceito pelo mundo, é preciso que soluções inovadoras se pautem nas adversidades mais evidentes destas. No Brasil, por exemplo, problemas de mobilidade urbana como engarrafamentos cada vez mais constantes, estão atrelados à grande frota de veículos no país, que conforme dados apresentados pela Confederação Nacional do Transporte em 2017, já chega a 51.2 milhões de automóveis \cite{site:cnt}. Além disso, segundo dezesseis estudos realizados entre os anos de 1927 e 2001, em média 30\% dos motoristas em congestionamentos estavam em busca de uma vaga para estacionarem seus veículos \cite{shoup2006cruising}. Ou seja, é evidente que procurar às cegas pela disponibilidade destes locais ainda contribui significativamente para tornar o trânsito mais lento, ainda que existam enormes diferenças entre as cidades da época desta pesquisa e as atuais.
 
-A disponibilização automatizada de informações acerca de objetos e locais pode ser considerada um dos pilares do conceito de internet das coisas (IoT, do inglês \textit{Internet of Things}), onde a utilização de redes de sensores sem fio é muito promissora para obtenção e transmissão de dados. Neste sentido, estima-se que o número de dispositivos conectados à Internet no ano de 2020 esteja próximo de 30 bilhões \cite{nordrum2016popular}, ou seja, monitorar parâmetros como umidade relativa do ar \cite{oliveira2011wireless}; nível de lixo em containers \cite{joshi2016cloud}; e qualidade do solo e do cultivo na agricultura de precisão \cite{ojha2015wireless} serão algumas das aplicações cada vez mais frequentes nos próximos anos.
+Neste contexto, pode-se imaginar como uma possível solução deste problema o uso de uma rede de sensores, onde o objetivo seja indicar de forma automatizada a disponibilidade das vagas monitoradas, e com isso contribuir diretamente na informatização das cidades. No entanto, uma implementação robusta destas redes é um grande desafio, pois são sensíveis a diversos fatores como a necessidade de empregar fontes de alimentação capazes de disponibilizar energia de forma segura durante longos períodos de tempo; proteção dos elementos perceptores, que podem não ser resistentes à água ou altas e baixas temperaturas, por exemplo; robustez e segurança na comunicação para que se tenha integridade dos dados; entre outros aspectos que impedem um desenvolvimento mais acelerado destes sistemas \cite{puccinelli2005wireless}. 
 
-Dessa forma, para que cidades inteligentes ou “infraestruturas em rede para melhorar a eficiência econômica e política, e possibilitar o desenvolvimento social, cultural e urbano” \cite{hollands2008will} não sejam apenas um conceito pelo mundo, é preciso que soluções inovadoras se pautem nas adversidades mais evidentes destas. No Brasil, por exemplo, problemas de mobilidade urbana como engarrafamentos cada vez mais constantes, estão atrelados à grande frota de veículos no país, que conforme dados apresentados pela Confederação Nacional do Transporte em 2017, já chega a 51.2 milhões de automóveis \cite{site:cnt}. Neste sentido, segundo dezesseis estudos realizados entre os anos de 1927 e 2001, em média 30\% dos motoristas em congestionamentos estavam em busca de uma vaga para estacionarem seus veículos \cite{shoup2006cruising}. Ou seja, ainda que tenham ocorrido inúmeras mudanças nas cidades desde que estes dados foram coletados, é evidente que procurar às cegas pela disponibilidade destes locais ainda contribui significativamente para tornar o trânsito mais lento. 
+Com isso, a cada ano estão surgindo soluções no campo de IoT para os complicadores anteriormente citados. A tecnologia de comunicação sem fio LoRa é um bom exemplo por ser recente e ter como objetivo contribuir na implementação de \textit{wireless sensor networks} (WSN) de baixo consumo de energia e longo alcance de transmissão. Características como estas são essenciais para que iniciativas baseadas em redes LoRaWAN, como a Digital Living Lab, situada em Wollongong na Austrália, sejam realizadas e possam colaborar com projetos de impacto urbano e social \cite{site:dll}. 
 
-Neste contexto, soluções baseadas em ferramentas como redes de sensores podem ser utilizadas, onde o objetivo destas seja indicar de forma automatizada a disponibilidade de vagas em determinado local, contribuindo assim para tornar as cidades mais informatizadas, e portanto mais inteligentes. No entanto, implementar estas redes de forma robusta é um grande desafio, pois são sensíveis a diversos fatores como a necessidade de empregar fontes de alimentação capazes de disponibilizar energia de forma segura durante longos períodos de tempo; proteção dos elementos perceptores, que podem não ser resistentes à água ou altas e baixas temperaturas, por exemplo; robustez e segurança na comunicação para que se tenha integridade dos dados; entre outros aspectos que impedem um desenvolvimento mais acelerado destes sistemas \cite{puccinelli2005wireless}. 
+% de modo que as pessoas da região entendam e possam contribuir no desenvolvimento de aplicações que ajudem na transformação de cidades mais inteligentes. Dessa forma, projetos que auxiliem de alguma forma a comunidade local são incentivados, como por exemplo a implantação de uma rede de sensores sem fio que possa mapear os hidrantes da cidade, ou possíveis pontos suscetíveis a deslizamentos de terra, e com isso ser útil para serviços de emergência.
 
-Com isso, a cada ano estão surgindo soluções no campo de IoT para os complicadores anteriormente citados. A tecnologia de comunicação sem fio LoRa é um bom exemplo por ser recente e ter como objetivo contribuir na implementação de WSNs de baixo consumo de energia e longo alcance de transmissão. Características como estas são essenciais para que iniciativas baseadas em redes LoRaWAN, como a Digital Living Lab, situada em Wollongong na Austrália \cite{site:dll}, sejam realizadas de modo que as pessoas da região entendam e possam contribuir no desenvolvimento de aplicações que ajudem na transformação de cidades mais inteligentes. Dessa forma, projetos que auxiliem de alguma forma a comunidade local são incentivados, como por exemplo a implantação de uma rede de sensores sem fio que possa mapear os hidrantes da cidade, ou possíveis pontos suscetíveis a deslizamentos de terra, e com isso ser útil para serviços de emergência.
+A partir disso, este trabalho de conclusão de curso tem a finalidade de abordar temas como WSN, comunicação em radiofrequência, tecnologia LoRa, sensores de luminosidade e propor a implementação de um protótipo de uma rede de sensores sem fio de baixo custo, afim de monitorar o estado de vagas de um estacionamento ao ar livre. Para tanto, serão usados em conjunto sensores LDR e também módulos de comunicação de radiofrequência.
 
-A partir disso, neste trabalho de conclusão de curso são discutidos temas como WSN, comunicação em radiofrequência, protocolo LoRaWAN, sensores de luminosidade e é proposta a implementação de um protótipo de uma rede de sensores sem fio para ser utilizada como base de uma aplicação, onde o objetivo principal é monitorar o estado de vagas de um estacionamento ao ar livre, através de um aplicativo web. Para isso, serão empregados em conjunto sensores LDR e também módulos de comunicação de radiofrequência.
-
-A estrutura deste trabalho está dividida da seguinte forma: no Capítulo 2 é realizada a revisão de literatura relacionada à aplicação proposta, mencionando técnicas e soluções utilizadas em outros trabalhos para o mesmo o problema; no Capítulo 3 são abordados conceitos básicos relevantes ao trabalho, como conversão analógico/digital e comunicação \textit{wireless}; no Capítulo 4 é apresentada a aplicação num todo, descrevendo o projeto do sistema; no Capítulo 5 são apresentados e discutidos os resultados obtidos; e por fim, o Capítulo 6 aborda as conclusões e sugestões para trabalhos futuros.
+A estrutura deste documento está dividida da seguinte forma: no Capítulo 2 é realizada a revisão de literatura relacionada à aplicação proposta, mencionando técnicas e soluções utilizadas em outros trabalhos para o mesmo o problema; no Capítulo 3 são abordados conceitos básicos relevantes ao trabalho, como conversão analógico/digital e comunicação \textit{wireless}; no Capítulo 4 é apresentada a aplicação num todo, descrevendo o desenvolvimento e testes do sistema; no Capítulo 5 são apresentados e discutidos os resultados obtidos; e por fim, o Capítulo 6 aborda as conclusões e sugestões para trabalhos futuros.
 }%
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \geraintro  %%%% GERA INTRODUCAO   % % % % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \chapter{REVISÃO DE LITERATURA}
-Este capítulo tem como objetivo abordar brevemente diferentes possíveis soluções para o mesmo problema, isto é, aplicações que visem monitorar o estado das vagas de um estacionamento ao ar livre.
+Este capítulo tem como objetivo abordar brevemente diferentes possíveis soluções para o problema em questão, isto é, aplicações que visem monitorar o estado das vagas de um estacionamento ao ar livre.
 
 \section{Detecção de veículos em estacionamentos}
 A etapa primordial para se informatizar o estado das vagas de um estacionamento é a maneira com que se detecta a disponibilidade das mesmas. Geralmente utilizam-se sensores dispostos no local, como magnetômetros \cite{barton2007d} e sensores ultrassônicos \cite{lee2008intelligent}. Entretanto, a instalação e manutenção destes sistemas se torna cara em ambientes com um grande número de vagas a serem monitoradas. Para isso, soluções que utilizam processamento de imagens, como apresentado em \cite{ichihashi2009vacant}, se mostram vantajosas tanto na capacidade de detecção simultânea de várias vagas, como na não intrusividade sobre o local em si, por não afetarem diretamente a superfície. Ainda que apresente diversas vantagens, sistemas dependentes de câmeras exigem alto consumo energético, quando comparadas a sensores, e também acabam gerando grandes volumes de dados \cite{wu2007robust}.
 
 Dessa forma, empregar um sistema que seja vantajoso em muitos aspectos é uma tarefa complicada. A seguir serão apresentados os tipos mais comuns de sensores utilizados para este tipo de aplicação, sendo descritos pontos positivos e negativos de cada um.
 
-\subsubsection{Magnetômetros} 
+\subsection{Magnetômetros} 
 Este tipo de sensor opera baseando-se nas variações de campo magnético da Terra. Portanto, quando há perturbações em alguma direção do campo, a corrente e consequentemente o fluxo de elétrons também são afetados. Medindo-se estas mudanças é possível determinar, por exemplo, a existência de materiais ferromagnéticos próximos, o que indicaria a presença de um carro. 
 
 \begin{figure}[ht]
@@ -381,12 +383,12 @@ Atualmente há algumas soluções no mercado baseadas em sensores magnéticos, c
 Além destes há o projeto de larga escala SFPark, iniciado em Abril de 2011 na cidade de São Francisco - CA, que foi implantado com o intuito de maximizar o número de vagas de estacionamento disponíveis. Para isso são utilizados em conjunto um sistema de detecção de veículos baseado em sensores magnéticos, com os parquímetros, afim de designar dinamicamente o preço das vagas conforme a disponibilidade, horário, e local. Dessa forma é possível saber em tempo real locais e preços de estacionamentos \cite{site:mobilize}.
 
 
-\subsubsection{Sensores Ultrassônicos}
+\subsection{Sensores Ultrassônicos}
 O princípio de funcionamento destes está relacionado à forma com que um sinal transmitido é refletido de volta ao entrar em contato com determinada superfície. Para tanto, pulsos de alta frequência são emitidos na direção do que se pretende analisar; depois a energia recebida de volta deve ser processada; e a partir disto é possível verificar, por exemplo, a que distância está um objeto ou também que tipo de material o elemento em questão é composto.
 
 Dentre as vantagens preponderantes deste sensor está a praticidade de instalação e de se aferir resultados. Porém, diferentemente dos magnetômetros, situações climáticas adversas, como vento e chuva, causam perda de performance.
 
-\subsubsection{Câmeras}
+\subsection{Câmeras}
 No caso destes sensores, a detecção das vagas de um estacionamento é feita através do uso de processamento de imagens. A alta capacidade de cobertura, ou seja, monitorar diversas vagas com apenas um só dispositivo, os tornam uma solução extremamente atrativa. Como pode ser visto na Figura \ref{fig:repoparking}, uma implementação de código aberto é capaz de detectar o estado de até quinze vagas de uma só vez.
 
 \begin{figure}[H]
@@ -398,7 +400,7 @@ No caso destes sensores, a detecção das vagas de um estacionamento é feita at
         \label{fig:repoparking}
 \end{figure}
 
-\section{SENSORES DE LUMINOSIDADE}
+\section{SENSORES DE LUMINOSIDADE LDR}
 Como o nome sugere, estes dispositivos são capazes de medir a intensidade de luz em determinada região. Existem diversos tipos destes sensores, como fototransistores e fotoresistores, do inglês \textit{Light Dependent Resistor} (LDR), cada um produzindo medidas elétricas de uma forma. Por exemplo, no caso dos LDRs (geralmente representados como na Figura \ref{fig:ldr-simbolo}), a medida é realizada em relação à resistência interna destes, que varia de forma inversamente proporcional à incidência luminosa, comumente medida em Lux. A seguir são detalhadas as características dos fotoresistores.
 \begin{figure}[ht]
     \caption{\label{exepretex} Simbologia de fotoresistores}
@@ -468,12 +470,12 @@ Outro ponto relevante dos LDRs é a resposta espectral destes dispositivos. Simi
 
 
 \chapter{REFERENCIAL TEÓRICO}
-Este capítulo tem como objetivo abordar conceitos básicos relativos aos sistemas utilizados neste aplicação, como obtenção de medidas utilizando sensores analógicos e princípios de comunicação sem fio.
+Este capítulo tem como objetivo abordar conceitos básicos relativos aos sistemas utilizados na aplicação proposta, como obtenção de medidas através de sensores analógicos e princípios de comunicação sem fio.
 
 \section{REDES DE SENSORES SEM FIO}
 Se há algo em comum entre todas as gerações humanas, pode-se dizer que isto é a curiosidade que temos de compreender o ambiente que nos circunda, e dar a isso algum valor. Dessa forma, diversos exemplos de aplicações, bem intencionadas ou não, que fossem baseadas na percepção ou monitoramento de eventos foram desenvolvidas ao longo dos anos. Na Segunda Guerra Mundial, por exemplo, a marinha alemã utilizava princípios eletromagnéticos para implantar minas navais que também atuavam como sensores, e assim eram capazes de afundar automaticamente navios britânicos quando próximos \cite{HowBrita11:online}. Em contrapartida, outros sistemas também antigos de percepção, como o radar são utilizados até hoje para fins mais pacíficos em áreas como meteorologia e aviação comercial. 
 
-Com o passar do tempo, as técnicas de monitoramento foram aprimoradas e gradualmente mais automatizadas. Isto foi possível devido à rápida evolução na área de microeletrônica, que com circuitos e encapsulamentos cada vez menores e mais eficientes \cite{renna2007evolution}, possibilitou o surgimento das chamadas redes de sensores sem fio, do inglês \textit{Wireless Sensor Networks} (WSN), que podem ser definidas como: sistemas compostos de nós sensores, que através de dispositivos perceptores juntamente com comunicação sem fio objetivam mensurar e transmitir informações sobre algum fenômeno. 
+Com o passar do tempo, as técnicas de monitoramento foram aprimoradas e gradualmente mais automatizadas. Isto foi possível devido à rápida evolução na área de microeletrônica, que com circuitos e encapsulamentos cada vez menores e mais eficientes \cite{renna2007evolution}, possibilitou o surgimento das redes de sensores sem fio, que podem ser definidas como: sistemas compostos de nós sensores, que através de dispositivos perceptores juntamente com comunicação sem fio objetivam mensurar e transmitir informações sobre algum fenômeno. 
 
 Nestas redes os nós sensores (\textit{sensor nodes}) são dispositivos de baixo consumo energético, equipados com sensores afim de detectar determinado evento, ou medida, de modo que a informação obtida seja transmitida por algum transceiver \cite{oliveira2011wireless}. Ou seja, por combinarem sensoriamento, processamento e comunicação em um só sistema, estes elementos são extremamente versáteis e possibilitam a criação de inúmeras aplicações. Entretanto ainda existem diversos desafios nesta área, como prolongar a vida útil das baterias, por exemplo. A seguir são apresentados alguns dos principais tópicos relevantes a estes sistemas.
 
@@ -492,7 +494,7 @@ Tipicamente redes de sensores sem fio (RSSFs) são definidas como um tipo especi
 
 Além do fator cooperativo entre os nós da rede, destacam-se alguns pontos cruciais que tornam estas redes diferentes do usual, como as limitações de energia que os \textit{sensor nodes} estão restritos, ou então a necessidade destes sistemas serem baratos, pois em muitas aplicações são utilizados inúmeros nós.
 
-\subsubsection{Classificação e aplicações}
+\subsection{Classificação e aplicações}
 Pelas diversas possibilidades de aplicação destas redes, pode-se classifica-las de várias formas. Uma das mais utilizadas é a classificação baseada na topologia de rede, ou seja, como é estruturada a troca de informações entre os dispositivos participantes. Na Figura \ref{fig:topologias} são apresentadas algumas das topologias mais utilizadas em redes de sensores sem fio. 
 
 \begin{figure}[ht]
@@ -518,7 +520,8 @@ Além das topologias, também é possível classificar estas redes conforme o ti
 Já redes implementadas para monitorar situações como a deste trabalho, isto é, com o intuito de obter dados do ambiente ou elementos deste, são nomeadas \textit{cyber-physical systems}, ou CPS. Neste caso destacam-se aplicações dispostas em áreas remotas, como o monitoramento de animais em migração \cite{zhang2004hardware}, ou então obtenção de dados de corais \cite{vasilescu2005data}, muito útil para biólogos. 
 
 \subsection{Componentes}
-Tipicamente estas redes consistem em dois sistemas básicos: nós da rede ou \textit{sensor nodes}, e central ou \textit{sink node}. Os \textit{sink nodes} são geralmente mais simples de serem implementados, pois não são necessariamente reféns das limitações energéticas que os nodos estão submetidos, e podem ser simplesmente um computador capaz de coletar e processar dados. Já os \textit{sensor nodes} são compostos pelos itens mostrados na Figura \ref{fig:sensor-node-components}, e devem ser selecionados criteriosamente, pois limitações como curta duração das baterias e precisão das medidas dos sensores impactam diretamente na aplicação. Abaixo são descritos brevemente estes sistemas.
+Tipicamente estas redes consistem em dois sistemas básicos: nós da rede ou \textit{sensor nodes}, e central ou \textit{sink node}. 
+Vale ressaltar que muitas vezes os \textit{sink nodes} não estão sujeitos às limitações energéticas inerente aos nós sensores, e dessa  forma consistem em apenas um computador diretamente conectado à rede elétrica, capaz de coletar e processar dados. Já os \textit{sensor nodes} são compostos pelos itens mostrados na Figura \ref{fig:sensor-node-components}, e devem ser selecionados criteriosamente, pois limitações como curta duração das baterias e precisão das medidas dos sensores impactam diretamente na aplicação. Abaixo são descritos brevemente estes sistemas.
 
 \begin{figure}[ht]
  	    \caption{\label{exepretex} Componentes básicos de um \textit{sensor node}}
@@ -530,7 +533,7 @@ Tipicamente estas redes consistem em dois sistemas básicos: nós da rede ou \te
 \end{figure}
 
 \begin{enumerate}
-    \item Sistema de alimentação: Para operar estes sistemas necessitam de energia provida por pequenas baterias, como pilhas alcalinas ou baterias de lítio, por exemplo.
+    \item Sistema de alimentação: Para operar, estes sistemas necessitam de energia provida por pequenas baterias, como pilhas alcalinas ou baterias de lítio, por exemplo.
     \item Sensor: O elemento que dá nome aos nodos destas redes tem a função de mensurar alguma grandeza, ou evento, como a luminosidade em determinada região.
     \item Microcontrolador: Para tornar os dados dos sensores em algum útil são utilizados estes pequenos dispositivos, que já contém sistemas como processador e memória embutidos. Dentre as suas principais funções estão o processamento e interface com o dispositivo de transmissão.
     \item Transceiver: Por fim, é necessário utilizar um transmissor \textit{wireless} para encaminhar as informações coletadas nos nodos. Geralmente estes dispositivos podem operar tanto como transmissores, quanto como receptores, sendo chamados de \textit{transceivers}.
@@ -627,7 +630,7 @@ Na Figura \ref{fig:processo-de-amostragem} é demonstrado o processo de amostrag
 \begin{figure}[ht]
     \caption{\label{exepretex} Processo de amostragem}
     \centering
-    \includegraphics[width=0.6\textwidth]{figuras/sample-and-hold.png}
+    \includegraphics[width=0.8\textwidth]{figuras/sample-and-hold.png}
     \vspace{\baselineskip} %%% linha em branco para atender a norma
         \fonte{Adaptado de \cite{livro:sistemas-digitais}.}
         \label{fig:processo-de-amostragem}
@@ -655,7 +658,7 @@ Outro ponto relevante a ser considerado é o efeito de aliasing (Figura \ref{fig
 \begin{figure}[ht]
     \caption{\label{exepretex} Efeito de aliasing}
     \centering
-    \includegraphics[width=0.6\textwidth]{figuras/aliasing.png}
+    \includegraphics[width=0.8\textwidth]{figuras/aliasing.png}
     \vspace{\baselineskip} %%% linha em branco para atender a norma
         \fonte{Adaptado de \cite{livro:sistemas-digitais}.}
         \label{fig:efeito-aliasing}
@@ -664,7 +667,7 @@ Outro ponto relevante a ser considerado é o efeito de aliasing (Figura \ref{fig
 \begin{figure}[ht]
     \caption{\label{exepretex} Espectro do sinal filtrado por um passa-baixas}
     \centering
-    \includegraphics[width=0.6\textwidth]{figuras/passa-baixas.png}
+    \includegraphics[width=0.8\textwidth]{figuras/passa-baixas.png}
     \vspace{\baselineskip} %%% linha em branco para atender a norma
         \fonte{Adaptado de \cite{livro:sistemas-digitais}.}
         \label{fig:passa-baixas}
@@ -689,7 +692,7 @@ Ou seja, neste caso a menor intensidade de tensão que o conversor pode codifica
 \begin{figure}[ht]
     \caption{\label{exepretex} Sinal quantizado e representado idealmente em codificação de 4 bits}
     \centering
-    \includegraphics[width=0.6\textwidth]{figuras/quantizado-e-codificado.png}
+    \includegraphics[width=0.8\textwidth]{figuras/quantizado-e-codificado.png}
     \vspace{\baselineskip} %%% linha em branco para atender a norma
         \fonte{Adaptado de \cite{livro:sistemas-digitais}.}
         \label{fig:quantizado-e-codificado}
@@ -722,7 +725,7 @@ Entretanto, além da resolução existem outros fatores limitantes à precisão 
     \begin{figure}[ht]
     \caption{\label{exepretex} Erro de ganho}
     \centering
-    \includegraphics[width=0.6\textwidth]{figuras/erro_ganho.png}
+    \includegraphics[width=0.8\textwidth]{figuras/erro_ganho.png}
     \vspace{\baselineskip} %%% linha em branco para atender a norma
         \fonte{Adaptado de \cite{ATmega3218:online}.}
         \label{fig:eg-adc}
@@ -734,7 +737,7 @@ Entretanto, além da resolução existem outros fatores limitantes à precisão 
     \begin{figure}[H]
     \caption{\label{exepretex} Erro DNL}
     \centering
-    \includegraphics[width=0.6\textwidth]{figuras/erro_dnl.png}
+    \includegraphics[width=0.8\textwidth]{figuras/erro_dnl.png}
     \vspace{\baselineskip} %%% linha em branco para atender a norma
         \fonte{Adaptado de \cite{ATmega3218:online}.}
         \label{fig:dnl-adc}
@@ -746,7 +749,7 @@ Entretanto, além da resolução existem outros fatores limitantes à precisão 
     \begin{figure}[H]
     \caption{\label{exepretex} Erro INL}
     \centering
-    \includegraphics[width=0.6\textwidth]{figuras/adc-inl.png}
+    \includegraphics[width=0.8\textwidth]{figuras/adc-inl.png}
     \vspace{\baselineskip} %%% linha em branco para atender a norma
         \fonte{Adaptado de \cite{ADCInteg19:online}.}
         \label{fig:inl-adc}
@@ -755,7 +758,7 @@ Entretanto, além da resolução existem outros fatores limitantes à precisão 
 
 
 \section{Comunicação por radiofrequência}
-A etapa final necessária para os \textit{sensor nodes} de uma WSN é a transmissão dos dados para a aplicação. Como mencionado anteriormente, geralmente utiliza-se um \textit{transceiver} operando em radiofrequência para este procedimento, que se baseia em alguns conceitos e etapas detalhadas a seguir.
+A etapa final necessária para os \textit{sensor nodes} de uma RSSF é a transmissão dos dados para a aplicação. Como mencionado anteriormente, geralmente utiliza-se um \textit{transceiver} operando em radiofrequência para este procedimento, que se baseia em alguns conceitos e etapas detalhadas a seguir.
 
 \subsection{Radiofrequência}
 Popularmente conhecidas como ondas de RF, as ondas de rádio ou radiofrequência são ondas eletromagnéticas com frequência delimitada no espectro de rádio (baixas frequências), como mostra a Figura \ref{fig:espectro}. Tipicamente os parâmetros que descrevem estas ondas são relacionados pela equação abaixo:
@@ -825,7 +828,7 @@ Vale ressaltar que a amplitude $A$ do sinal modulado é tipicamente representado
 % \subsection{Modulação por espalhamento espectral}
 
 \section{LoRa}
-A tecnologia de radiofrequência LoRa, criada pela empresa Semtech e desenvolvida atualmente pela LoRa Alliance, é caracterizada por possibilitar comunicação sem fio de baixo consumo e de longo alcance, sendo categorizada como uma LPWAN. Vale ressaltar que o termo LoRa se refere à camada física do sistema, enquanto que LoRaWAN ao protocolo de acesso ao meio (MAC) mais utilizado junto a esta tecnologia.
+A tecnologia de radiofrequência LoRa, criada pela empresa Semtech e desenvolvida atualmente pela LoRa Alliance, é caracterizada por possibilitar comunicação sem fio de baixo consumo e de longo alcance, sendo categorizada como uma LPWAN (\textit{low power wide area network}). Vale ressaltar que o termo LoRa se refere à camada física do sistema, enquanto que LoRaWAN ao protocolo de acesso ao meio (MAC) mais utilizado junto a esta tecnologia.
 
 \subsection{Camada física}
 A camada física LoRa foi desenvolvida pela Semtech e se caracteriza pela utilização da modulação \textit{Lora Spread Spectrum}, baseada na \textit{Chirp Spread Spectrum}, e pela operação nas bandas não licenciadas ISM (\textit{Industrial Scientific and Medical}). Nessa modulação a informação é codificada em \textit{chirps} (\textit{compressed high intensity radar pulses}) de frequência, que variam linearmente no tempo \cite{augustin2016study}. Para transmitir dados com esta técnica, inicialmente é enviada uma série de \textit{up-chirps} (\textit{preamble}) que delimitam o início de uma mensagem (\textit{payload}), como mostra a Figura \ref{fig:lora-message}. Vale ressaltar que o preâmbulo inicia com variações crescentes de frequência e termina com os chamados \textit{down-chirps}, que são variações decrescentes da mesma.
@@ -855,7 +858,7 @@ Dispositivos LoRa foram desenvolvidos de modo que possam operar com baixo consum
     \begin{figure}[ht]
     \caption{\label{exepretex} Espectrograma de diferentes SFs}
     \centering
-    \includegraphics[width=0.8\textwidth]{figuras/LoRa_Symbols_01.png}
+    \includegraphics[width=0.8\textwidth]{figuras/lora-sf.png}
     \vspace{\baselineskip} %%% linha em branco para atender a norma
         \fonte{\cite{lora-symbol-generation}.}
         \label{fig:lora-sf}
@@ -868,9 +871,8 @@ Dispositivos LoRa foram desenvolvidos de modo que possam operar com baixo consum
 Além disso, existem os parâmetros regionais, como a frequência ou canal central de comunicação e potência máxima de transmissão, os quais são estabelecidos conforme as regulamentações de telecomunicações de cada país. No Brasil, por exemplo, rádios LoRa devem operar em torno da frequência de 915MHz, segundo a resolução nº 506 da Anatel \cite{ttn-frequencies}.
 
 \subsection{LoRaWAN}
-O protocolo de controle de acesso ao meio LoRaWAN, desenvolvido pela LoRa Alliance, possibilita o uso das características da camada física LoRa em aplicações que necessitem longo alcance de transmissão, porém com baixa taxa de comunicação. Dentre os principais aspectos de redes LoRaWAN estão a independência entre dispositivos finais (\textit{end-devices}) e \textit{gateways}, e também a taxa de transmissão de dados adaptativa (\textit{Adaptative Data Rate}), que propicia uma forma de ajustar dinamicamente os parâmetros LoRa anteriormente citados.
+O protocolo de controle de acesso ao meio LoRaWAN, desenvolvido pela LoRa Alliance, possibilita utilizar as características da camada física LoRa em aplicações que necessitem longo alcance de transmissão, porém com baixa taxa de comunicação. Dentre os principais aspectos de redes LoRaWAN estão a independência entre dispositivos finais (\textit{end-devices}) e \textit{gateways}, e também a taxa de transmissão de dados adaptativa (\textit{Adaptative Data Rate}), que propicia uma forma de ajustar dinamicamente os parâmetros LoRa anteriormente citados.
 
-% Além disso, este possui o diferencial de suportar uma taxa de transmissão de dados adaptativa, o que propicia melhor controle sobre a eficiência energética e robustez de link da conexão. 
 
 \subsubsection{Arquitetura de rede}
 \par
@@ -942,17 +944,16 @@ Para obtenção de dados do servidor de rede são utilizados protocolos de conec
 O funcionamento deste protocolo ocorre da seguinte forma: elementos que desejam receber algum dado de determinado tópico, se subscrevem a este; depois, a interface de comunicação, chamada de \textit{broker}, é responsável por gerenciar e encaminhar mensagens publicadas neste tópico. No caso de sistemas compostos por uma rede de sensores, por exemplo, os dados (\textit{payload}) são enviados para o gateway, sem distinção de tópicos neste momento; a partir disso, o gateway encaminha os dados ao servidor de rede afim de separá-los em tópicos relevantes, como "temperatura" ou "umidade do ar"; depois, alguma aplicação que deseja receber informações de temperatura, por exemplo, pode inscrever-se neste tópico; com isso, o \textit{broker} do servidor verifica os inscritos deste tópico, e os encaminha as mensagens publicadas pelos \textit{publishers}. 
 
 
-
-
 \chapter{APLICAÇÃO DESENVOLVIDA}
 Como mencionado nos capítulos anteriores, a busca às cegas por vagas de estacionamento disponíveis nas ruas é parcialmente responsável por problemas como congestionamentos e queimas desnecessárias de combustível. Partindo desta motivação, foi pensada e prototipada uma solução baseada em uma rede de sensores sem fio de baixo custo. 
 Neste capítulo é descrito o sistema num todo, desde a definição dos componentes utilizados no projeto, até como é feita a transmissão dos dados.
     
     \section{VISÃO GERAL}
-    Apesar de existirem algumas soluções no mercado para a informatização da disponibilidade de vagas de estacionamentos, geralmente as que se dão através de redes de sensores são caras, e portanto tornam-se inviáveis para um grande número de locais a serem monitorados. Dessa forma, o sistema proposto teve foco no uso de componentes de baixo custo e numa arquitetura de comunicação sem fio (...)
+    Apesar de existirem algumas soluções no mercado para a informatização da disponibilidade de vagas de estacionamentos, geralmente as que se dão através de redes de sensores são caras, e portanto tornam-se inviáveis para um grande número de locais a serem monitorados. Dessa forma, o sistema proposto teve foco no uso de componentes de baixo custo e também na possibilidade de utiliza-lo em áreas remotas.
     
-    Como pode ser visto na Figura \ref{fig:visao-geral}, o sistema é composto por cinco etapas. Na primeira é realizada a verificação do estado das vagas, através de sensores LDR independentes (\textit{sensor nodes}); depois, essa informação é propagada para o \textit{sink node} utilizando módulos de rádio AM; por sua vez, a central encaminha estes dados ao \textit{gateway} por intermédio de um rádio LoRa; diante disso o servidor de rede TTN obtém e disponibiliza o estado das vagas a um \textit{broker} MQTT; e por fim, uma página disponibiliza estas informações utilizando comunicação via MQTT com o \textit{broker}.
+    Como pode ser visto na Figura \ref{fig:visao-geral}, o projeto é composto por cinco etapas. Na primeira é realizada a verificação do estado das vagas, através de sensores LDR independentes (\textit{sensor nodes}); depois, essa informação é propagada para o \textit{sink node} utilizando módulos de rádio AM; por sua vez, a central encaminha estes dados ao \textit{gateway} por intermédio de um rádio LoRa; diante disso o servidor de rede TTN obtém e disponibiliza o estado das vagas a um \textit{broker} MQTT; e por fim, comunicando-se com o \textit{broker} via MQTT a aplicação web disponibiliza estas informações.
     
+    % e por fim, uma página disponibiliza estas informações utilizando comunicação via MQTT com o \textit{broker}.
     \begin{figure}[ht]
      	   \caption{\label{exepretex} Visão geral do sistema}
             \centering
@@ -968,7 +969,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     
     
     \section{DESENVOLVIMENTO}
-    O desenvolvimento desta aplicação se pautou em três etapas: inicialmente foi realizado o projeto dos \textit{sensor nodes}, abrangendo desde o esquema elétrico à transmissão de pacotes; depois foi projetado o sistema \textit{sink node}, ou central; e por fim foi desenvolvida a aplicação que mostra a disponibilidade de vagas no local. A seguir são detalhados estes sistemas.
+    O desenvolvimento desta aplicação foi dividido em três etapas: inicialmente foi realizado o projeto dos \textit{sensor nodes}, abrangendo desde o esquema elétrico à transmissão de pacotes; depois foi projetado o sistema \textit{sink node}, ou central; e por fim foi desenvolvida a aplicação que mostra a disponibilidade de vagas no local. A seguir são detalhados estes sistemas.
     
     \subsection{Projeto dos \textit{sensor nodes}}
     O projeto destes dispositivos foi feito com o objetivo de se ter um sistema barato capaz de informar o estado atual das vagas a cada 1 minuto, de modo que o consumo energético fosse reduzido ao máximo. Para isso, primeiramente foi estabelecido um fluxograma indicando cada etapa de operação deste sistema (Figura \ref{fig:flux-sensor-node}).
@@ -1019,7 +1020,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
 	    \fonte{Autor (2018)}
     \end{quadro}
     
-    Dessa forma, ainda que o resistor de 10k$\Omega$ tenha um consumo máximo cinco vezes maior que o de 100k$\Omega$, a precisão para casos de menor luminosidade é essencial para distinguir se determinada vaga está ou não ocupada, e portanto o seleciona para a aplicação.
+    Dessa forma, ainda que o resistor de 10k$\Omega$ tenha um consumo teórico máximo cinco vezes maior que o de 100k$\Omega$, a precisão para casos de menor luminosidade é essencial para distinguir se determinada vaga está ou não ocupada, e portanto o seleciona para a aplicação.
     
     Com o circuito montado (ver Anexo \textbf{x}), foram realizados os cálculos necessários para determinar qual fonte de alimentação seria utilizada. Diante disso foi necessário estimar o consumo médio de corrente de cada parte deste sistema, como gastos em transmissão e leitura do conversor A/D. Para tanto
     foi utilizada uma relação que leva em conta dois fatores: o tempo para realizar determinada ação, e o consumo médio desta. Dessa forma, pode-se obter o consumo médio de corrente durante um ciclo de operação dos \textit{sensor nodes}, como pode ser observado na Equação \ref{eq:consumo-medio}.
@@ -1244,7 +1245,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     
     
     \subsection{Projeto do \textit{sink node}}
-    A central deste sistema foi projetada com o intuito de disponibilizar as informações recebidas dos \textit{sensor nodes} para a aplicação. Para encaminhar os dados à aplicação foi escolhida a tecnologia LoRa devido à capacidade de transmissão de dados em longas distâncias, permitindo que estacionamentos em áreas remotas, como em alguns lugares da UFSM, pudessem ser monitorados sem a necessidade de roteadores, caso fosse utilizado Wi-Fi, por exemplo. Além disso, por utilizar uma faixa de frequência não licenciada, esta tecnologia se tornou ainda mais atrativa. E por fim, é possível expandir este sistema sem a necessidade de reprojetá-lo para comportar mais estacionamentos, vide a facilidade de se obter dados de dispositivos LoRa cadastrados na plataforma \textit{The Things Network}. A operação deste sistema está brevemente descrita no fluxograma da Figura \ref{fig:flux-sink-node}.
+    A central deste sistema foi projetada com o intuito de disponibilizar as informações recebidas dos \textit{sensor nodes} para a aplicação. Para encaminhar os dados à aplicação foi selecionada a tecnologia LoRa por dois motivos: aproveitar a disponibilidade de acesso a um \textit{gateway} já instalado sobre a reitoria da UFSM e também devido à capacidade de transmissão de dados em longas distâncias, permitindo que estacionamentos em áreas remotas, como em alguns lugares da universidade, pudessem ser monitorados sem a necessidade de roteadores, caso fosse utilizado Wi-Fi, por exemplo. Além disso, por utilizar uma faixa de frequência não licenciada, esta tecnologia se tornou ainda mais atrativa. E por fim, é possível expandir este sistema sem a necessidade de reprojetá-lo para comportar mais estacionamentos, vide a facilidade de se obter dados de dispositivos LoRa cadastrados na plataforma \textit{The Things Network}. A operação deste sistema está brevemente descrita no fluxograma da Figura \ref{fig:flux-sink-node}.
     
     \begin{figure}[ht]
      	    \caption{\label{exepretex} Fluxograma do \textit{sink node}}
@@ -1257,7 +1258,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     
     \begin{enumerate}
         \item \textit{Setup}: Nesta etapa são definidas as configurações utilizadas no código.
-        \item Recebimento dos dados: Este é \textit{loop} que aguarda novos dados. 
+        \item Recebimento dos dados: Este é \textit{loop} que aguarda dados dos nós sensores. 
         \item Estado de alguma vaga atualizado: Caso o estado de alguma das vagas tenha sido alterado, a central atualiza o número de vagas disponíveis.
         \item Transmissão dos dados: Finalmente a quantia de vagas disponíveis é enviada à aplicação.
     \end{enumerate}
@@ -1268,12 +1269,9 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
         \item Arduino Nano
         \item Recepetor AM MX-05V
         \item Módulo LoRa RFM95W
-        \item Carregador de celular
-        \item Cabo USB
+        \item Bateria de 9V
     \end{itemize}
-    
-    Foi escolhido alimentar o sistema através de um carregador de celular devido à praticidade que este dispositivo proporciona. Entretanto, é evidente que para funcionar é necessário conectá-lo a uma tomada, o que pode ser um complicador em áreas extremamente remotas.
-    
+ 
     \subsubsection{Funcionamento}
     Como mencionado anteriormente, o sistema permanece em um \textit{loop} aguardando dados transmitidos pelos \textit{sensor nodes}.
     Assim como nos \textit{sensor nodes}, também foi utilizada a biblioteca RadioHead para recebimento dos dados. Quando chega uma nova informação, a central verifica com base no identificador do nodo remetente, se o estado da vaga em questão foi modificado, e então atualiza o contador de vagas disponíveis na área de cobertura do \textit{sink node}. Depois, é realizado o envio desta quantia, através da biblioteca LMIC, que implementa as funcionalidades necessárias para utilizar o protocolo LoRaWAN. O destinatário destas mensagens é um \textit{gateway} LoRa instalado na reitoria da Universidade Federal de Santa Maria, previamente testado e utilizado em \cite{tcc:matheus-neis}.
@@ -1283,11 +1281,111 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     A aplicação final do sistema consiste em dois subsistemas: \textit{backend} e \textit{frontend}. O primeiro é responsável por obter os dados do servidor de rede \textit{The Things Network} e encaminha-los ao servidor de aplicação, através do protocolo MQTT. Já o segundo busca as informações do servidor de aplicação, através de um cliente MQTT, e as mostra ao usuário.
     A seguir estão descritos estes dois subsistemas.
     
-    \subsubsection{\textit{Backend}}
+    \subsubsection{\textit{Back-end}}
     Inicialmente, foi definido o servidor de rede \textit{The Things Network} para ser usado na aplicação, pois o \textit{gateway} utilizado já estava vinculado ao sistema e também por ser prático na criação e gerenciamento de aplicações. Depois, foi desenvolvido um código na linguagem Python para obter os dados do servidor. Para isso, foi utilizada a biblioteca de código aberto \textit{Eclipse Paho MQTT Python Client}, que oferece métodos de acesso através do protocolo MQTT. 
     
-    \subsubsection{\textit{Frontend}}
+    \subsubsection{\textit{Front-end}}
     Neste módulo é apresentado quantas vagas estão disponíveis no estacionamento sob monitoramento. Para isso, foi desenvolvido um código em Javascript que tem duas funções: obter os dados do \textit{backend}, utilizando a versão Javascript da mesma biblioteca \textit{opensource} \textit{Eclipse Paho MQTT}, e depois mostrá-los na tela. 
+    
+    \section{Implementação}
+    A partir do projeto e definição de componentes foram prototipados os nós sensores e o nó central. Ambos foram previamente testados em \textit{protoboard} antes de serem montados nas placas de circuito impresso. 
+    
+    \subsection{Gravação de firmware no ATmega328P-PU via SPI}
+    Para programar o microcontrolador foi empregado um Arduino Nano configurado como gravador, conectando-o como mostra a Figura \ref{fig:gravador-sensor-node} e o quadro \ref{quadro:connections}. 
+    
+    \begin{figure}[ht]
+ 	    \caption{\label{exepretex} Diagrama de conexões entre gravador e microcontrolador}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figuras/firmware-programmer_bb.png}
+        \vspace{\baselineskip} %%% linha em branco para atendender a norma
+            \fonte{Autor (2018)}
+        \label{fig:gravador-sensor-node}
+    \end{figure}
+    
+    \begin{quadro}
+   	    \caption{Conexões para gravação de \textit{firmware}}
+	    \centering
+	    \begin{tabular}{| c | c | c | }
+	    \hline
+	    Arduino Nano & ATmega328P-PU & Cor\\
+	    \hline
+	    5V & Pino 7 (VCC), Pino 20 (AVCC) e Pino 21 (AREF) & Vermelho\\
+	    \hline
+	    GND & Pino 8 (GND) e Pino 22 (GND) & Preto\\
+	    \hline
+	    D10 & Pino 1 (RESET) & Cinza\\
+	    \hline
+	    D11 & Pino 17 (MOSI) & Laranja\\
+	    \hline
+	    D12 & Pino 18 (MISO) & Azul\\
+	    \hline
+	    D13 & Pino 19 (SCK) & Rosa\\
+	    \hline
+	    \end{tabular}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	    \fonte{Autor (2018)}
+	    \label{quadro:connections}
+\end{quadro}
+    
+    As etapas para a gravação foram as seguintes:
+    \begin{enumerate}
+        \item Conectar o Arduino Nano ao computador, através de um cabo micro USB e na IDE do Arduino realizar o upload do \textit{sketch} "ArduinoISP", selecionando o \textit{programmer} "AVRISP mkll". Dessa forma a placa Nano se torna a interface de gravação.
+        \item Depois, é necessário gravar o \textit{bootloader} no microcontrolador. Foi escolhido o \textit{bootloader} que utiliza a frequência de \textit{clock} interna de 8MHz do chip (disponível em \textbf{...}), por motivos de economia energética do nó sensor durante a operação. Para isso, primeiramente deve-se mover a pasta baixada para o diretório de \textit{sketches} da IDE do Arduino (no Windows geralmente se encontra em: C:/Users/user/Documents/Arduino). Depois, na IDE seleciona-se a placa "ATmega328 on a breadboard (8MHz internal clock)", configurando o \textit{programmer} "Arduino as ISP", e finalmente usar a ferramenta "Burn Bootloader".
+        \item Por fim, deve-se abrir o código escrito para o \textit{sensor node} na IDE e fazer o \textit{upload} do mesmo através da ferramenta "Upload using programmer", disponível na seção "Sketch"  do menu. Dessa forma, o microcontrolador estará pronto para operar.
+    \end{enumerate}
+    
+    \subsection{Montagem}
+    \textbf{TODO}: Com os \textit{firmwares} gravados
+    
+    \subsection{Configuração do servidor de rede TTN}
+    Nesta etapa é realizada a criação e configuração da interface de comunicação entre os dados vindos dos nós sensores, e a aplicação final. Dessa forma, primeiramente deve-se criar um usuário no sistema, e depois criar e configurar um dispositivo em ''Console'' na seção \textit{Applications} (Figura \ref{fig:add-app-ttn}). 
+    
+    \begin{figure}[ht]
+ 	    \caption{\label{exepretex} Criação de aplicação na TTN}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figuras/teste.png}
+        \vspace{\baselineskip} %%% linha em branco para atendender a norma
+            \fonte{Autor (2018)}
+        \label{fig:add-app-ttn}
+    \end{figure}
+    
+    As configurações necessárias são as seguintes:
+    
+    \begin{enumerate}
+        \item Quando criar um dispositivo, deve-se selecionar o \textit{handler} ''ttn-handler-brazil''.
+        \item Depois, cria-se um \textit{device} com o identificador EUI gerado automaticamente, selecionando o botão destacado na Figura \ref{fig:dev-eui-ttn}.
+        \item Com o dispositivo criado, deve-se navegar até o \textit{device} em questão na aba \textit{settings}, selecionando o método de ativação ABP (Figura \ref{fig:dev-settings-ttn}).
+    \end{enumerate}
+    
+    \begin{figure}[ht]
+ 	    \caption{\label{exepretex} Seleção de EUI para dispositivo}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figuras/device_eui.png}
+        \vspace{\baselineskip} %%% linha em branco para atendender a norma
+            \fonte{Autor (2018)}
+        \label{fig:dev-eui-ttn}
+    \end{figure}
+    
+    \begin{figure}[ht]
+ 	    \caption{\label{exepretex} Configuração do método de ativação ABP}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figuras/device_settings.png}
+        \vspace{\baselineskip} %%% linha em branco para atendender a norma
+            \fonte{Autor (2018)}
+        \label{fig:dev-settings-ttn}
+    \end{figure}
+    
+    \subsection{Gravação de \textit{firmware} no \textit{sink node}}
+    \textbf{TODO}
+    
+    \subsection{Aplicação \textit{back-end}}
+    Com as configurações da aplicação na TTN prontas, é necessário uma forma de obter os dados enviados pelos sensores, recebidos e disponíveis no servidor de rede. 
+    Para isso, o código do \textit{backend} consiste num cliente MQTT, tendo as funções de \textit{subscriber} na obtenção dos dados da TTN, e também como \textit{publisher} ao disponibilizar os dados à aplicação disponível aos usuários (\textit{front-end}). Dessa forma, são necessários alguns parâmetros configurados na TTN, como chave de acesso (\textit{access key}), \textit{hostname} (brazil.thethings.network) e a identificação ou nome da aplicação (\textit{Application ID}).
+    
+    % Quando configurado neste método, o dispositivo criado recebe um endereço único de 4 bytes, uma chave de sessão na rede (\textit{Network Session Key}) e uma chave de sessão do aplicativo (\textit{App Session Key}). Essas duas chaves podem ser geradas na página de configuração
+    
+    \subsection{Aplicação \textit{frontend}}
+    
     
     \section{Testes Realizados}
     Para avaliar a efetividade do sistema, foram testados isoladamente cada subsistema, como os sistemas de detecção e transmissão. Dessa forma, foi possível verificar primeiramente se os \textit{sensor nodes} realizam as medidas adequadamente no tempo esperado, e também se a comunicação, tanto dos nós para a central, quanto da central para o \textit{gateway} eram robustas para a aplicação. Por fim, com o sistema completo em operação, foram obtidos os resultados finais.
