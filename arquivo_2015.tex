@@ -159,9 +159,7 @@ A mim!
 % % % % %  RESUMO E PALAVRAS CHAVE DO RESUMO - OBRIGATORIO PARA MDT-UFSM
 % TODO: Melhorar
 \resumo{
-O crescimento do número de veículos em circulação no país gera diversos inconvenientes, como engarrafamentos e altos índices de poluição. Neste contexto, uma das principais causas de lentidão no trânsito é a busca às cegas por vagas de estacionamento, que se dá pela falta de informatização destes locais.
-Diante disso, o objetivo deste trabalho é verificar a efetividade de uma aplicação que detecta vagas disponíveis em um estacionamento ao ar livre. Para isso foi desenvolvido um protótipo de uma rede de sensores sem fio, que utiliza sensores LDR de baixo custo para detectar a disponibilidade das vagas e comunicação por radiofrequência nas transmissões. O sistema está estruturado em uma topologia de rede em estrela, onde os \textit{sensor-nodes} transmitem individualmente o estado de determinada vaga a uma central (\textit{sink-node}) através de módulos de comunicação AM. Por fim, o \textit{sink-node} disponibiliza a quantia de vagas disponíveis para a aplicação, através da tecnologia LoRa.
-
+O crescimento do número de veículos em circulação no país gera diversos inconvenientes, como engarrafamentos e altos índices de poluição. Neste contexto, uma das principais causas de lentidão no trânsito é a busca às cegas por vagas de estacionamento, que se dá pela falta de informatização destes locais. Diante disso, o objetivo deste trabalho é elucidar as necessidades atreladas ao desenvolvimento de uma solução para este problema, e também propor uma aplicação baseada em uma rede de sensores sem fio de baixo custo. Para a realização deste projeto, sensores de luminosidade LDR foram escolhidos, por serem componentes baratos e capazes de medir uma das variáveis mais evidentes relacionadas ao estado de uma vaga de estacionamento ao ar livre. Neste sentido, foi constatado que o sensor LDR é capaz de distinguir entre a presença e ausência de veículos em diferentes situações, tanto climáticas, quanto luminosas. Já o protótipo da rede foi estruturado em uma topologia de comunicação estrela de estrelas, utilizando módulos de rádio AM nos nós sensores e um nó central LoRa. Além disso, o projeto aborda a autonomia dos nós e uma aplicação baseada no protocolo MQTT para exibição da disponibilidade das vagas monitoradas. Foi estimada uma autonomia dos dispositivos de aproximadamente 19 meses em operação. Entretanto, a comunicação entre os nós apresentou baixa efetividade. 
 }
 % MELHORAR AQUI!
 \palavrachave{Estacionamento. LDR. LoRa.}
@@ -526,61 +524,49 @@ Vale ressaltar que muitas vezes os \textit{sink nodes} não estão sujeitos às 
 \begin{figure}[ht]
  	    \caption{\label{exepretex} Componentes básicos de um \textit{sensor node}}
     \centering
-    \includegraphics[width=0.6\textwidth]{figuras/sensor-node-components.png}
+    \includegraphics[width=0.6\textwidth]{figuras/wsn-blocks.png}
     \vspace{\baselineskip} %%% linha em branco para atendender a norma
         \fonte{Autor (2018)}
         \label{fig:sensor-node-components}
 \end{figure}
 
 \begin{enumerate}
-    \item Sistema de alimentação: Para operar, estes sistemas necessitam de energia provida por pequenas baterias, como pilhas alcalinas ou baterias de lítio, por exemplo.
+    \item Fonte de energia: Para operar, estes sistemas necessitam de energia provida por pequenas baterias, como pilhas alcalinas ou baterias de lítio, por exemplo.
     \item Sensor: O elemento que dá nome aos nodos destas redes tem a função de mensurar alguma grandeza, ou evento, como a luminosidade em determinada região.
     \item Microcontrolador: Para tornar os dados dos sensores em algum útil são utilizados estes pequenos dispositivos, que já contém sistemas como processador e memória embutidos. Dentre as suas principais funções estão o processamento e interface com o dispositivo de transmissão.
-    \item Transceiver: Por fim, é necessário utilizar um transmissor \textit{wireless} para encaminhar as informações coletadas nos nodos. Geralmente estes dispositivos podem operar tanto como transmissores, quanto como receptores, sendo chamados de \textit{transceivers}.
+    \item \textit{Transceiver}: Por fim, é necessário utilizar um transmissor \textit{wireless} para encaminhar as informações coletadas nos nodos. Geralmente estes dispositivos podem operar tanto como transmissores, quanto como receptores, sendo chamados de \textit{transceivers}.
 \end{enumerate}
 
 \subsection{Autonomia dos nós sensores}
-Dentre as principais preocupações no desenvolvimento dos \textit{sensor nodes} encontra-se a longevidade e capacidade do sistema de alimentação empregado. Em uma aplicação composta por diversos nodos dispostos em uma área remota, como em plantações ou florestas, seria inviável utilizar baterias de curta duração, pois troca-las poderia acarretar em custos elevados. Portanto, é fundamental que a autonomia destes nodos seja devidamente projetada, levando em conta fatores como o consumo médio de cada dispositivo que compõe este sistema. Para ilustrar, pode-se imaginar um \textit{sensor node} composto por um sensor qualquer $S$; microcontrolador $M$; bateria $B$; e \textit{transceiver} $T$. Diante disso, pode-se avaliar a autonomia deste sistema relacionando os seguintes fatores:
+Dentre as principais preocupações no desenvolvimento dos \textit{sensor nodes} encontra-se a longevidade e capacidade do sistema de alimentação empregado. Em uma aplicação composta por diversos nodos dispostos em uma área remota, como em plantações ou florestas, seria inviável utilizar baterias de curta duração, pois troca-las poderia acarretar em custos elevados. Portanto, é fundamental que a autonomia destes nodos seja devidamente projetada, levando em conta fatores como o consumo médio de cada dispositivo que compõe este sistema. Como mencionado em \cite{tan2013energy}, tipicamente os fatores mais relevantes para estimar a autonomia dos nós sensores são: 
 
 \begin{itemize}
     \item Modo de operação: Este fator é extremamente importante, pois define o consumo médio necessário para realizar determinada ação. Em um sistema típico de WSN, deve-se considerar que a maior parte do tempo o sistema estará em modo de baixo consumo, e portanto exigirá menos da fonte de alimentação. Já quando estiver transmitindo dados, por exemplo, haverá um pico de consumo que será delimitante para o projeto.
     
-    \item Tempo médio por operação: É essencial que se conheça o tempo necessário para realizar cada ação do sistema, pois isso também afetará o consumo médio de cada componente.
+    \item Tempo médio por operação: É essencial que se conheça o tempo necessário para realizar cada ação do sistema, pois este indica o quão impactante é o consumo em cada modo de operação. Usualmente é utilizada a técnica de \textit{duty cycling}, para prolongar a vida útil destes sistemas \cite{zhang2010energy}.
     
-    \item Consumo individual dos componentes: Estes dados geralmente são fornecidos pelos fabricantes e são cruciais para estimar o consumo total.
-    
-    \item Capacidade da bateria: Esta informação indica o consumo médio máximo, geralmente em mAh, por parte do sistema que será alimentado.
+    \item Capacidade da bateria: Indica a máxima quantia de energia disponível da fonte de alimentação ao longo de um período de tempo. Geralmente esta informação é fornecida em mAh. 
 \end{itemize}
 
-Com isso, relaciona-se estes parâmetros através de uma uma média ponderada:
-\begin{equation}
-    \overline{i} = \frac{1}{T_{ciclo}}\sum\limits_{n=1}^n [T_{n}(on)i_{n}(on) + T_{n}(off)i_{n}(off)],
-\end{equation}
-onde $\overline{i}$ representa o consumo médio total por ciclo de operação; $T_{ciclo}$ o tempo deste ciclo ($T_{on}$ + $T_{off}$); e $T_{n}$ e $i_{n}$ são o tempo e consumo médio necessários para realizar determinada operação $n$. Vale ressaltar que $on$ e $off$ se referem aos tempos de atividade e inatividade de cada dispositivo. Por exemplo, a transmissão de dados dos \textit{sensor nodes} não será contínua, portanto o tempo inativo ($T_{T}(off)$) será maior que o tempo em operação deste \textit{transceiver} ($T_{T}(on)$). Em um sistema que consista em 3 operações básicas, como a deste trabalho: leitura do sensor; processamento dos dados; e envio das informações, pode-se afirmar que o consumo médio será dado por:
-\begin{equation}
-    \overline{i}_{on} = \frac{T_{S}(on)i_{S}(on) + T_{M}(on)i_{M}(on) + T_{T}(on)i_{T}(on)}{T_{on}},
-\end{equation}
-\begin{equation}
-    \overline{i}_{off} = \frac{T_{S}(off)i_{S}(off) + T_{M}(off)i_{M}(off) + T_{T}(off)i_{T}(off)}{T_{off}},
-\end{equation}
-e finalmente:
-\begin{equation}
-    \overline{i} = \overline{i}_{on} + \overline{i}_{off},
-\end{equation}
-em que $\overline{i}$ é o consumo médio total por ciclo, dado em mA. Através dessa equação será estimada a necessidade de alimentação para o sistema. Vale ressaltar que geralmente as baterias contém informação de energia disponível por hora, como mAh, e por isso é interessante utilizar os tempos já convertidos em hora nos cálculos. Dessa forma, dado que uma bateria tenha uma capacidade de $i_{B}$ em mAh, então o tempo total, em horas, de operação do \textit{sensor node} é estimado da seguinte forma:
-\begin{equation}\label{eq:time-of-operation}
-    T_{total} = \frac{i_{B}}{\overline{i}}
-\end{equation}
+% Com isso, relaciona-se estes parâmetros através de uma uma média ponderada:
 % \begin{equation}
-%     i_{hora} = \overline{i}\frac{T_{ciclo}}{3600},
+%     \overline{i} = \frac{1}{T_{ciclo}}\sum\limits_{n=1}^n [T_{n}(on)i_{n}(on) + T_{n}(off)i_{n}(off)],
 % \end{equation}
-% onde $T_{ciclo}$ é o tempo total do ciclo, em segundos. 
-
-
-% Então, se $\overline{i}$ representa o quanto de energia o \textit{sensor node} precisará por ciclo de operação, o consumo médio em uma hora será expresso por:
-
-
-
+% onde $\overline{i}$ representa o consumo médio total por ciclo de operação; $T_{ciclo}$ o tempo deste ciclo ($T_{on}$ + $T_{off}$); e $T_{n}$ e $i_{n}$ são o tempo e consumo médio necessários para realizar determinada operação $n$. Vale ressaltar que $on$ e $off$ se referem aos tempos de atividade e inatividade de cada dispositivo. Por exemplo, a transmissão de dados dos \textit{sensor nodes} não será contínua, portanto o tempo inativo ($T_{T}(off)$) será maior que o tempo em operação deste \textit{transceiver} ($T_{T}(on)$). Em um sistema que consista em 3 operações básicas, como a deste trabalho: leitura do sensor; processamento dos dados; e envio das informações, pode-se afirmar que o consumo médio será dado por:
+% \begin{equation}
+%     \overline{i}_{on} = \frac{T_{S}(on)i_{S}(on) + T_{M}(on)i_{M}(on) + T_{T}(on)i_{T}(on)}{T_{on}},
+% \end{equation}
+% \begin{equation}
+%     \overline{i}_{off} = \frac{T_{S}(off)i_{S}(off) + T_{M}(off)i_{M}(off) + T_{T}(off)i_{T}(off)}{T_{off}},
+% \end{equation}
+% e finalmente:
+% \begin{equation}
+%     \overline{i} = \overline{i}_{on} + \overline{i}_{off},
+% \end{equation}
+% em que $\overline{i}$ é o consumo médio total por ciclo, dado em mA. Através dessa equação será estimada a necessidade de alimentação para o sistema. Vale ressaltar que geralmente as baterias contém informação de energia disponível por hora, como mAh, e por isso é interessante utilizar os tempos já convertidos em hora nos cálculos. Dessa forma, dado que uma bateria tenha uma capacidade de $i_{B}$ em mAh, então o tempo total de operação, em horas, de operação do \textit{sensor node} é estimado da seguinte forma:
+% \begin{equation}\label{eq:time-of-operation}
+%     n_{horas} = \frac{i_{B}}{\overline{i}}
+% \end{equation}
 
 
 \section{CONVERSÃO ANALÓGICO/DIGITAL}
@@ -970,23 +956,22 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     O desenvolvimento desta aplicação foi dividido em três etapas: inicialmente foi realizado o projeto dos \textit{sensor nodes}, abrangendo desde o esquema elétrico à transmissão de pacotes; depois foi projetado o sistema \textit{sink node}, ou central; e por fim foi desenvolvida a aplicação que mostra a disponibilidade de vagas no local. A seguir são detalhados estes sistemas.
     
     \subsection{Projeto dos \textit{sensor nodes}}
-    O projeto destes dispositivos foi feito com o objetivo de se ter um sistema barato capaz de informar o estado atual das vagas a cada 1 minuto, de modo que o consumo energético fosse reduzido ao máximo. Para isso, primeiramente foi estabelecido um fluxograma indicando cada etapa de operação deste sistema (Figura \ref{fig:flux-sensor-node}).
+    O projeto destes dispositivos foi feito com o objetivo de se ter um sistema barato capaz de informar o estado atual das vagas a cada 30 segundos, de modo que o consumo energético fosse reduzido ao máximo. Para isso, primeiramente foi estabelecido um fluxograma indicando cada etapa de operação deste sistema (Figura \ref{fig:flux-sensor-node}).
     
     \begin{figure}[ht]
-     	    \caption{\label{exepretex} Fluxograma dos \textit{sensor nodes}}
+     	    \caption{\label{exepretex} Fluxograma de operação dos \textit{sensor nodes}}
             \centering
-            \includegraphics[width=0.6\textwidth]{figuras/funcionamento-sensor-node.png}
+            \includegraphics[width=0.6\textwidth]{figuras/sensor-node-fluxograma.png}
             \vspace{\baselineskip} %%% linha em branco para atendender a norma
                 \fonte{Autor (2018)}
                 \label{fig:flux-sensor-node}
     \end{figure}
     
-    \begin{itemize}
-        \item Modo de baixo consumo: Neste modo de operação o sistema mantém grande parte dos subsistemas desligados, como conversor AD e \textit{timers}, visando baixo consumo energético.
-        \item Leitura do sensor: Nesta etapa são realizadas as medidas do estado atual da vaga.
-        \item Transmissão de dados: Por fim o estado da vaga atual é enviado ao \textit{sink node}.
-        
-    \end{itemize}
+    \begin{enumerate}
+        \item Modo de baixo consumo (\textit{off}): Neste modo de operação o sistema mantém grande parte dos subsistemas desligados, como conversor AD e \textit{timers}, visando baixo consumo energético.
+        \item Leitura do sensor e processamento dos dados do sensor: Nesta etapa são obtidas e analisadas amostras do sensor de luminosidade.
+        \item Transmissão de dados: Caso haja mudança no estado da vaga, este dado é enviado ao \textit{sink node}.
+    \end{enumerate}
     
     A partir disso foi feita a escolha dos componentes, visando baixo custo e baixo consumo energético.
     
@@ -997,241 +982,34 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
         \item Sensor: LDR GL5528 
         \item Módulo RF: MX-FS-03V
         \item Bateria: 3 pilhas Duracell AA de 1.5V
-        \item Resistor de \textit{pull down}: 10k$\Omega$
+        \item Resistor de \textit{pull-down}: 10k$\Omega$
     \end{itemize}
     
-    Ainda que a escolha destes dispositivos tenha se concentrado em prolongar o tempo de duração das baterias, também foi necessário avaliar a robustez na obtenção de medidas por parte do circuito de sensoriamento. Isto é, o resistor de \textit{pull down} teve de ser selecionado de modo que pequenas varições luminosas fossem percebidas, mas que também tivessem pouco impacto no consumo médio. Para isso, foram avaliados os seguintes resistores:
+    Ainda que a escolha destes dispositivos tenha se concentrado em prolongar o tempo de duração das baterias, também foi necessário avaliar a robustez na obtenção de medidas por parte do circuito de sensoriamento. Isto é, o resistor de \textit{pull-down} teve de ser selecionado de modo que pequenas varições luminosas fossem percebidas, mas que também tivessem pouco impacto no consumo médio. Para isso, foram avaliados os seguintes resistores:
     
-    \begin{quadro}\label{quadro:resistores-pd}
-   	    \caption{Avaliação de resistores de \textit{pull down}}
-	    \centering
-	    \begin{tabular}{| c |c |c |}
-	    \hline
-	    Resistor & Consumo máximo & Precisão \\
-	    \hline
-	    10k$\Omega$ & 250$\mu A$ & 0.0024V\\
-	    \hline
-	    100k$\Omega$ & 45$\mu A$ & 0.004V\\
-	    \hline
-	    \end{tabular}
-	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
-	    \fonte{Autor (2018)}
-    \end{quadro}
+    \begin{table}[ht]
+         \centering
+         \caption{Avaliação do resistor de \textit{pull-down}}
+         \begin{tabular}{ c c c }
+             \hline
+             Resistor [k$\Omega$] & Consumo máximo [$\mu A$] & Precisão [V] \\
+             \hline
+             10 & 250 & 0.0024 \\
+             100 & 45 & 0.004 \\
+             \hline
+         \end{tabular}
+         \vspace{\baselineskip} %%% linha em branco para atender a norma
+          \fonte{Autor (2018)}
+          \label{table:pull-down}
+    \end{table}
     
     Dessa forma, ainda que o resistor de 10k$\Omega$ tenha um consumo teórico máximo cinco vezes maior que o de 100k$\Omega$, a precisão para casos de menor luminosidade é essencial para distinguir se determinada vaga está ou não ocupada, e portanto o seleciona para a aplicação.
-    
-    % Com o circuito montado (ver Anexo \textbf{x}), foram realizados os cálculos necessários para determinar qual fonte de alimentação seria utilizada. Diante disso foi necessário estimar o consumo médio de corrente de cada parte deste sistema, como gastos em transmissão e leitura do conversor A/D. Para tanto
-    % foi utilizada uma relação que leva em conta dois fatores: o tempo para realizar determinada ação, e o consumo médio desta. Dessa forma, pode-se obter o consumo médio de corrente durante um ciclo de operação dos \textit{sensor nodes}, como pode ser observado na Equação \ref{eq:consumo-medio}.
-    % % EQUAÇÕES PARA DETERMINAR CONSUMO MÉDIO
-    % \begin{equation}\label{eq:consumo-medio}
-    %     \overline{i}_{ciclo} = \frac{T_{off}\times i_{off} + T_{on}\times i_{on}}{T_{off}+T_{on}},
-    % \end{equation}
-    % onde $T_{off}$ e $i_{off}$ representam tempo e consumo médio de corrente durante o modo de baixo consumo, e $T_{on}$ e $i_{on}$ são relativos ao tempo e consumo médio de corrente quando o circuito está em operação de fato. Vale ressaltar que o tempo e corrente necessária quando o circuito está realizando alguma ação é descrito pelas relações abaixo:
-    
-    % \begin{equation}
-    %     T_{on} = T_{tx} + T_{sensor}
-    % \end{equation}
-    
-    % \begin{equation}
-    %     i_{on} = i_{tx} + i_{sensor}
-    % \end{equation}
-    
-    % Ou seja, $T_{on}$ é o tempo necessário tanto para ler e processar os valores do sensor ($T_{sensor}$), quanto para transmiti-los ($T_{tx}$). Para determinar estes valores foram realizados dois procedimentos:
-    
-    Depois, foi estimada a autonomia deste circuito, de modo que pudesse ser constatada a quantia de tempo que o sistema poderia operar sem a necessidade de substituir as baterias. Para isso foram obtidas medidas de tempo e consumo médio por modo de operação do sistema, da seguinte forma:
-    
-    \begin{enumerate}
-        \item Medições de tempo: Para esta etapa foram desenvolvidos códigos que pudessem aproximar o tempo gasto em cada operação. 
-        
-        \item Medições de corrente: As medições do consumo médio se deram através de um multímetro em escala de corrente, em $\mu A$ (\textbf{osciloscópio?}).
-    \end{enumerate}
-    
-    Estas medidas, assim como a capacidade por modo de operação estão descritos na Tabela \ref{table:capacidade}. Vale ressaltar que estes valores de consumo médio por operação foram baseados no pior caso, ou seja, para casos de máximo consumo de corrente possível. Por exemplo, quando há muita luz incidente no sensor, este baixa sua resistência de modo que haja maior circulação de corrente pelo circuito, o que pode resultar em 250$\mu$A de consumo por parte do sensor (resistência mínima  de 10k$\Omega$ informada pelo fabricante).
-    
-    \begin{table}[ht]
-         \centering
-         \caption{Capacidade, tempo e consumo médio por modo de operação}
-         \begin{tabular}{ l c c c }
-             \hline
-             Modo de operação & Tempo médio [s] & Consumo médio [mA] & Capacidade [mAh] \\
-             \hline
-             Modo 1 (\textit{off}) & 64 & 0.006 & 0.000107 \\
-             Modo 2 (sensor) & 0.1 & 10 &  0.000278\\
-             Modo 3 (TX) & 0.2 & 15 & 0.000833\\
-             \hline
-              & Total: 64.3 & & Total: 0.001218
-         \end{tabular}
-         \vspace{\baselineskip} %%% linha em branco para atender a norma
-          \fonte{Autor (2018)}
-          \label{table:capacidade}
-    \end{table}
-    
-    A medida de capacidade é necessária para determinar o tempo que o sistema poderá operar, visto que geralmente o dado fornecido por fabricantes de baterias é a capacidade ou energia disponível ao longo de uma hora (mAh). Portanto, estimando a quantia de energia média necessária ao longo de uma hora para o circuito funcionar, pode-se calcular em diversas unidades, como horas de operação ou anos de operação, a autonomia do circuito. Estes valores estão presentes na Tabela \ref{table:autonomia} e são obtidos pelas relações abaixo:
-    
-    \begin{equation}
-        n_{ciclos} = \frac{C_{bateria}}{C_{total}}
-    \end{equation}
-
-    \begin{equation}
-        n_{horas} = \frac{n_{ciclos}}{(\frac{3600}{T_{total}})}
-    \end{equation}
-    
-    \begin{equation}
-        n_{dias} = \frac{n_{horas}}{24}
-    \end{equation}
-
-    \begin{equation}
-        n_{meses} = \frac{n_{dias}}{30}
-    \end{equation}
-    
-    \begin{equation}
-        n_{anos} = \frac{n_{meses}}{12}
-    \end{equation}
-
-    \begin{table}[ht]
-         \centering
-         \caption{Autonomia teórica aproximada dos \textit{sensor nodes}}
-         \begin{tabular}{ c c c c c }
-             \hline
-             Ciclos & Horas & Dias & Meses & Anos \\
-             \hline
-             2340328.5 & 41800.9 & 1741.7 & 58.1 & 4.8 \\
-             \hline
-         \end{tabular}
-         \vspace{\baselineskip} %%% linha em branco para atender a norma
-          \fonte{Autor (2018)}
-          \label{table:autonomia}
-    \end{table}
     
     \subsubsection{Leitura do sensor}
     Nesta etapa é realizada a coleta de dados que indicam o estado atual das vagas. Para isso é utilizado o conversor A/D do microcontrolador, realizando medições do sensor LDR. Como pode ser visto no \textbf{ANEXO DO CÓDIGO DO SENSOR NODE}, é feita uma média de quinhentas medidas de luminosidade para aumentar a assertividade da presença ou não de um veículo no local.
     
     \subsubsection{Transmissão dos dados}
     Após a definição de presença ou ausência de veículo sobre a vaga, são enviadas mensagens com essa informação ao \textit{sink node}. Para tanto, foi empregado o módulo MX-FS-03V que opera em 315MHz e utiliza modulação ASK para comunicação de dados. Vale ressaltar que devido a este dispositivo ser apenas emissor, não é possível receber confirmação (ACK) de recebimento dos pacotes por parte da central. Após a transmissão do pacote o sistema volta ao modo de baixo consumo.
-    
-    % \section{Metodologia de coleta de dados}
-    % Para a aplicação proposta foi desenvolvida uma metodologia dividida em algumas etapas: inicialmente foram coletados e analisados dados referentes à luminosidade incidente sobre os sensores LDR em diversas situações, como dias nublados e dias bem iluminados; depois, com o circuito completo e o sensor devidamente calibrado, verificou-se a eficiência de comunicação entre os nós da rede e a central; e por fim, foi analisada o envio de informações do \textit{sink node} para o \textit{gateway}. 
-    
-    % \subsection{Coleta de dados dos sensores LDR}
-    % Para que esta aplicação tenha algum valor, é necessário que os dados brutos obtidos pelos sensores estejam calibrados e consigam informar com certa precisão a presença ou não dos veículos sobre as vagas. Dessa forma, foram realizados diversos testes com o seguinte objetivo: verificar a resposta dos sensores sob diferentes condições, e com isso definir os limites de luminosidade que indicam ou não a presença de veículos nas vagas. O procedimento adotado para obtenção dos dados foi o mesmo para todas as situações, e consistiu em colocar em operação o circuito \textbf{REFERENCIAR ANEXO???} no centro das vagas afim de ler continuamente dados do sensor. Para isso foi utilizado um \textit{datalogger} capturando o valor médio dos últimos 10 dados brutos do sensor durante períodos de 2 minutos, ou seja, cada ponto no gráfico representa esta média. A seguir são apresentadas medidas resultantes dos testes realizados em um estacionamento próximo à reitoria da UFSM.
-    
-    % \subsubsection{Medições sem veículos}
-    % Estas medidas são referentes às situações de vagas desocupadas, e foram realizadas com o intuito de verificar se os valores obtidos pelo sensor são próximos ou iguais aos valores de quando há um veículo estacionado no local. Dessa forma, foram selecionados casos em que houvesse sombra ou pouca incidência solar sobre as vagas, como em dias nublados, por exemplo. Abaixo estão as medidas obtidas.
-    
-    %     \begin{grafico}[ht]
-    %      	    \caption{\label{exepretex1}Medidas realizadas entre 16:30 e 17h}
-    % 	    \centering
-    % 	    \includegraphics[width=0.8\textwidth]{figuras/sem_carro_tarde.png}
-    % 	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
-    %             \fonte{Autor (2018)}
-    %             \label{graph:medidas-tarde}
-    %     \end{grafico}
-    
-    % No gráfico \ref{graph:medidas-tarde} são demonstrados os resultados de quatro testes: 
-    % \begin{enumerate}
-    %     \item Com sol: Neste teste o circuito estava exposto à incidência solar, sem sombras no local. 
-    %     \begin{figure}[ht]
-    %  	    \caption{\label{exepretex} Teste sob incidência solar direta}
-    %         \centering
-    %         \includegraphics[width=0.8\textwidth]{figuras/teste4.png}
-    %         \vspace{\baselineskip} %%% linha em branco para atendender a norma
-    %             \fonte{Autor (2018)}
-    %     \end{figure}
-        
-    %     \item Sombra ao lado de carro: Neste caso havia um veículo estacionado ao lado da vaga em que estava o sensor. Dessa forma, o carro produzia uma sombra sobre o circuito.
-        
-    %     \begin{figure}[ht]
-    %  	    \caption{\label{exepretex} Teste ao lado de veículo (com sombra)}
-    %         \centering
-    %         \includegraphics[width=0.8\textwidth]{figuras/teste5.jpg}
-    %         \vspace{\baselineskip} %%% linha em branco para atendender a norma
-    %             \fonte{Autor (2018)}
-    %     \end{figure}
-        
-    %     \item Ao lado de carro com sol: Nesta situação havia sombra no local de teste, porém o céu também estava limpo, de modo que o sol incidia diretamente.
-        
-    %     \begin{figure}[ht]
-    %  	    \caption{\label{exepretex} Teste sob incidência solar direta}
-    %         \centering
-    %         \includegraphics[width=0.8\textwidth]{figuras/teste6.jpg}
-    %         \vspace{\baselineskip} %%% linha em branco para atendender a norma
-    %             \fonte{Autor (2018)}
-    %     \end{figure}
-    % \end{enumerate}
-    
-    % \subsubsection{Medições com veículos}
-    % Estes testes se concentraram em analisar a resposta do sensor quando a vaga em questão estava ocupada. Nos gráficos \ref{graph:medidas-manha-nublada} e \ref{graph:medidas-vaga-ocupada-tarde} são apresentadas as medidas obtidas nas seguintes condições:
-    % \begin{enumerate}
-    %     \item Manhã nublada: Seguindo a metodologia estabelecida, foi verificada a situação de um dia nublado, com baixa incidência solar sobre a vaga ocupada (Gráfico \ref{graph:medidas-manha-nublada}). 
-        
-    %     \begin{grafico}[H]
-        
-    %         \caption{\label{exepretex1}Medidas realizadas entre 8:30 e 9h}
-    % 	    \centering
-    % 	    \includegraphics[width=0.8\textwidth]{figuras/carros_manha_2.png}
-    % 	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
-    %             \fonte{Autor (2018)}
-    %             \label{graph:medidas-manha-nublada}
-    %     \end{grafico}
-        
-    %     \item Diferentes situações à tarde: Nestes testes foram visualizadas as respostas do sensor em casos específicos, como quando havia carro na vaga, mas que ao lado houvesse uma sombra que pudesse ser confundida com a presença do veículo (pontos em vermelho no Gráfico \ref{graph:medidas-vaga-ocupada-tarde}). 
-        
-    %     \begin{grafico}[ht]
-    %      	    \caption{\label{exepretex1}Medidas realizadas entre 16:30 e 17h}
-    % 	    \centering
-    % 	    \includegraphics[width=0.8\textwidth]{figuras/carros_tarde.png}
-    % 	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
-    %             \fonte{Autor (2018)}
-    %             \label{graph:medidas-vaga-ocupada-tarde}
-    %     \end{grafico}
-        
-    % \end{enumerate}
-    
-    % \subsection{Definições dos limites de luminosidade}
-    % Como retratado na seção anterior, os valores de luminosidade foram obtidos com base em testes sob situações específicas, de modo que estas retratassem casos em que vagas desocupadas pudessem ser confundidas com ocupadas. Ou seja, foram selecionadas situações com baixa incidência solar, ou com sombreamento no local, pois assim retratariam um caso parecido com quando há um veículo estacionado sobre o sensor (baixa luminosidade). Dessa forma obteve-se os seguintes valores:
-    
-    % \begin{quadro}\label{quadro:valores-vaga-desocupada}
-   	%     \caption{Valores de luminosidade sob diferentes situações - vaga desocupada}
-	   % \centering
-	   % \begin{tabular}{| c | c |c |c |c |}
-	   % \hline
-	   % Medida & Com sol & Ao lado de sombra & Bem nublado\\
-	   % \hline
-	   % Valor mínimo & 742.10 & 728.50 & 736.20\\
-	   % \hline
-	   % Valor médio & 743.89 & 730.57 & 740.39\\
-	   % \hline
-	   % Valor máximo & 745.60 & 732.40 & 741.60\\
-	   % \hline
-	   % Desvio Padrão & 0.75 & 0.90 & 0.89\\
-	   % \hline
-	   % \end{tabular}
-	   % \vspace{\baselineskip} %%% linha em branco para atendender a norma
-	   % \fonte{Autor (2018)}
-    % \end{quadro}
-    
-    % \begin{quadro}[H]\label{quadro:valores-vaga-ocupada}
-   	%     \caption{Valores de luminosidade sob diferentes situações - vaga ocupada}
-	   % \centering
-	   % \begin{tabular}{| c | c |c |c |c |}
-	   % \hline
-	   % Medida & Com sol & Ao lado de sombra & Bem nublado\\
-	   % \hline
-	   % Valor mínimo & 521.60 & 622.80 & 668.40\\
-	   % \hline
-	   % Valor médio & 528.86 & 648.81 & 670.06\\
-	   % \hline
-	   % Valor máximo & 539.80 & 651.10 & 671.80\\
-	   % \hline
-	   % Desvio Padrão & 5.31 & 2.78 & 0.79\\
-	   % \hline
-	   % \end{tabular}
-	   % \vspace{\baselineskip} %%% linha em branco para atendender a norma
-	   % \fonte{Autor (2018)}
-    % \end{quadro}
-    
-    % Com isso, pode-se verificar que valores abaixo de 671.80 (máximo valor obtido em um dia nublado) representarão uma vaga ocupada. Ou seja, este número é considerado um \textit{threshold}, ou valor de limiar, e é utilizado para determinar o estado de determinada vaga. Além disso, o menor valor obtido para vaga desocupada acontece em torno de 728.50, indicando que medidas acima deste parâmetro indicarão ausência de veículo.
-    
     
     \subsection{Projeto do \textit{sink node}}
     A central deste sistema foi projetada com o intuito de disponibilizar as informações recebidas dos \textit{sensor nodes} para a aplicação. Para encaminhar os dados à aplicação foi selecionada a tecnologia LoRa por dois motivos: aproveitar a disponibilidade de acesso a um \textit{gateway} já instalado sobre a reitoria da UFSM e também devido à capacidade de transmissão de dados em longas distâncias, permitindo que estacionamentos em áreas remotas, como em alguns lugares da universidade, pudessem ser monitorados sem a necessidade de roteadores, caso fosse utilizado Wi-Fi, por exemplo. Além disso, por utilizar uma faixa de frequência não licenciada, esta tecnologia se tornou ainda mais atrativa. E por fim, é possível expandir este sistema sem a necessidade de reprojetá-lo para comportar mais estacionamentos, vide a facilidade de se obter dados de dispositivos LoRa cadastrados na plataforma \textit{The Things Network}. A operação deste sistema está brevemente descrita no fluxograma da Figura \ref{fig:flux-sink-node}.
@@ -1271,15 +1049,16 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     A seguir estão descritos estes dois subsistemas.
     
     \subsubsection{\textit{Back-end}}
-    Inicialmente, foi definido o servidor de rede \textit{The Things Network} para ser usado na aplicação, pois o \textit{gateway} utilizado já estava vinculado ao sistema e também por ser prático na criação e gerenciamento de aplicações. Depois, foi desenvolvido um código na linguagem Python para obter os dados do servidor. Para isso, foi utilizada a biblioteca de código aberto \textit{Eclipse Paho MQTT Python Client}, que oferece métodos de acesso através do protocolo MQTT. 
+    Inicialmente, foi definido o servidor de rede \textit{The Things Network} para ser usado na aplicação, pois o \textit{gateway} utilizado já estava vinculado ao sistema e também por ser prático na criação e gerenciamento de aplicações. Depois, foi desenvolvido um código na linguagem Python para obter em tempo real os dados do servidor. Para isso, foi utilizada a biblioteca de código aberto \textit{Eclipse Paho MQTT Python Client}, que oferece métodos de acesso através do protocolo MQTT. 
     
     \subsubsection{\textit{Front-end}}
-    Neste módulo é apresentado quantas vagas estão disponíveis no estacionamento sob monitoramento. Para isso, foi desenvolvido um código em Javascript que tem duas funções: obter os dados do \textit{backend}, utilizando a versão Javascript da mesma biblioteca \textit{opensource} \textit{Eclipse Paho MQTT}, e depois mostrá-los na tela. 
+    Neste módulo é apresentado quantas vagas estão disponíveis no estacionamento sob monitoramento. Para isso, foi desenvolvido um código em JavaScript que tem duas funções: obter os dados do \textit{backend}, utilizando a versão Javascript da mesma biblioteca \textit{opensource} \textit{Eclipse Paho MQTT}, e depois mostrá-los na tela. 
     
     \section{Implementação}
     A partir do projeto e definição de componentes foram prototipados os nós sensores e o nó central. Ambos foram previamente testados em \textit{protoboard} antes de serem montados nas placas de circuito impresso. 
     
     \subsection{Gravação de firmware no ATmega328P-PU via SPI}
+    \textbf{TODO: Corrigir o esquemático - PINO de alimentação}
     Para programar o microcontrolador foi empregado um Arduino Nano configurado como gravador, conectando-o como mostra a Figura \ref{fig:gravador-sensor-node} e o quadro \ref{quadro:connections}. 
     
     \begin{figure}[ht]
@@ -1320,11 +1099,14 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     \begin{enumerate}
         \item Conectar o Arduino Nano ao computador, através de um cabo micro USB e na IDE do Arduino realizar o upload do \textit{sketch} "ArduinoISP", selecionando o \textit{programmer} "AVRISP mkll". Dessa forma a placa Nano se torna a interface de gravação.
         \item Depois, é necessário gravar o \textit{bootloader} no microcontrolador. Foi escolhido o \textit{bootloader} que utiliza a frequência de \textit{clock} interna de 8MHz do chip (disponível em \textbf{...}), por motivos de economia energética do nó sensor durante a operação. Para isso, primeiramente deve-se mover a pasta baixada para o diretório de \textit{sketches} da IDE do Arduino (no Windows geralmente se encontra em: C:/Users/user/Documents/Arduino). Depois, na IDE seleciona-se a placa "ATmega328 on a breadboard (8MHz internal clock)", configurando o \textit{programmer} "Arduino as ISP", e finalmente usar a ferramenta "Burn Bootloader".
-        \item Por fim, deve-se abrir o código escrito para o \textit{sensor node} na IDE e fazer o \textit{upload} do mesmo através da ferramenta "Upload using programmer", disponível na seção "Sketch"  do menu. Dessa forma, o microcontrolador estará pronto para operar.
+        \item Por fim, deve-se abrir o código escrito para o \textit{sensor node} na IDE e fazer o \textit{upload} do mesmo através da ferramenta "Upload using programmer", disponível na seção ''Sketch'' do menu. Dessa forma, o microcontrolador estará pronto para operar.
     \end{enumerate}
     
     \subsection{Montagem}
     \textbf{TODO}: Com os \textit{firmwares} gravados
+    
+    \subsection{Gravação de \textit{firmware} no \textit{sink node}}
+    \textbf{TODO}
     
     \subsection{Configuração do servidor de rede TTN}
     Nesta etapa é realizada a criação e configuração da interface de comunicação entre os dados vindos dos nós sensores, e a aplicação final. Dessa forma, primeiramente deve-se criar um usuário no sistema, e depois criar e configurar um dispositivo em ''Console'' na seção \textit{Applications} (Figura \ref{fig:add-app-ttn}). 
@@ -1364,21 +1146,81 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
         \label{fig:dev-settings-ttn}
     \end{figure}
     
-    \subsection{Gravação de \textit{firmware} no \textit{sink node}}
-    \textbf{TODO}
-    
     \subsection{Aplicação \textit{back-end}}
-    Com as configurações da aplicação na TTN prontas, é necessário uma forma de obter os dados enviados pelos sensores, recebidos e disponíveis no servidor de rede. 
-    Para isso, o código do \textit{backend} consiste num cliente MQTT, tendo as funções de \textit{subscriber} na obtenção dos dados da TTN, e também como \textit{publisher} ao disponibilizar os dados à aplicação disponível aos usuários (\textit{front-end}). Dessa forma, são necessários alguns parâmetros configurados na TTN, como chave de acesso (\textit{access key}), \textit{hostname} (brazil.thethings.network) e a identificação ou nome da aplicação (\textit{Application ID}).
+    Com as configurações da aplicação na TTN prontas, é necessário uma forma de obter e disponibilizar os dados enviados pelos sensores, recebidos e disponíveis no servidor de rede. Para isso, o código do \textit{backend} consiste em um cliente MQTT e um cliente \textit{MQTT over WebSocket}. O primeiro tem a função de obter continuamente os dados que chegam ao servidor de rede em determinado tópico (\textit{subscriber}). Já o segundo cliente tem o papel de \textit{publisher}, enviando os dados à aplicação de usuário (\textit{front-end}). Dessa forma, são necessários alguns parâmetros configurados na TTN, como chave de acesso (\textit{access key}), \textit{hostname} e a identificação ou nome da aplicação (\textit{Application ID}). O código utilizado na aplicação está disponível no Anexo \ref{}. 
     
-    % Quando configurado neste método, o dispositivo criado recebe um endereço único de 4 bytes, uma chave de sessão na rede (\textit{Network Session Key}) e uma chave de sessão do aplicativo (\textit{App Session Key}). Essas duas chaves podem ser geradas na página de configuração
-    
-    \subsection{Aplicação \textit{frontend}}
-    
+    \subsection{Aplicação \textit{front-end}}
+    Também chamada de aplicação final por ser o que é mostrado ao usuário, o \textit{front-end} tem a função de obter os dados fornecidos pelo \textit{back-end} e disponibilizar ao usuário de uma maneira agradável. No caso deste trabalho, esta aplicação consiste em duas partes: a primeira é responsável pela lógica de
     
     \section{Testes Realizados}
     Para avaliar a efetividade do sistema, foram testados isoladamente cada subsistema, como os sistemas de detecção e transmissão. Dessa forma, foi possível verificar primeiramente se os \textit{sensor nodes} realizam as medidas adequadamente no tempo esperado, e também se a comunicação, tanto dos nós para a central, quanto da central para o \textit{gateway} eram robustas para a aplicação. Por fim, com o sistema completo em operação, foram obtidos os resultados finais.
+    
+    \subsection{Autonomia}
+    Primeiramente foi estimada a autonomia deste circuito, de modo que pudesse ser constatada a quantia de tempo que o sistema poderia operar sem a necessidade de substituir as baterias. Para isso foram obtidas medidas de tempo e consumo médio por modo de operação do sistema, da seguinte forma:
+    
+    \begin{enumerate}
+        \item Medições de tempo: Para esta etapa foram desenvolvidos códigos que pudessem aproximar o tempo gasto em cada operação. 
+        
+        \item Medições de corrente: As medições do consumo médio se deram através de um multímetro em série com o circuito.
+    \end{enumerate}
+    
+    Estas medidas, assim como a capacidade por modo de operação estão descritos na Tabela \ref{table:capacidade}. Vale ressaltar que estes valores de consumo médio por operação foram baseados no pior caso, ou seja, para casos de máximo consumo de corrente possível. Por exemplo, quando há muita luz incidente no sensor, este baixa sua resistência de modo que haja maior circulação de corrente pelo circuito, o que pode resultar em 250$\mu$A de consumo por parte do sensor (resistência mínima  de 10k$\Omega$ informada pelo fabricante).
+    
+    \begin{table}[ht]
+         \centering
+         \caption{Capacidade, tempo e consumo médio por modo de operação}
+         \begin{tabular}{ l c c c }
+             \hline
+             Modo de operação & Tempo médio [s] & Consumo médio [mA] & \begin{tabular}{@{}c@{}}Consumo médio \\ por hora [mAh]\end{tabular} \\
+             \hline
+             Modo 1 (\textit{off}) & 30 & 0.0055 & 0.0021\\
+             Modo 2 (sensor) & 0.055 & 6 & 7.64e-5\\
+             Modo 3 (TX) & 0.450 & 13 & 0.0015\\
+             \hline
+              & Total: 30.505 & & Total: 0.0018
+         \end{tabular}
+         \vspace{\baselineskip} %%% linha em branco para atender a norma
+          \fonte{Autor (2018)}
+          \label{table:capacidade}
+    \end{table}
+    
+    A medida de consumo médio por hora é necessária para determinar o tempo que o sistema poderá operar, visto que geralmente o dado fornecido por fabricantes de baterias é a capacidade ou energia disponível ao longo de uma hora (mAh). Portanto, estimando a quantia de energia média necessária para o circuito funcionar neste período, pode-se calcular a autonomia do circuito em diversas unidades, como horas de operação ou anos de operação. Estes valores estão presentes na Tabela \ref{table:autonomia} e são obtidos pelas relações abaixo:
+    
+    \begin{equation}
+    n_{ciclos} = \frac{\text{Capacidade da bateria}}{\text{Consumo médio por hora}} = \frac{i_{bateria}}{i_{total}}
+    \end{equation}
 
+    \begin{equation}
+        n_{horas} = \frac{n_{ciclos}}{(\frac{3600}{T_{total}})}
+    \end{equation}
+    
+    \begin{equation}
+        n_{dias} = \frac{n_{horas}}{24}
+    \end{equation}
+
+    \begin{equation}
+        n_{meses} = \frac{n_{dias}}{30}
+    \end{equation}
+    
+    \begin{equation}
+        n_{anos} = \frac{n_{meses}}{12}
+    \end{equation}
+
+    \begin{table}[ht]
+         \centering
+         \caption{Autonomia teórica aproximada dos \textit{sensor nodes}}
+         \begin{tabular}{ c c c c c }
+             \hline
+             Ciclos & Horas & Dias & Meses & Anos \\
+             \hline
+             1617021.2765 & 13702.0095 & 570.9171 & 19.0306 & 1.5859 \\
+             \hline
+         \end{tabular}
+         \vspace{\baselineskip} %%% linha em branco para atender a norma
+          \fonte{Autor (2018)}
+          \label{table:autonomia}
+    \end{table}
+    
     \subsection{Medições do sensor LDR}
     Afim de verificar o quão precisas eram as medidas do sensor ao longo do dia, foram realizados testes no período das 8h às 18h, entre os dias 25, 26 e 28 de Setembro de 2018. Estes consistiram em colocar em operação um dos \textit{sensor nodes} no centro de 10 vagas, onde 5 destas estavam ocupadas, e as outras 5 livres, em um dos estacionamentos ao lado da Reitoria da UFSM. 
     
@@ -1439,8 +1281,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     
     \subsection{Comunicação entre \textit{sink node} e \textit{gateway} LoRa}
     
-    
-\chapter{RESULTADOS}
+\section{AVALIAÇÃO DOS RESULTADOS}
 
 
 
