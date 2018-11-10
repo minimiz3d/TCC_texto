@@ -106,10 +106,10 @@
 % % % % % %    OS DEMAIS MEMBROS DA BANCA (COOREIENTADOR E DEMAIS PROFESSORES) QUANDO COMENTADOS NAO APARECEM NA FOLHA DE APROVACAO (O LAYOUT DA FOLHA DE APROVACAO ESTA PREPARADO PARA O ORIENTADOR E ATE MAIS 4 MEMBROS NA BANCA
 \orientador{Carlos Henrique Barriquello}{Dr}{UFSM}{M}{P}  %%%INFORMACOES SOBRE ORIENTADOR: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
 % \coorientador{TALVEZ!!!}{Dra}{AAAA}{F}{M} %%%INFORMACOES SOBRE CO-ORIENTADOR: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
-\bancaum{Banca Um}{Dr}{AAAA}{F}{M}  %%%INFORMACOES SOBRE PRIMEIRO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
+\bancaum{Nelson da Silva Spode}{Me}{UFSM}{M}{M}  %%%INFORMACOES SOBRE PRIMEIRO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}{SEXO} M=masculino   F=feminino {PARTE DA BANCA?} P=presidente  M=Membro  N=Nao faz parte
 
-\bancadois{Banca Dois}{Dr}{BBBB}  %%%INFORMACOES SOBRE SEGUNDO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}
-\bancatres{Banca Três}{Dra}{CCCC} %%%INFORMACOES SOBRE TERCEIRO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}
+\bancadois{José Eduardo Baggio}{Dr}{UFSM}  %%%INFORMACOES SOBRE SEGUNDO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}
+% \bancatres{Banca Três}{Dra}{CCCC} %%%INFORMACOES SOBRE TERCEIRO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}
 % \bancaquatro{Banca Quatro}{Dr}{DDDD} %%%INFORMACOES SOBRE QUARTO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}
 % \bancacinco{Banca Cinco}{Dra}{EEEE} %%%INFORMACOES SOBRE QUARTO NOME DA BANCA: OS CAMPOS SAO:{NOME}{SIGLA DA TITULACAO}{SIGLA DA INSTITUICAO DE ORIGEM}
 
@@ -139,7 +139,7 @@
 %     \concordagenerico{o}
 %     \graugenerico{Engenheiro Eletricista}
 % % % DATA DA DEFESA 
-\data{DIA}{MÊS}{2018} %% FORMATO {DD}{MM}{AAAA}
+\data{27}{11}{2018} %% FORMATO {DD}{MM}{AAAA}
 
 
 
@@ -153,27 +153,25 @@
 % TODO
 % % % %  AGRADECIMENTOS
 \agradecimentos{
-A mim!
+Primeiramente gostaria de agradecer a minha família por todo apoio ao longo de toda minha vida. Em especial a Silvia Tolfo, minha querida mãe, que desde sempre me incentivou a fazer o que eu gosto.
 }
 
 % % % % %  RESUMO E PALAVRAS CHAVE DO RESUMO - OBRIGATORIO PARA MDT-UFSM
 % TODO: Melhorar
 \resumo{
-O crescimento do número de veículos em circulação no país gera diversos inconvenientes, como engarrafamentos e altos índices de poluição. Neste contexto, uma das principais causas de lentidão no trânsito é a busca às cegas por vagas de estacionamento, que se dá pela falta de informatização destes locais. Diante disso, o objetivo deste trabalho é elucidar as necessidades atreladas ao desenvolvimento de uma solução para este problema, e também propor uma aplicação baseada em uma rede de sensores sem fio de baixo custo. Para a realização deste projeto, sensores de luminosidade LDR foram escolhidos, por serem componentes baratos e capazes de medir uma das variáveis mais evidentes relacionadas ao estado de uma vaga de estacionamento ao ar livre. Neste sentido, foi constatado que o sensor LDR é capaz de distinguir entre a presença e ausência de veículos em diferentes situações, tanto climáticas, quanto luminosas. Já o protótipo da rede foi estruturado em uma topologia de comunicação estrela de estrelas, utilizando módulos de rádio AM nos nós sensores e um nó central LoRa. Além disso, o projeto aborda a autonomia dos nós e uma aplicação baseada no protocolo MQTT para exibição da disponibilidade das vagas monitoradas. Foi estimada uma autonomia dos dispositivos de aproximadamente 19 meses em operação. Entretanto, a comunicação entre os nós apresentou baixa efetividade. 
+O crescimento do número de veículos em circulação no país gera diversos inconvenientes, como engarrafamentos e altos índices de poluição. Neste contexto, uma das principais causas de lentidão no trânsito é a busca às cegas por vagas de estacionamento, que se dá pela falta de informatização destes locais. Diante disso, o objetivo deste trabalho é elucidar as necessidades atreladas ao desenvolvimento de uma solução para este problema, e também propor uma aplicação baseada em uma rede de sensores sem fio de baixo custo. Para a realização deste projeto, sensores de luminosidade LDR foram escolhidos, por serem componentes baratos e capazes de medir uma das variáveis mais evidentes relacionadas ao estado de uma vaga de estacionamento ao ar livre. Neste sentido, foi constatado que o sensor LDR é capaz de distinguir entre a presença e ausência de veículos em diferentes horários do dia. Já o protótipo da rede foi estruturado em uma topologia de comunicação estrela de estrelas, utilizando módulos de rádio AM baratos nos nós sensores e um nó central LoRa. Além disso, o projeto aborda a autonomia dos nós e uma aplicação baseada no protocolo MQTT para exibição da disponibilidade das vagas monitoradas. Foi estimada uma autonomia teórica dos nós sensores de aproximadamente 15 meses. Em contrapartida, a comunicação entre os nós sensores e o nó central apresentou baixa efetividade, com um raio máximo de transmissão de apenas 4 metros.
 }
 % MELHORAR AQUI!
-\palavrachave{Estacionamento. LDR. LoRa.}
+\palavrachave{Estacionamento, Rede de Sensores Sem Fio, LDR, LoRa e MQTT.}
 % "... deverão constar, no mínimo, três palavras-chave, iniciadas em
 % letras maiúsculas, cada termo separado dos demais por ponto, e
 % finalizadas também por ponto." MDT 2012
 
 % % % % %  ABSTRACT E PALAVRAS CHAVE DO RESUMO - OBRIGATORIO PARA MDT-UFSM
 \abstract{
-    The growth in the number of vehicles in circulation in the country creates several drawbacks, such as traffic congestion and high rates of pollution. In this context, one of the main causes in traffic slowness is the blind search for parking spaces, which occur due to the lack of informatization of these places.
-    Thus
-    , the objective of this work is to verify the effectiveness of an application that detects vacant parking spaces in an open parking lot. For this purpose a wireless sensor network prototype was developed, which uses low-cost LDR sensors to detect parking spaces availability and radiofrequency communication in transmissions. The system is structured in a star network topology, where each sensor-node transmits the state of a particular parking space to a central, called sink-node, using AM communication modules. Finally, the sink-node provides the amount of available parking spaces to the application, through LoRa technology.
+    The growth in the number of vehicles in circulation in the country creates several drawbacks, such as traffic congestion and high rates of pollution. In this context, one of the main causes in traffic slowness is the blind search for parking spaces, which occur due to the lack of informatization of these places. Thus, the objective of this work is to elucidate the needs linked to the development of a solution to this problem, and also to propse an application based on a low cost wireless sensor network. For the realization of this project, LDR luminosity sensores were chosen because they are inexpensive components capable of measuring one of the most obvious variables related to the state of an outdoor parking space. In this sense, it was verified that the LDR sensor is able to distinguish between the presence and absence of vehicles at different hours of the day. The network prototype was structured in a star of stars topology, using cheap AM radio modules on the sensor nodes and a central LoRa node. In addition, the project addresses the autonomy of nodes and an application based on the MQTT protocol to display the availability of monitored parking spaces. A theoretical autonomy was estimated for the sensor nodes in approximately 15 months. However, the communication between the sensor nodes and the central node presented low effectiveness, with a maximum transmission radius of only 4 meters.
 }
-\keywords{Parking. LDR. LoRa.}
+\keywords{Parking, Wireless Sensor Network, LDR, LoRa and MQTT.}
 
 
 % % %  ATIVACAO DE LISTAS E PAGINAS ESPECIAIS
@@ -236,15 +234,13 @@ O crescimento do número de veículos em circulação no país gera diversos inc
 %%%%%%%% para não utilizar comente as linhas abaixo.
 \simbolomax{(Re)2} %%%% coloque aqui o maior simbolo (indentacao)
 \listadesimbolos{
-\item[\overline{i}] Consumo médio total por ciclo de operação
-\item[T_{ciclo}] Tempo de ciclo
-\item[T_{on}] Tempo médio em atividade por ciclo
-\item[T_{off}] Tempo médio ocioso por ciclo
-\item[\overline{i_{on}}] Consumo médio em atividade por ciclo
-\item[\overline{i_{off}}] Consumo médio em ociosidade por ciclo
-\item[u_*]	Escala de velocidade de fricção	
-\item[w_*]	Escala de velocidade convectiva
-\item[(Re)^2]	Maior simbolo da lista
+\item[\overline{i}_{bateria}] Capacidade energética média da bateria
+\item[\overline{i}_{total}] Consumo médio total por hora
+\item[T_{total}] Tempo total de um ciclo
+\item[n_{ciclos}] Autonomia em ciclos
+\item[n_{horas}] Autonomia em horas
+\item[n_{meses}] Autonomia em meses
+\item[n_{anos}] Autonomia em anos
 }
 
 
@@ -340,7 +336,7 @@ Neste sentido, estima-se que o número de dispositivos conectados à Internet no
 
 Dessa forma, para que cidades inteligentes ou “infraestruturas em rede para melhorar a eficiência econômica e política, e possibilitar o desenvolvimento social, cultural e urbano” \cite{hollands2008will} não sejam apenas um conceito pelo mundo, é preciso que soluções inovadoras se pautem nas adversidades mais evidentes destas. No Brasil, por exemplo, problemas de mobilidade urbana como engarrafamentos cada vez mais constantes, estão atrelados à grande frota de veículos no país, que conforme dados apresentados pela Confederação Nacional do Transporte em 2017, já chega a 51.2 milhões de automóveis \cite{site:cnt}. Além disso, segundo dezesseis estudos realizados entre os anos de 1927 e 2001, em média 30\% dos motoristas em congestionamentos estavam em busca de uma vaga para estacionarem seus veículos \cite{shoup2006cruising}. Ou seja, é evidente que procurar às cegas pela disponibilidade destes locais ainda contribui significativamente para tornar o trânsito mais lento, ainda que existam enormes diferenças entre as cidades da época desta pesquisa e as atuais.
 
-Neste contexto, pode-se imaginar como uma possível solução deste problema o uso de uma rede de sensores, onde o objetivo seja indicar de forma automatizada a disponibilidade das vagas monitoradas, e com isso contribuir diretamente na informatização das cidades. No entanto, uma implementação robusta destas redes é um grande desafio, pois são sensíveis a diversos fatores como a necessidade de empregar fontes de alimentação capazes de disponibilizar energia de forma segura durante longos períodos de tempo; proteção dos elementos perceptores, que podem não ser resistentes à água ou altas e baixas temperaturas, por exemplo; robustez e segurança na comunicação para que se tenha integridade dos dados; entre outros aspectos que impedem um desenvolvimento mais acelerado destes sistemas \cite{puccinelli2005wireless}. 
+Neste contexto, pode-se imaginar como uma possível solução deste problema o uso de uma rede de sensores, onde o objetivo seja indicar de forma automatizada a disponibilidade das vagas monitoradas, e com isso contribuir diretamente na informatização das cidades. No entanto, uma implementação robusta destas redes é um grande desafio, pois são sensíveis a diversos fatores como a necessidade de empregar fontes de alimentação que disponibilizem energia durante longos períodos de tempo; proteção dos elementos perceptores, que podem não ser resistentes à água ou altas e baixas temperaturas, por exemplo; robustez e segurança na comunicação para que se tenha integridade dos dados; entre outros aspectos que impedem um desenvolvimento mais acelerado destes sistemas \cite{puccinelli2005wireless}. 
 
 Com isso, a cada ano estão surgindo soluções no campo de IoT para os complicadores anteriormente citados. A tecnologia de comunicação sem fio LoRa é um bom exemplo por ser recente e ter como objetivo contribuir na implementação de \textit{wireless sensor networks} (WSN) de baixo consumo de energia e longo alcance de transmissão. Características como estas são essenciais para que iniciativas baseadas em redes LoRaWAN, como a Digital Living Lab, situada em Wollongong na Austrália, sejam realizadas e possam colaborar com projetos de impacto urbano e social \cite{site:dll}. 
 
@@ -348,7 +344,7 @@ Com isso, a cada ano estão surgindo soluções no campo de IoT para os complica
 
 A partir disso, este trabalho de conclusão de curso tem a finalidade de abordar temas como WSN, comunicação em radiofrequência, tecnologia LoRa, sensores de luminosidade e propor a implementação de um protótipo de uma rede de sensores sem fio de baixo custo, afim de monitorar o estado de vagas de um estacionamento ao ar livre. Para tanto, serão usados em conjunto sensores LDR e também módulos de comunicação de radiofrequência.
 
-A estrutura deste documento está dividida da seguinte forma: no Capítulo 2 é realizada a revisão de literatura relacionada à aplicação proposta, mencionando técnicas e soluções utilizadas em outros trabalhos para o mesmo o problema; no Capítulo 3 são abordados conceitos básicos relevantes ao trabalho, como conversão analógico/digital e comunicação \textit{wireless}; no Capítulo 4 é apresentada a aplicação num todo, descrevendo o desenvolvimento e testes do sistema; no Capítulo 5 são apresentados e discutidos os resultados obtidos; e por fim, o Capítulo 6 aborda as conclusões e sugestões para trabalhos futuros.
+A estrutura deste documento está dividida da seguinte forma: no Capítulo 2 é realizada a revisão de literatura relacionada à aplicação proposta, mencionando técnicas e soluções utilizadas em outros trabalhos para o mesmo o problema; no Capítulo 3 são abordados conceitos básicos relevantes ao trabalho, como conversão analógico/digital e comunicação \textit{wireless}; no Capítulo 4 é apresentada a aplicação num todo, descrevendo o desenvolvimento, testes do sistema e os resultados obtidos; e por fim, o Capítulo 6 aborda as conclusões e sugestões para trabalhos futuros.
 }%
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \geraintro  %%%% GERA INTRODUCAO   % % % % % % % % % % % % % % % % % % % % % 
@@ -374,9 +370,9 @@ Este tipo de sensor opera baseando-se nas variações de campo magnético da Ter
         \label{fig:magnetometro}
 \end{figure}
 
-Pode-se citar como principal vantagem o funcionamento em largas faixas de temperatura (entre -30°C e 85°C no caso do sensor mostrado acima) e também a alta confiabilidade das medidas. Entretanto, estes possuem uma área de sensibilidade baixa, o que leva ao problema anteriormente citado da necessidade de instalação de uma unidade por vaga.
+Pode-se citar como principal vantagem o funcionamento em largas faixas de temperatura (entre -30°C e 85°C no caso do sensor da Figura \ref{fig:magnetometro}) e também a alta confiabilidade das medidas. Entretanto, estes possuem uma área de sensibilidade baixa, o que leva ao problema anteriormente citado da necessidade de instalação de uma unidade por vaga.
 
-Atualmente há algumas soluções no mercado baseadas em sensores magnéticos, como o PlacePod desenvolvido pela PNI Sensor, destacando-se a alta precisão na detecção dos veículos e a durabilidade de até 10 anos das baterias \cite{placepod}. Entretanto, o preço nada atrativo de U\$200 é um fator extremamente limitante, pois inviabiliza a escalabilidade desta solução. Há também empresas como a Libelium e a Paradox Engineering desenvolvendo produtos semelhantes, com precisão e durabilidade das bateriais semelhante, porém o preço destes não está disponível.
+Atualmente há algumas soluções no mercado baseadas em sensores magnéticos, como o PlacePod desenvolvido pela PNI Sensor, destacando-se a alta precisão na detecção dos veículos e a durabilidade de até 10 anos das baterias \cite{placepod}. Entretanto, o preço nada atrativo de U\$200 é um fator extremamente limitante, pois inviabiliza a escalabilidade desta solução. Há também empresas como a Libelium e a Paradox Engineering desenvolvendo produtos semelhantes, com precisão e durabilidade das baterias similares, porém o preço destes não está disponível.
 
 Além destes há o projeto de larga escala SFPark, iniciado em Abril de 2011 na cidade de São Francisco - CA, que foi implantado com o intuito de maximizar o número de vagas de estacionamento disponíveis. Para isso são utilizados em conjunto um sistema de detecção de veículos baseado em sensores magnéticos, com os parquímetros, afim de designar dinamicamente o preço das vagas conforme a disponibilidade, horário, e local. Dessa forma é possível saber em tempo real locais e preços de estacionamentos \cite{site:mobilize}.
 
@@ -434,7 +430,7 @@ A estrutura dos fotoresistores é composta por uma trilha de algum material foto
 \subsection{Princípio de Funcionamento}
 O funcionamento básico destes dispositivos consiste em variações na resistividade do material semicondutor que o compõe, conforme a intensidade luminosa incidente, e se dá através do efeito fotoelétrico,  postulado por Einsten em 1905 \cite{klassen2011photoelectric}. Isto é, quando a luz sobre o LDR for de alta frequência, os prótons absorvidos terão energia suficiente para fazer com que elétrons presos na camada de valência pulem para a camada de condução \cite{ibrahim2016automated}. Dessa forma, quando houver alta luminosidade incidente, haverão mais elétrons livres disponíveis para a condução de corrente elétrica (maior fotocondutividade), e portanto menor resistência do LDR.
 
-Pode-se visualizar este comportamento na Figura \ref{fig:ldr-graph}. Em casos de alta luminosidade, como entre 10Lux e 100Lux, a resistência interna do material está na faixa de centenas de Ohms, e para cenários escuros, tem-se um aumento para a extensão de mega Ohms. Esta relação é descrita pela constante do LDR $\gamma$, que define a taxa de variação de resistência do LDR, em relação a um intervalo bem definido de variação luminosa:
+Pode-se visualizar este comportamento na Figura \ref{fig:ldr-graph}. Em casos de alta luminosidade, como entre 10Lux e 100Lux, a resistência interna do material está na faixa de centenas de Ohms, e para cenários escuros, tem-se um aumento para a extensão de mega Ohms. Esta relação é descrita pela constante $\gamma$, que define a taxa de variação de resistência do LDR, em relação a um intervalo bem definido de variação luminosa:
 \begin{equation}
     \gamma = log(\frac {R_{start}}{R_{end}}),
 \end{equation}
@@ -473,7 +469,7 @@ Este capítulo tem como objetivo abordar conceitos básicos relativos aos sistem
 \section{REDES DE SENSORES SEM FIO}
 Se há algo em comum entre todas as gerações humanas, pode-se dizer que isto é a curiosidade que temos de compreender o ambiente que nos circunda, e dar a isso algum valor. Dessa forma, diversos exemplos de aplicações, bem intencionadas ou não, que fossem baseadas na percepção ou monitoramento de eventos foram desenvolvidas ao longo dos anos. Na Segunda Guerra Mundial, por exemplo, a marinha alemã utilizava princípios eletromagnéticos para implantar minas navais que também atuavam como sensores, e assim eram capazes de afundar automaticamente navios britânicos quando próximos \cite{HowBrita11:online}. Em contrapartida, outros sistemas também antigos de percepção, como o radar são utilizados até hoje para fins mais pacíficos em áreas como meteorologia e aviação comercial. 
 
-Com o passar do tempo, as técnicas de monitoramento foram aprimoradas e gradualmente mais automatizadas. Isto foi possível devido à rápida evolução na área de microeletrônica, que com circuitos e encapsulamentos cada vez menores e mais eficientes \cite{renna2007evolution}, possibilitou o surgimento das redes de sensores sem fio, que podem ser definidas como: sistemas compostos de nós sensores, que através de dispositivos perceptores juntamente com comunicação sem fio objetivam mensurar e transmitir informações sobre algum fenômeno. 
+Com o passar do tempo, as técnicas de monitoramento foram aprimoradas e gradualmente mais automatizadas. Isto foi possível devido à rápida evolução na área de microeletrônica, que com circuitos e encapsulamentos cada vez menores e mais eficientes \cite{renna2007evolution}, possibilitou o surgimento das redes de sensores sem fio, que podem ser definidas como: sistemas compostos de nós sensores, que através de dispositivos perceptores, juntamente com comunicação sem fio objetivam mensurar e transmitir informações sobre algum fenômeno. 
 
 Nestas redes os nós sensores (\textit{sensor nodes}) são dispositivos de baixo consumo energético, equipados com sensores afim de detectar determinado evento, ou medida, de modo que a informação obtida seja transmitida por algum transceiver \cite{oliveira2011wireless}. Ou seja, por combinarem sensoriamento, processamento e comunicação em um só sistema, estes elementos são extremamente versáteis e possibilitam a criação de inúmeras aplicações. Entretanto ainda existem diversos desafios nesta área, como prolongar a vida útil das baterias, por exemplo. A seguir são apresentados alguns dos principais tópicos relevantes a estes sistemas.
 
@@ -534,7 +530,7 @@ Vale ressaltar que muitas vezes os \textit{sink nodes} não estão sujeitos às 
     \item Fonte de energia: Para operar, estes sistemas necessitam de energia provida por pequenas baterias, como pilhas alcalinas ou baterias de lítio, por exemplo.
     \item Sensor: O elemento que dá nome aos nodos destas redes tem a função de mensurar alguma grandeza, ou evento, como a luminosidade em determinada região.
     \item Microcontrolador: Para tornar os dados dos sensores em algum útil são utilizados estes pequenos dispositivos, que já contém sistemas como processador e memória embutidos. Dentre as suas principais funções estão o processamento e interface com o dispositivo de transmissão.
-    \item \textit{Transceiver}: Por fim, é necessário utilizar um transmissor \textit{wireless} para encaminhar as informações coletadas nos nodos. Geralmente estes dispositivos podem operar tanto como transmissores, quanto como receptores, sendo chamados de \textit{transceivers}.
+    \item \textit{Transceiver}: Por fim, é necessário utilizar um transmissor \textit{wireless} para encaminhar as informações coletadas nos nodos. Geralmente estes dispositivos podem operar tanto como transmissores, quanto como receptores, sendo classificados de \textit{transceivers}.
 \end{enumerate}
 
 \subsection{Autonomia dos nós sensores}
@@ -611,7 +607,7 @@ Logo em sequência devem ser filtradas frequências que distorcem o sinal origin
 \subsection{Amostragem e retenção}
 Microcontroladores são capazes de operar com base em sinais digitais, ou seja, conjuntos de valores discretos no tempo que representem alguma grandeza, como textos e números inteiros. Entretanto, a grande maioria dos sinais presentes no universo são de natureza contínua e por isso devem ser discretizados para que sejam úteis a estes dispositivos eletrônicos. A discretização dos sinais analógicos já condicionados inicia através do processo de amostragem, que consiste em capturar de forma intervalada valores do sinal original, afim de se obter um conjunto finito de amostras que o represente.
 
-Na Figura \ref{fig:processo-de-amostragem} é demonstrado o processo de amostragem baseado em uma série de impulsos, onde cada pulso é multiplicado pelo sinal original para se obter a amplitude deste naquele instante (representado pela Equação \ref{eq:amostragem}). 
+Na Figura \ref{fig:processo-de-amostragem} é demonstrado o processo de amostragem baseado em uma série de impulsos, onde cada pulso é multiplicado pelo sinal original para se obter a amplitude deste naquele instante, representado pela Equação \ref{eq:amostragem}: 
 
 \begin{figure}[ht]
     \caption{\label{exepretex} Processo de amostragem}
@@ -720,7 +716,7 @@ Entretanto, além da resolução existem outros fatores limitantes à precisão 
     \item Erro de não linearidade diferencial (DNL):
     Este erro é definido como a máxima diferença entre as larguras real e ideal de cada código (000 por exemplo). Ou seja, a distância existente entre cada símbolo pode ser diferente de 1LSB, e é mensurado como mostra a Figura \ref{fig:dnl-adc}.
     
-    \begin{figure}[H]
+    \begin{figure}[ht]
     \caption{\label{exepretex} Erro DNL}
     \centering
     \includegraphics[width=0.8\textwidth]{figuras/erro_dnl.png}
@@ -732,7 +728,7 @@ Entretanto, além da resolução existem outros fatores limitantes à precisão 
     \item Erro integral de não linearidade (INL):
     Assim como o DNL, este erro também decorre das limitações tecnológicas que tornam os conversores AD sistemas não lineares. Para determiná-lo, os fabricantes geralmente comparam a máxima distância vertical entre a curva de transferência real do ADC com a curva ideal de transferência deste dispositivo (Figura \ref{fig:inl-adc}).
     
-    \begin{figure}[H]
+    \begin{figure}[ht]
     \caption{\label{exepretex} Erro INL}
     \centering
     \includegraphics[width=0.8\textwidth]{figuras/adc-inl.png}
@@ -767,11 +763,10 @@ onde $A(t)$ representa a amplitude desta função; $f(t)$ a frequência; e $\phi
 A partir disso, para que seja possível transmitir informações através destas ondas é necessário manipular os parâmetros que a descrevem, de forma que esta modificação seja perceptível tanto pelo transmissor, quanto pelo receptor. Isto é, assim como em uma conversa entre duas pessoas, é necessário que quem envia os dados (falante) fale o mesmo idioma que quem recebe (ouvinte). Este procedimento de manipulação sobre a onda em questão para inserção/recepção de informação é chamado de modulação/demodulação, e é descrito a seguir.
 
 \subsection{Modulação}
-Como mencionado anteriormente, o processo de modulação consiste em inserir informação em determinada onda, através da manipulação dos parâmetros que a descrevem. Por exemplo, em uma aplicação que transmita voz, como em estações de rádio, é necessário modular o sinal elétrico equivalente da fala em um sinal que possa ser transmitido pelo ar por longas distâncias. Para isso, é utilizado um sinal auxiliar, chamado de onda portadora, que tem o papel de sofrer variações em determinado parâmetro, como frequência ou amplitude, por exemplo, em função do sinal que deseja-se transmitir (sinal modulante). 
+O processo de modulação consiste em inserir informação em determinada onda, através da manipulação dos parâmetros que a descrevem. Por exemplo, em uma aplicação que transmita voz, como em estações de rádio, é necessário modular o sinal elétrico equivalente da fala em um sinal que possa ser transmitido pelo ar por longas distâncias. Para isso, é utilizado um sinal auxiliar, chamado de onda portadora, que tem o papel de sofrer variações em determinado parâmetro, como frequência ou amplitude, por exemplo, em função do sinal que deseja-se transmitir (sinal modulante). 
 
 Além disso, deve-se ressaltar que as ondas portadoras são fundamentais neste processo, pois permitem que a transmissão de dados pelo ar seja possível sem a necessidade de antenas gigantescas. Isto é, como os sinais enviados se dão na forma de campos eletromagnéticos, então a máxima distância que determinado sinal poderá percorrer será delimitado pelo diâmetro da antena empregada para transmissão do campo \cite{book:1681103}.
 
-% ABORDAR AM E MODULAÇÃO LORA
 \subsection{Modulação digital AM}
 Uma das técnicas de modulação digital mais simples empregadas em comunicação \textit{wireless} é a modulação ASK (\textit{Amplitude-Shift Keying}), que consiste em variar a amplitude de uma portadora conforme o sinal digital que deseja-se transmitir, de modo que a frequência e fase permaneçam constantes \cite{book:1039396}. Este tipo de modulação pode ser representado pelo diagrama de controle abaixo:
 \begin{figure}[ht]
@@ -875,7 +870,7 @@ A arquitetura do sistema utiliza uma topologia estrela de estrelas, e é compost
 \begin{enumerate}
     \item Módulos (\textit{end-devices}): Representam os sensores e atuadores conectados à rede via a interface de radiofrequência LoRa. Neste cenário, estes dispositivos transmitem dados sem destinatário em específico, o que os torna independentes dos \textit{gateways}. Vale ressaltar que estes podem operar de três formas diferentes, categorizadas como classes A, B e C, onde cada uma determina uma maneira de obter dados (\textit{downlink}) do servidor de rede.
     \item \textit{Gateways}: Também chamados de concentradores, estes são responsáveis pelo encaminhamento dos pacotes transmitidos pelos \textit{end-devices} aos servidores de rede. Atualmente o raio de cobertura destes fica entre 2km e 15km.
-    \item Servidores de Rede: Estes são encarregados de filtrarem pacotes duplicados; realizarem controle de segurança e taxa de comunicação de dados (\textit{mac-commands}); envio de ACKs aos \textit{gateways}; direcionamento de pacotes para aplicações; em outras palavras, implementam toda a inteligência de rede necessária.
+    \item Servidores de Rede: Estes são encarregados de filtrarem pacotes duplicados; realizarem controle de segurança e taxa de comunicação de dados; envio de ACKs aos \textit{gateways}; direcionamento de pacotes para aplicações; em outras palavras, implementam toda a inteligência de rede necessária.
     \item Servidores de Aplicação: Estes servidores contém as aplicações em si. Tipicamente a obtenção de informações dos servidores de rede ocorre através de algum protocolo de comunicação de mensagens leves, como MQTT e CoAP.
 \end{enumerate}
 
@@ -912,22 +907,35 @@ Nota-se que em ambos os tipos de mensagem há o preâmbulo (\textit{preamble}); 
 
 
 \subsubsection{Segurança}
-A segurança em redes LoRaWAN é implementada em duas camadas: uma mantém a autenticação individual dos \textit{end-devices} na rede, e a outra garante que os dados dos dispositivos finais estejam protegidos \cite{lora-overview}. Para isso são utilizadas três chaves AES de 128 bits:  AppKey, NwkSKey e AppSKey. A primeira é utilizada para ativação dos dispositivos, tanto na forma OTAA (\textit{over-the-air activation}), quanto na ABP (\textit{activation-by-personalization}). O que diferencia estes dois modos de ativação é a maneira com que cada um gerencia as outras duas chaves, sendo que na ativação ABP os dispositivos ficam muito mais vulneráveis, pois dessa forma as chaves de criptografia de rede e aplicação (NwkSKey e AppSKey, respectivamente) ficam gravadas nos \textit{end-devices}.
-
+A segurança em redes LoRaWAN é implementada em duas camadas: uma mantém a autenticação individual dos \textit{end-devices} na rede, e a outra garante que os dados dos dispositivos finais estejam protegidos \cite{lora-overview}. Para isso são utilizadas três chaves com padrão de criptografia avançada (AES) de 128 bits:  AppKey, NwkSKey e AppSKey. A primeira é utilizada para ativação dos dispositivos, tanto na forma OTAA (\textit{over-the-air activation}), quanto na ABP (\textit{activation-by-personalization}). O que diferencia estes dois modos de ativação é a maneira com que cada um gerencia as outras duas chaves, sendo que na ativação ABP os dispositivos ficam muito mais vulneráveis, pois dessa forma as chaves de criptografia de rede e aplicação (NwkSKey e AppSKey, respectivamente) ficam gravadas nos \textit{end-devices}.
 
 
 \subsection{Protocolo MQTT}
 Para obtenção de dados do servidor de rede são utilizados protocolos de conectividade entre dispositivos (M2M, do inglês \textit{Machine to Machine}). O protocolo \textit{Message Queue Telemetry Transport} (MQTT), originalmente desenvolvido pela IBM, é um destes, tendo como principal característica a utilização do paradigma \textit{publish}/\textit{subscribe} para troca de mensagens leves (Figura \ref{fig:mqtt-topico}).
 \begin{figure}[H]
-    \caption{\label{exepretex} Paradigma \textit{publish/subscribe}}
+    \caption{\label{exepretex} Arquitetura \textit{Publish/Subscribe} em uma rede MQTT} 
     \centering
-    \includegraphics[width=0.8\textwidth]{figuras/publish-subscribe.png}
+    \includegraphics[width=0.6\textwidth]{figuras/publish-subscribe.png}
     \vspace{\baselineskip} %%% linha em branco para atender a norma
         \fonte{\cite{mqtt-diagram}}
         \label{fig:mqtt-topico}
 \end{figure}
 
-O funcionamento deste protocolo ocorre da seguinte forma: elementos que desejam receber algum dado de determinado tópico, se subscrevem a este; depois, a interface de comunicação, chamada de \textit{broker}, é responsável por gerenciar e encaminhar mensagens publicadas neste tópico. No caso de sistemas compostos por uma rede de sensores, por exemplo, os dados (\textit{payload}) são enviados para o gateway, sem distinção de tópicos neste momento; a partir disso, o gateway encaminha os dados ao servidor de rede afim de separá-los em tópicos relevantes, como "temperatura" ou "umidade do ar"; depois, alguma aplicação que deseja receber informações de temperatura, por exemplo, pode inscrever-se neste tópico; com isso, o \textit{broker} do servidor verifica os inscritos deste tópico, e os encaminha as mensagens publicadas pelos \textit{publishers}. 
+O funcionamento deste protocolo ocorre da seguinte forma: elementos que desejam receber algum dado de determinado tópico, se subscrevem a este; depois, a interface de comunicação, chamada de \textit{broker}, é responsável por gerenciar e encaminhar mensagens publicadas neste tópico. No caso de sistemas compostos por uma rede de sensores, por exemplo, os dados (\textit{payload}) são enviados para o gateway, sem distinção de tópicos neste momento; a partir disso, o gateway encaminha os dados ao servidor de rede afim de separá-los em tópicos relevantes, como ''temperatura'' ou ''umidade do ar''; depois, alguma aplicação que deseja receber informações de temperatura, por exemplo, pode inscrever-se neste tópico; com isso, o \textit{broker} do servidor verifica os inscritos deste tópico, e os encaminha as mensagens publicadas pelos \textit{publishers}. 
+
+\subsection{MQTT \textit{over WebSockets}}
+Tipicamente a utilidade das informações coletadas por sensores se dá com a disponibilização destas ao usuário, através de uma aplicação \textit{web} ou um aplicativo \textit{mobile}, por exemplo. No caso de aplicativos \textit{web}, os \textit{browsers} são utilizados para rodar a aplicação, como Google Chrome ou Firefox, que por padrão utilizam a conexão bidirecional \textit{WebSocket} para se comunicarem com servidores de rede. Portanto, para que seja possível obter uma informação repassada por um \textit{broker} MQTT, é necessário que o protocolo MQTT rode sobre o protocolo implementado nos \textit{browsers}, daí o nome MQTT \textit{over WebSockets}. O funcionamento dessa configuração de protocolos pode ser vista na Figura \ref{fig:mqtt-over-websockets}.
+
+\begin{figure}[H]
+    \caption{\label{exepretex} Funcionamento de MQTT \textit{over WebSockets}}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figuras/websockets.png}
+    \vspace{\baselineskip} %%% linha em branco para atender a norma
+        \fonte{\cite{mqtt-over-websockets}}
+        \label{fig:mqtt-over-websockets}
+\end{figure}
+
+Ou seja, para transmitir uma mensagem MQTT, como uma publicação em determinado tópico (\textit{publish}), primeiramente o \textit{broker} encapsula o pacote MQTT em um ou mais \textit{frames WebSocket}. Com isso, a mensagem a ser transmitida fica contida em um dado compreensível ao protocolo \textit{WebSocket}, e pode ser transmitida à aplicação \textit{web}. Por fim, o receptor decodifica a mensagem através de um cliente MQTT \textit{over WebSockets}, como o Paho MQTT \cite{paho-mqtt}.
 
 
 \chapter{APLICAÇÃO DESENVOLVIDA}
@@ -949,7 +957,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
                 \label{fig:visao-geral}
     \end{figure}
     
-    A arquitetura de rede adotada consiste em uma rede estrela de estrelas, com duas camadas de comunicação sem fio. O motivo desta escolha se deu com o intuito de minimizar os custos da aplicação para que seja possível escalabilizar o sistema, isto é, para monitorar um número elevado de vagas, em diversos estacionamentos, é necessário que o preço unitário dos nós sensores seja baixo. Dessa forma, foram escolhidos módulos de rádio AM com um alcance razoável e de baixíssimo custo, de maneira que se utilize apenas um módulo LoRa (ainda muito caros no Brasil) para encaminhar o estado de várias vagas em determinado estacionamento. 
+    A arquitetura de rede adotada consiste em uma rede estrela de estrelas, com duas camadas de comunicação sem fio. O motivo desta escolha se deu com o intuito de minimizar os custos da aplicação para que seja possível escalabilizar o sistema, isto é, para monitorar um número elevado de vagas, em diversos estacionamentos, é necessário que o preço unitário dos nós sensores seja baixo. Dessa forma, foram escolhidos módulos de rádio AM com um alcance teórico razoável e de baixíssimo custo, de maneira que se utilize apenas um módulo LoRa (ainda muito caros no Brasil) para encaminhar o estado de várias vagas em determinado estacionamento. 
     
     
     \section{DESENVOLVIMENTO}
@@ -970,7 +978,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     \begin{enumerate}
         \item Modo de baixo consumo (\textit{off}): Neste modo de operação o sistema mantém grande parte dos subsistemas desligados, como conversor AD e \textit{timers}, visando baixo consumo energético.
         \item Leitura do sensor e processamento dos dados do sensor: Nesta etapa são obtidas e analisadas amostras do sensor de luminosidade.
-        \item Transmissão de dados: Caso haja mudança no estado da vaga, este dado é enviado ao \textit{sink node}.
+        \item Transmissão de dados: As amostras processadas do sensor são encaminhadas ao \textit{sink node}.
     \end{enumerate}
     
     A partir disso foi feita a escolha dos componentes, visando baixo custo e baixo consumo energético.
@@ -985,7 +993,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
         \item Resistor de \textit{pull-down}: 10k$\Omega$
     \end{itemize}
     
-    Ainda que a escolha destes dispositivos tenha se concentrado em prolongar o tempo de duração das baterias, também foi necessário avaliar a robustez na obtenção de medidas por parte do circuito de sensoriamento. Isto é, o resistor de \textit{pull-down} teve de ser selecionado de modo que pequenas varições luminosas fossem percebidas, mas que também tivessem pouco impacto no consumo médio. Para isso, foram avaliados os seguintes resistores:
+    Ainda que a escolha destes dispositivos tenha se concentrado em prolongar o tempo de duração das baterias, também foi necessário avaliar a robustez na obtenção de medidas por parte do circuito de sensoriamento. Isto é, o resistor de \textit{pull-down} teve de ser selecionado de modo que pequenas varições luminosas fossem percebidas, mas que também tivessem pouco impacto no consumo médio. Para isso, foram avaliados os resistores da Tabela \ref{table:pull-down}.
     
     \begin{table}[ht]
          \centering
@@ -1006,7 +1014,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     Dessa forma, ainda que o resistor de 10k$\Omega$ tenha um consumo teórico máximo cinco vezes maior que o de 100k$\Omega$, a precisão para casos de menor luminosidade é essencial para distinguir se determinada vaga está ou não ocupada, e portanto o seleciona para a aplicação.
     
     \subsubsection{Leitura do sensor}
-    Nesta etapa é realizada a coleta de dados que indicam o estado atual das vagas. Para isso é utilizado o conversor A/D do microcontrolador, realizando medições do sensor LDR. Como pode ser visto no \textbf{ANEXO DO CÓDIGO DO SENSOR NODE}, é feita uma média de quinhentas medidas de luminosidade para aumentar a assertividade da presença ou não de um veículo no local.
+    Nesta etapa é realizada a coleta de dados que indicam o estado atual das vagas. Para isso é utilizado o conversor A/D do microcontrolador, realizando medições do sensor LDR. Como pode ser visto no Apêndice \ref{apendice:sensor-nodes-code}, é feita uma média de quinhentas medidas de luminosidade para aumentar a assertividade da presença ou não de um veículo no local.
     
     \subsubsection{Transmissão dos dados}
     Após a definição de presença ou ausência de veículo sobre a vaga, são enviadas mensagens com essa informação ao \textit{sink node}. Para tanto, foi empregado o módulo MX-FS-03V que opera em 315MHz e utiliza modulação ASK para comunicação de dados. Vale ressaltar que devido a este dispositivo ser apenas emissor, não é possível receber confirmação (ACK) de recebimento dos pacotes por parte da central. Após a transmissão do pacote o sistema volta ao modo de baixo consumo.
@@ -1017,49 +1025,98 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     \begin{figure}[ht]
      	    \caption{\label{exepretex} Fluxograma do \textit{sink node}}
             \centering
-            \includegraphics[width=0.6\textwidth]{figuras/central.png}
+            \includegraphics[width=0.6\textwidth]{figuras/sink-node-fluxograma.png}
             \vspace{\baselineskip} %%% linha em branco para atendender a norma
                 \fonte{Autor (2018)}
             \label{fig:flux-sink-node}
     \end{figure}
     
     \begin{enumerate}
-        \item \textit{Setup}: Nesta etapa são definidas as configurações utilizadas no código.
-        \item Recebimento dos dados: Este é \textit{loop} que aguarda dados dos nós sensores. 
-        \item Estado de alguma vaga atualizado: Caso o estado de alguma das vagas tenha sido alterado, a central atualiza o número de vagas disponíveis.
-        \item Transmissão dos dados: Finalmente a quantia de vagas disponíveis é enviada à aplicação.
+        \item
+        Recebimento de dados: Nesta etapa são obtidos mensagens enviadas pelos nós sensores.
+        \item Modo de baixo consumo: O sistema permanece em modo de baixo consumo para poupar bateria.
+        \item Transmissão dos dados: Caso haja alterações no número de vagas disponíveis, esta informação é propagada ao \textit{gateway} LoRa.
     \end{enumerate}
     
     \subsubsection{Componentes}
     Foram utilizados os seguintes componentes de \textit{hardware}:
     \begin{itemize}
-        \item Arduino Nano
-        \item Recepetor AM MX-05V
-        \item Módulo LoRa RFM95W
-        \item Bateria de 9V
+        \item Placa Controladora: Arduino Nano
+        \item \textit{Transceiver} AM: AM MX-05V
+        \item \textit{Transceiver} LoRa: RFM95W
+        \item Bateria: 4 pilhas Duracell AA de 1.5V
     \end{itemize}
- 
-    \subsubsection{Funcionamento}
-    Como mencionado anteriormente, o sistema permanece em um \textit{loop} aguardando dados transmitidos pelos \textit{sensor nodes}.
-    Assim como nos \textit{sensor nodes}, também foi utilizada a biblioteca RadioHead para recebimento dos dados. Quando chega uma nova informação, a central verifica com base no identificador do nodo remetente, se o estado da vaga em questão foi modificado, e então atualiza o contador de vagas disponíveis na área de cobertura do \textit{sink node}. Depois, é realizado o envio desta quantia, através da biblioteca LMIC, que implementa as funcionalidades necessárias para utilizar o protocolo LoRaWAN. O destinatário destas mensagens é um \textit{gateway} LoRa instalado na reitoria da Universidade Federal de Santa Maria, previamente testado e utilizado em \cite{tcc:matheus-neis}.
     
+    \subsubsection{Funcionamento}
+    Como pode ser visto no fluxograma, o sistema permanece no modo de baixo consumo durante um tempo de 5 segundos. Depois, fica em modo de recepção, afim de receber dados dos nós sensores. Quando chega uma nova informação, a central verifica com base no identificador do nodo remetente, se o estado da vaga em questão foi modificado, e então atualiza o contador de vagas disponíveis na área de cobertura do \textit{sink node}. Depois, caso este contador tenha sido modificado, é propagada esta informação, através do módulo LoRa. O destinatário destas mensagens é um \textit{gateway} LoRa instalado na reitoria da Universidade Federal de Santa Maria, previamente testado e utilizado em \cite{tcc:matheus-neis}. 
+    
+    \subsection{Orçamento}
+    Para estimar o custo do sistema, foi realizado um orçamento dos dispositivos. No caso dos nós sensores, pode ser visto na Tabela \ref{table:preco-sensor-node} que o preço dos componentes eletrônicos para produzir uma unidade destes dispositivos fica em torno de R\$16 (valores referentes ao dia 08/11/2018). Já no caso do nó central, o valor foi um pouco mais alto (Tabela \ref{table:preco-sink-node}). Vale ressaltar que o custo dos componentes foi baseado nos preços destes na AliExpress, exceto as pilhas. 
+    % ################## Preços sensor node
+    \begin{table}
+   	    \caption{Preço dos componentes de um \textit{sensor node}}
+	    \centering
+	    \begin{tabular}{ l | l }
+	    \hline
+	    Componente & Preço [R\$]\\
+	    \hline
+	    ATmega328P-PU & 6 \\
+	    \hline
+	    Sensor LDR & 0.2\\
+	    \hline
+	    Resistor de \textit{pull-down} & 0.1\\
+	    \hline
+	    Módulo RF MX-FS-03V & 3\\
+	    \hline
+	    Pilhas Duracell & 6.2\\
+	    \hline
+	    & Total: 15.3
+	    \end{tabular}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	    \fonte{Autor (2018)}
+	    \label{table:preco-sensor-node}
+\end{table}
+    
+    % ################## Preços sink node
+    \begin{table}
+   	    \caption{Preço dos componentes de um \textit{sink node}}
+	    \centering
+	    \begin{tabular}{ l | l }
+	    \hline
+	    Componente & Preço [R\$]\\
+	    \hline
+	    Arduino Nano & 10 \\
+	    \hline
+	    RFM95W & 20\\
+	    \hline
+	    Resistores & 1\\
+	    \hline
+	    Regulador de tensão 3.3V & 3\\
+	    \hline
+	    Pilhas Duracell & 8.2\\
+	    \hline
+	    & Total: 42.2
+	    \end{tabular}
+	    \vspace{\baselineskip} %%% linha em branco para atendender a norma
+	    \fonte{Autor (2018)}
+	    \label{table:preco-sink-node}
+\end{table}
     
     \subsection{Aplicação final}
-    A aplicação final do sistema consiste em dois subsistemas: \textit{backend} e \textit{frontend}. O primeiro é responsável por obter os dados do servidor de rede \textit{The Things Network} e encaminha-los ao servidor de aplicação, através do protocolo MQTT. Já o segundo busca as informações do servidor de aplicação, através de um cliente MQTT, e as mostra ao usuário.
+    A aplicação final do sistema consiste em dois subsistemas: \textit{back-end} e \textit{front-end}. O primeiro é responsável por obter os dados do servidor de rede \textit{The Things Network} e encaminha-los ao servidor de aplicação, através do protocolo MQTT \textit{over WebSockets}. Já o segundo busca as informações do servidor de aplicação, através de um cliente MQTT, e as mostra ao usuário.
     A seguir estão descritos estes dois subsistemas.
     
     \subsubsection{\textit{Back-end}}
-    Inicialmente, foi definido o servidor de rede \textit{The Things Network} para ser usado na aplicação, pois o \textit{gateway} utilizado já estava vinculado ao sistema e também por ser prático na criação e gerenciamento de aplicações. Depois, foi desenvolvido um código na linguagem Python para obter em tempo real os dados do servidor. Para isso, foi utilizada a biblioteca de código aberto \textit{Eclipse Paho MQTT Python Client}, que oferece métodos de acesso através do protocolo MQTT. 
+    Inicialmente, foi definido o servidor de rede \textit{The Things Network} para ser usado na aplicação, pois o \textit{gateway} utilizado já estava vinculado ao sistema e também por ser prático na criação e gerenciamento de aplicações. Depois, foi desenvolvido um código na linguagem Python para obter em tempo real os dados do servidor. 
     
     \subsubsection{\textit{Front-end}}
-    Neste módulo é apresentado quantas vagas estão disponíveis no estacionamento sob monitoramento. Para isso, foi desenvolvido um código em JavaScript que tem duas funções: obter os dados do \textit{backend}, utilizando a versão Javascript da mesma biblioteca \textit{opensource} \textit{Eclipse Paho MQTT}, e depois mostrá-los na tela. 
+    Neste módulo é apresentado quantas vagas estão disponíveis no estacionamento sob monitoramento. Para isso, foi desenvolvido um código em JavaScript e outro em HTML com as funções de obter os dados do \textit{back-end} e mostrá-los na tela. 
     
     \section{Implementação}
-    A partir do projeto e definição de componentes foram prototipados os nós sensores e o nó central. Ambos foram previamente testados em \textit{protoboard} antes de serem montados nas placas de circuito impresso. 
+    A partir do projeto e definição de componentes foram prototipados os nós sensores e o nó central, e também foi desenvolvida a aplicação final.
     
     \subsection{Gravação de firmware no ATmega328P-PU via SPI}
-    \textbf{TODO: Corrigir o esquemático - PINO de alimentação}
-    Para programar o microcontrolador foi empregado um Arduino Nano configurado como gravador, conectando-o como mostra a Figura \ref{fig:gravador-sensor-node} e o quadro \ref{quadro:connections}. 
+    Inicialmente foi gravado o código dos nós sensores. Para isso, foi programado o microcontrolador através de um Arduino Nano configurado como gravador, conectando-o como mostra a Figura \ref{fig:gravador-sensor-node} e o Quadro \ref{quadro:connections}. 
     
     \begin{figure}[ht]
  	    \caption{\label{exepretex} Diagrama de conexões entre gravador e microcontrolador}
@@ -1098,19 +1155,23 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     As etapas para a gravação foram as seguintes:
     \begin{enumerate}
         \item Conectar o Arduino Nano ao computador, através de um cabo micro USB e na IDE do Arduino realizar o upload do \textit{sketch} "ArduinoISP", selecionando o \textit{programmer} "AVRISP mkll". Dessa forma a placa Nano se torna a interface de gravação.
-        \item Depois, é necessário gravar o \textit{bootloader} no microcontrolador. Foi escolhido o \textit{bootloader} que utiliza a frequência de \textit{clock} interna de 8MHz do chip (disponível em \textbf{...}), por motivos de economia energética do nó sensor durante a operação. Para isso, primeiramente deve-se mover a pasta baixada para o diretório de \textit{sketches} da IDE do Arduino (no Windows geralmente se encontra em: C:/Users/user/Documents/Arduino). Depois, na IDE seleciona-se a placa "ATmega328 on a breadboard (8MHz internal clock)", configurando o \textit{programmer} "Arduino as ISP", e finalmente usar a ferramenta "Burn Bootloader".
+        \item Depois, é necessário gravar o \textit{bootloader} no microcontrolador. Foi escolhido o \textit{bootloader} que utiliza a frequência de \textit{clock} interna de 8MHz do chip (disponível em \cite{bootloader-8mhz}), por motivos de economia energética do nó sensor durante a operação. Para isso, primeiramente deve-se mover a pasta baixada para o diretório de \textit{sketches} da IDE do Arduino. Depois, na IDE seleciona-se a placa ''ATmega328 on a breadboard (8MHz internal clock)'', configurando o \textit{programmer} ''Arduino as ISP'', e finalmente usar a ferramenta ''Burn Bootloader''.
         \item Por fim, deve-se abrir o código escrito para o \textit{sensor node} na IDE e fazer o \textit{upload} do mesmo através da ferramenta "Upload using programmer", disponível na seção ''Sketch'' do menu. Dessa forma, o microcontrolador estará pronto para operar.
     \end{enumerate}
     
-    \subsection{Montagem}
-    \textbf{TODO}: Com os \textit{firmwares} gravados
+    \subsection{Utilização da biblioteca Low-Power}
+    Como mencionado anteriormente, em aplicações baseadas em RSSFs é muito importante que a autonomia dos nós da rede seja maximizada. Para tanto, no caso do microcontrolador utilizado, pode-se desabilitar alguns periféricos, como ADC e \textit{Brown Out Detector} (BOD) durante o modo de operação de maior duração (modo de baixo consumo). Dessa forma, foi empregada a biblioteca Low-Power, desenvolvida pela empresa Rocket Scream \cite{low-power-lib}. Como pode ser visualizado no Apêndice \ref{apendice:sensor-nodes-code}, o modo de baixo consumo selecionado foi o ''LowPower.powerDown'', que traz maior redução no consumo energético.
     
-    \subsection{Gravação de \textit{firmware} no \textit{sink node}}
-    \textbf{TODO}
+    \subsection{\textit{Firmware} do \textit{sink node}}
+    Inicialmente foi gravado o \textit{firmware} na placa Arduino Nano, através da interface USB. O código desenvolvido utiliza três bibliotecas: Low-Power, RCSwitch e Arduino-LMIC. A primeira, assim como nos nós sensores, foi empregada com o intuito de reduzir o consumo de energia; a segunda para recebimento dos dados vindos dos \textit{sensor nodes}; e a terceira é uma modificação da biblioteca IBM LMIC para transmissão de dados via o protocolo LoRaWAN. Foram selecionadas duas configurações muito importantes para o correto funcionamento do módulo LoRa: a primeira foi a seleção de frequência central de operação, definida como 915MHz, e a outra é o fator de espalhamento configurado com o valor de 12, afim de obter maior qualidade nas transmissões.
+    
+    \subsection{Prototipagem}
+    Os circuitos foram implementados em \textit{protoboard} para realização dos testes. Depois, com o sistema já testado, soldou-se os componentes em placas ilhadas (Figuras \ref{} e \ref{}).
     
     \subsection{Configuração do servidor de rede TTN}
-    Nesta etapa é realizada a criação e configuração da interface de comunicação entre os dados vindos dos nós sensores, e a aplicação final. Dessa forma, primeiramente deve-se criar um usuário no sistema, e depois criar e configurar um dispositivo em ''Console'' na seção \textit{Applications} (Figura \ref{fig:add-app-ttn}). 
+    Nesta etapa é realizada a criação e configuração da interface de comunicação entre os dados vindos dos nós sensores, e a aplicação final. Dessa forma, primeiramente deve-se criar um usuário no sistema, e depois criar e configurar um dispositivo em ''Console'' na seção \textit{Applications} (Figura \ref{fig:add-app-ttn}). As configurações necessárias são as seguintes: 
     
+    % ################## Criação de aplicação na TTN
     \begin{figure}[ht]
  	    \caption{\label{exepretex} Criação de aplicação na TTN}
         \centering
@@ -1120,14 +1181,14 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
         \label{fig:add-app-ttn}
     \end{figure}
     
-    As configurações necessárias são as seguintes:
-    
+    % ################## Configuração de device na TTN
     \begin{enumerate}
         \item Quando criar um dispositivo, deve-se selecionar o \textit{handler} ''ttn-handler-brazil''.
         \item Depois, cria-se um \textit{device} com o identificador EUI gerado automaticamente, selecionando o botão destacado na Figura \ref{fig:dev-eui-ttn}.
         \item Com o dispositivo criado, deve-se navegar até o \textit{device} em questão na aba \textit{settings}, selecionando o método de ativação ABP (Figura \ref{fig:dev-settings-ttn}).
     \end{enumerate}
     
+    % ################### Seleção de EUI para dispositivo
     \begin{figure}[ht]
  	    \caption{\label{exepretex} Seleção de EUI para dispositivo}
         \centering
@@ -1137,6 +1198,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
         \label{fig:dev-eui-ttn}
     \end{figure}
     
+    % ################## Configuração do método de ativação ABP
     \begin{figure}[ht]
  	    \caption{\label{exepretex} Configuração do método de ativação ABP}
         \centering
@@ -1147,16 +1209,16 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     \end{figure}
     
     \subsection{Aplicação \textit{back-end}}
-    Com as configurações da aplicação na TTN prontas, é necessário uma forma de obter e disponibilizar os dados enviados pelos sensores, recebidos e disponíveis no servidor de rede. Para isso, o código do \textit{backend} consiste em um cliente MQTT e um cliente \textit{MQTT over WebSocket}. O primeiro tem a função de obter continuamente os dados que chegam ao servidor de rede em determinado tópico (\textit{subscriber}). Já o segundo cliente tem o papel de \textit{publisher}, enviando os dados à aplicação de usuário (\textit{front-end}). Dessa forma, são necessários alguns parâmetros configurados na TTN, como chave de acesso (\textit{access key}), \textit{hostname} e a identificação ou nome da aplicação (\textit{Application ID}). O código utilizado na aplicação está disponível no Anexo \ref{}. 
+    Com as configurações da aplicação na TTN prontas, é necessário uma forma de obter e disponibilizar os dados enviados pelos sensores, recebidos e disponíveis no servidor de rede. Para isso, o código do \textit{backend} consiste em dois clientes \textit{MQTT over WebSockets}. Um deles tem a função de obter continuamente os dados que chegam ao servidor de rede em determinado tópico (\textit{subscriber}). E o outro tem o papel de \textit{publisher}, enviando os dados à aplicação de usuário (\textit{front-end}). Dessa forma, são necessários alguns parâmetros configurados na TTN, como chave de acesso (\textit{access key}), \textit{hostname} e a identificação ou nome da aplicação (\textit{Application ID}). Os métodos utilizados para funcionamento dos clientes MQTT estão disponíveis no Apêndice \ref{apendice:back-end-code}.
     
     \subsection{Aplicação \textit{front-end}}
-    Também chamada de aplicação final por ser o que é mostrado ao usuário, o \textit{front-end} tem a função de obter os dados fornecidos pelo \textit{back-end} e disponibilizar ao usuário de uma maneira agradável. No caso deste trabalho, esta aplicação consiste em duas partes: a primeira é responsável pela lógica de
+    Também chamada de aplicação final por ser o que é mostrado ao usuário, o \textit{front-end} tem a função de obter os dados fornecidos pelo \textit{back-end} e disponibilizá-los ao usuário de uma maneira agradável. No caso deste trabalho, esta aplicação consiste em duas partes: a primeira é um código escrito em JavaScript responsável pela comunicação com o \textit{back-end}, através de um cliente \textit{MQTT over WebSockets}; e a segunda é uma página HTML que indica em um mapa do local monitorado a quantia de vagas disponíveis. As bibliotecas utilizadas são: Paho MQTT e Google Maps API. Como pode ser visto no Apêndice \ref{}, o cliente MQTT está conectado a um \textit{broker open-source} da HiveMQ, que tem o papel de encaminhar as mensagens publicadas no tópico designado às vagas monitoradas. Com isso, quando há atualizações das informações, o \textit{broker} repassa ao cliente do \textit{front-end}, que as recebe e as mostra na tela.
     
     \section{Testes Realizados}
-    Para avaliar a efetividade do sistema, foram testados isoladamente cada subsistema, como os sistemas de detecção e transmissão. Dessa forma, foi possível verificar primeiramente se os \textit{sensor nodes} realizam as medidas adequadamente no tempo esperado, e também se a comunicação, tanto dos nós para a central, quanto da central para o \textit{gateway} eram robustas para a aplicação. Por fim, com o sistema completo em operação, foram obtidos os resultados finais.
+    Para avaliar a efetividade do sistema, foram testados isoladamente cada etapa, como a detecção e a transmissão. Dessa forma, foi possível verificar primeiramente se os \textit{sensor nodes} realizam as medidas adequadamente, e também se a comunicação, tanto dos nós para a central, quanto da central para o \textit{gateway} eram robustas para a aplicação. Por fim, com o sistema completo em operação, foram obtidos os resultados finais.
     
-    \subsection{Autonomia}
-    Primeiramente foi estimada a autonomia deste circuito, de modo que pudesse ser constatada a quantia de tempo que o sistema poderia operar sem a necessidade de substituir as baterias. Para isso foram obtidas medidas de tempo e consumo médio por modo de operação do sistema, da seguinte forma:
+    \subsection{Autonomia} \label{subsection:autonomia}
+    Primeiramente foi estimada a autonomia dos nós sensores, de modo que pudesse ser constatada a quantia de tempo que o sistema poderia operar sem a necessidade de substituição das baterias. Para isso foram obtidas medidas de tempo e consumo médio por modo de operação do sistema, da seguinte forma:
     
     \begin{enumerate}
         \item Medições de tempo: Para esta etapa foram desenvolvidos códigos que pudessem aproximar o tempo gasto em cada operação. 
@@ -1164,11 +1226,11 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
         \item Medições de corrente: As medições do consumo médio se deram através de um multímetro em série com o circuito.
     \end{enumerate}
     
-    Estas medidas, assim como a capacidade por modo de operação estão descritos na Tabela \ref{table:capacidade}. Vale ressaltar que estes valores de consumo médio por operação foram baseados no pior caso, ou seja, para casos de máximo consumo de corrente possível. Por exemplo, quando há muita luz incidente no sensor, este baixa sua resistência de modo que haja maior circulação de corrente pelo circuito, o que pode resultar em 250$\mu$A de consumo por parte do sensor (resistência mínima  de 10k$\Omega$ informada pelo fabricante).
+    Estas medidas, assim como o consumo médio ao longo do tempo por modo de operação estão descritas na Tabela \ref{table:capacidade}. Vale ressaltar que estes valores de consumo médio por operação foram baseados no pior caso, ou seja, para casos de máximo consumo de corrente possível. Por exemplo, quando há muita luz incidente no sensor, este baixa sua resistência de modo que haja maior circulação de corrente pelo circuito, o que pode resultar em 250$\mu$A de consumo por parte do sensor (resistência mínima  de 10k$\Omega$ informada pelo fabricante).
     
     \begin{table}[ht]
          \centering
-         \caption{Capacidade, tempo e consumo médio por modo de operação}
+         \caption{Tempos e consumos médio por modo de operação}
          \begin{tabular}{ l c c c }
              \hline
              Modo de operação & Tempo médio [s] & Consumo médio [mA] & \begin{tabular}{@{}c@{}}Consumo médio \\ por hora [mAh]\end{tabular} \\
@@ -1184,64 +1246,37 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
           \label{table:capacidade}
     \end{table}
     
-    A medida de consumo médio por hora é necessária para determinar o tempo que o sistema poderá operar, visto que geralmente o dado fornecido por fabricantes de baterias é a capacidade ou energia disponível ao longo de uma hora (mAh). Portanto, estimando a quantia de energia média necessária para o circuito funcionar neste período, pode-se calcular a autonomia do circuito em diversas unidades, como horas de operação ou anos de operação. Estes valores estão presentes na Tabela \ref{table:autonomia} e são obtidos pelas relações abaixo:
+    A medida de consumo médio por hora é necessária para determinar o tempo que o sistema poderá operar, visto que geralmente o dado fornecido por fabricantes de baterias é a capacidade ou energia disponível ao longo de uma hora (mAh). Com isso, estimando a quantia de energia média necessária para o circuito funcionar neste período, pode-se calcular a autonomia do circuito em diversas unidades, como horas de operação ou anos de operação, através das relações abaixo:
     
     \begin{equation}
-    n_{ciclos} = \frac{\text{Capacidade da bateria}}{\text{Consumo médio por hora}} = \frac{i_{bateria}}{i_{total}}
+    n_{ciclos} = \frac{\overline{i}_{bateria}}{\overline{i}_{total}}
+    \label{eq:n_ciclos}
     \end{equation}
 
     \begin{equation}
         n_{horas} = \frac{n_{ciclos}}{(\frac{3600}{T_{total}})}
+        \label{eq:n_horas}
     \end{equation}
     
     \begin{equation}
         n_{dias} = \frac{n_{horas}}{24}
+        \label{eq:n_dias}
     \end{equation}
 
     \begin{equation}
         n_{meses} = \frac{n_{dias}}{30}
+        \label{eq:n_meses}
     \end{equation}
     
     \begin{equation}
         n_{anos} = \frac{n_{meses}}{12}
+        \label{eq:n_anos}
     \end{equation}
 
-    \begin{table}[ht]
-         \centering
-         \caption{Autonomia teórica aproximada dos \textit{sensor nodes}}
-         \begin{tabular}{ c c c c c }
-             \hline
-             Ciclos & Horas & Dias & Meses & Anos \\
-             \hline
-             1617021.2765 & 13702.0095 & 570.9171 & 19.0306 & 1.5859 \\
-             \hline
-         \end{tabular}
-         \vspace{\baselineskip} %%% linha em branco para atender a norma
-          \fonte{Autor (2018)}
-          \label{table:autonomia}
-    \end{table}
-    
     \subsection{Medições do sensor LDR}
-    Afim de verificar o quão precisas eram as medidas do sensor ao longo do dia, foram realizados testes no período das 8h às 18h, entre os dias 25, 26 e 28 de Setembro de 2018. Estes consistiram em colocar em operação um dos \textit{sensor nodes} no centro de 10 vagas, onde 5 destas estavam ocupadas, e as outras 5 livres, em um dos estacionamentos ao lado da Reitoria da UFSM. 
+    Afim de verificar o quão precisas eram as medidas do sensor ao longo do dia, foram realizados testes no período das 8h às 18h, entre os dias 25, 26 e 28 de Setembro de 2018. Estes consistiram em colocar em operação um dos \textit{sensor nodes} no centro de 10 vagas, onde 5 destas estavam ocupadas, e as outras 5 livres, em um dos estacionamentos ao lado da Reitoria da UFSM (Figura \ref{fig:estac-visao}).
     
-    \subsubsection{Testes de intensidade luminosa}
-    Primeiramente foram obtidas medidas dos níveis de luminosidade sobre as vagas, afim de definir um valor de limiar (\textit{threshold}) que dita a presença ou ausência de veículos. Neste caso, foi utilizado um led em conjunto com o circuito original para indicar o nível de luminosidade sobre determinado local (Figura \ref{fig:led-indicator}).
-    
-    \begin{figure}[H]
-     	    \caption{\label{exepretex} Circuito indicador de intensidade luminosa}
-            \centering
-            \includegraphics[width=0.6\textwidth]{figuras/indicador.jpg}
-            \vspace{\baselineskip} %%% linha em branco para atendender a norma
-                \fonte{Autor (2018)}
-            \label{fig:led-indicator}
-    \end{figure}
-    
-    Para cada horário, foram realizadas 10 medições por vaga, sendo 10 medidas a cada 10 segundos, resultando em um total de 50 medidas em vagas ocupadas e 50 medidas nas vagas disponíveis. Essas medidas correspondem ao valor cru obtido na leitura do sensor através do conversor AD do microcontrolador, utilizando a referência de tensão externa, afim de evitar que flutuações no nível de tensão da fonte influenciem no resultado. A partir disso, foram estabelecidas estimativas de níveis de intensidade luminosa esperadas para as duas possíveis ocasiões (vaga disponível ou vaga ocupada) em cada horário, baseando-se na média aritmética normalizada das medidas em cada situação. 
-    
-    \subsubsection{Precisão do sensor}
-    Com base nas estimativas de nível de intensidade luminosa, foi avaliada a precisão do sensor em indicar o estado de uma vaga escolhida aleatoriamente no mesmo estacionamento. Assim como nos testes anteriores, foram realizadas 10 medidas por vaga, nos mesmos horários, porém em dias diferentes. 
-    
-    \begin{figure}[H]
+    \begin{figure}[ht]
      	    \caption{\label{exepretex} Visão do estacionamento}
             \centering
             \includegraphics[width=0.6\textwidth]{figuras/estacionamento_visao.jpg}
@@ -1250,7 +1285,92 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
             \label{fig:estac-visao}
     \end{figure}
     
-    \begin{figure}[H]
+    \subsubsection{Testes de intensidade luminosa}
+    Primeiramente foram obtidas medidas dos níveis de luminosidade sobre as vagas, afim de definir um valor de limiar (\textit{threshold}) que dita a presença ou ausência de veículos. Neste caso, foi utilizado um led em conjunto com o circuito original para indicar o nível de luminosidade sobre determinado local. Para cada horário, foram realizadas 10 medições por vaga, sendo 10 medidas a cada 10 segundos, resultando em um total de 50 medidas em vagas ocupadas e 50 medidas nas vagas disponíveis. Essas medidas correspondem ao valor cru obtido na leitura do sensor através do conversor AD do microcontrolador, utilizando a referência de tensão externa, afim de evitar que flutuações no nível de tensão da fonte influenciassem no resultado. A partir disso, estimou-se os níveis de intensidade luminosa esperados para as duas possíveis ocasiões (vaga disponível ou vaga ocupada) em cada horário, baseando-se na equação \ref{eq:lum_horario} em cada situação, como pode ser visto na Tabela \ref{table:indices-ldr}. 
+
+    \begin{equation}
+        lum_{horario} = \frac{1}{N} \sum_{n=0}^{N} norm(lum_n),
+        \label{eq:lum_horario}
+    \end{equation}
+    onde $N$ representa o número de medidas por situação em determinado horário e $norm(lum_n)$ indica o valor normalizado em determinado instante, dado por: \begin{equation}
+        norm(lum) = \frac{lum}{10}
+        \label{eq:norm_lum}
+    \end{equation}
+    
+    \begin{table}[ht]
+         \centering
+         \caption{Medidas normalizadas de intensidade luminosa}
+         \begin{tabular}{ c c c c }
+             \hline
+              Horário & Vagas ocupadas & Vagas disponíveis \\ 
+             \hline
+             8 & 52 & 65\\
+             \hline
+             9 & 51.25 & 65\\
+             \hline
+             10 & 51 & 65\\
+             \hline
+             11 & 53 & 65\\
+             \hline
+             12 & 53.2 & 64\\
+             \hline
+             13 & 54 & 64\\
+             \hline
+             14 & 53.5 & 65\\
+             \hline
+             15 & 52 & 65\\
+             \hline
+             16 & 51 & 63\\
+             \hline
+             17 & 49.5 & 61\\
+             \hline
+             18 & 49 & 60\\
+             \hline
+         \end{tabular}
+         \vspace{\baselineskip} %%% linha em branco para atender a norma
+          \fonte{Autor (2018)}
+          \label{table:indices-ldr}
+    \end{table}
+    
+    \subsubsection{Assertividade do sensor}
+    Com base nas medidas de nível de intensidade luminosa, foi avaliada a precisão do sensor em indicar o estado de uma vaga escolhida aleatoriamente no mesmo estacionamento. Assim como nos testes anteriores, foram realizadas 10 medidas por vaga, nos mesmos horários, porém em dias diferentes. Os resultados obtidos estão descritos na Tabela \ref{table:assertividade-ldr}. Vale ressaltar que em todos os testes citados até agora, os sensores estavam dispostos no centro das vagas, e os carros estavam estacionados de maneira correta, ou seja, ocupando apenas a própria vaga e consequentemente produzindo sombra sobre o circuito. Entretanto, há sempre a possibilidade de um veículo estacionar indevidamente e ocupar duas vagas, por exemplo. Diante disso, foi verificado que nestas situações o índice de luminosidade indicava um valor próximo ao de uma vaga disponível, pois o sensor estava mais exposto à claridade. Em situações como esta, o sensor apresentou uma taxa de acerto máxima de apenas 67\%. As Figuras \ref{fig:ocupada} e \ref{fig:disponivel} mostram o circuito em operação normal, e a Figura \ref{fig:mal-estacionado} quando um veículo está mal estacionado.
+    
+    \begin{table}[ht]
+         \centering
+         \caption{Assertividade do sensor}
+         \begin{tabular}{ c c }
+             \hline
+              Horário & Assertividade \\ 
+             \hline
+             8 & 98.28\\
+             \hline
+             9 & 97\\
+             \hline
+             10 & 97.57\\
+             \hline
+             11 & 96.10\\
+             \hline
+             12 & 96.25\\
+             \hline
+             13 & 95.72\\
+             \hline
+             14 & 95.34\\
+             \hline
+             15 & 96.55\\
+             \hline
+             16 & 94.83\\
+             \hline
+             17 & 93.22\\
+             \hline
+             18 & 93.10\\
+             \hline
+         \end{tabular}
+         \vspace{\baselineskip} %%% linha em branco para atender a norma
+          \fonte{Autor (2018)}
+          \label{table:assertividade-ldr}
+    \end{table}
+    
+    \begin{figure}[ht]
      	    \caption{\label{exepretex} Teste em uma vaga ocupada}
             \centering
             \includegraphics[width=0.6\textwidth]{figuras/ocupada.png}
@@ -1259,7 +1379,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
             \label{fig:ocupada}
     \end{figure}
     
-    \begin{figure}[H]
+    \begin{figure}[ht]
      	    \caption{\label{exepretex} Teste em uma vaga disponível}
             \centering
             \includegraphics[width=0.6\textwidth]{figuras/disponivel.jpg}
@@ -1268,26 +1388,96 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
             \label{fig:disponivel}
     \end{figure}
     
-    \begin{grafico}[H]
+    \begin{figure}[ht]
+     	    \caption{\label{exepretex} Teste com carro mal estacionado}
+            \centering
+            \includegraphics[width=0.6\textwidth]{figuras/mal-estacionado.jpg}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+            \label{fig:mal-estacionado}
+    \end{figure}
+    
+    \subsection{Comunicação entre \textit{sensor node} e \textit{sink node}}
+    Para verificar a efetividade das transmissões dos nós sensores ao nó central, foram realizados testes em vagas ocupadas e vagas disponíveis. Assim como nas medições anteriores, o circuito foi inserido no centro das vagas (Figura \ref{}). Como os rádios utilizados não implementam \textit{acknowledgment} nas transmissões, então foi definido um teste baseado em um contador de transmissões. Isto é, o \textit{sensor node} incrementa uma variável a cada tentativa de comunicação (com sucesso ou não, pois não há como saber se houve sucesso por parte do transmissor) e a envia ao \textit{sink node}, de modo que se possa avaliar a quantia de transmissões com sucesso (Tabela \ref{table:sensor-to-sink}).
+    
+    \begin{table}[ht]
+         \centering
+         \caption{Avaliação da comunicação entre nó sensor e nó central}
+         \begin{tabular}{ c c }
+             \hline
+              Distância [m] & \begin{tabular}{@{}c@{}}Taxa de sucesso \\ nas transmissões [\%]\end{tabular} \\ 
+             \hline
+             1 & 80\\
+             \hline
+             1.5 & 80\\
+             \hline
+             2 & 80\\
+             \hline
+             2.5 & 80\\
+             \hline
+             3 & 80\\
+             \hline
+             3.5 & 80\\
+             \hline
+             4 & 80\\
+             \hline
+         \end{tabular}
+         \vspace{\baselineskip} %%% linha em branco para atender a norma
+          \fonte{Autor (2018)}
+          \label{table:sensor-to-sink}
+    \end{table}
+    
+    \subsection{Comunicação entre \textit{sink node} e \textit{gateway} LoRa}
+    Nesta etapa foram colocados em operação estes dois sistemas. Visto que já existem resultados relacionados ao raio de cobertura do sistema LoRa, disponível em \cite{tcc:matheus-neis}, o objetivo destes testes foi apenas verificar a capacidade do \textit{sink node} em encaminhar as informações sobre o número de vagas disponíveis no tempo esperado. Para isso, o \textit{sink node} foi disposto no mesmo estacionamento ao lado da Reitoria da UFSM, enviando mensagens periódicas à cada 5 segundos (pior caso) \textbf{ADICIONAR IMAGEM}. Para observar o recebimento de dados transmitidos pelo nó central, foi utilizado o monitor de dados da TTN (Figura \ref{}).
+    
+    
+\section{AVALIAÇÃO DOS RESULTADOS}
+Com os dados obtidos nos testes da seção anterior, foi possível analisar parâmetros como a autonomia do sistema e a efetividade nas medições do sensor LDR. Primeiramente, através das medições de consumo médio em relação aos modos de operação (Tabela \ref{table:capacidade}), foi determinada a autonomia do sistema utilizando as relações descritas na subseção \ref{subsection:autonomia}. Como pode ser visto na relação \ref{eq:n_ciclos}, a capacidade energética da fonte de alimentação é necessária para determinar o número de ciclos em operação do sistema e demais unidades. Dessa forma, foi estabelecido um comparativo entre as capacidades teórica e sob uma carga constante de 0.1A (disponível em \cite{duracell-tests}) das pilhas utilizadas. Observando a Tabela \ref{table:autonomia}, pode-se constatar que com o ciclo estabelecido, em que a maior parte do tempo o sistema permanece em modo de baixo consumo, a autonomia estimada dos nós sensores fica em torno de 15 meses no pior caso. 
+
+\begin{table}[ht]
+         \centering
+         \caption{Autonomia teórica aproximada dos \textit{sensor nodes}}
+         \begin{tabular}{ c c c c c c }
+             \hline
+             \begin{tabular}{@{}c@{}}Capacidade \\ da bateria [mAh]\end{tabular} & Ciclos & Horas & Dias & Meses & Anos \\
+             \hline
+             2850 & 1617021.2765 & 13702.0095 & 570.9171 & 19.0306 & 1.5859 \\
+             \hline
+             2348 & 1332198.5816 & 11288.5327 & 470.3555 & 15.6785 & 1.3065 \\
+             \hline
+         \end{tabular}
+         \vspace{\baselineskip} %%% linha em branco para atender a norma
+          \fonte{Autor (2018)}
+          \label{table:autonomia}
+    \end{table}
+
+Além disso, foi elucidado através do Gráfico \ref{graph:autonomias} a relação direta entre a autonomia do sistema e o tempo em modo de baixo consumo. Fica claro, portanto que quanto mais vezes o sistema sair do modo \textit{low power}, ou menos tempo permanecer neste modo, maior será o consumo energético e consequentemente menor a autonomia. Esse dado é muito importante, pois nesta aplicação é necessário que se tenha um balanço entre a autonomia e a rapidez na detecção do estado de uma vaga, pois isso impacta diretamente nos possíveis custos relacionados à substituição das baterias, e também na disponibilização de informações em tempo real da aplicação final. 
+
+\begin{grafico}[ht]
+     	    \caption{\label{exepretex} Relação entre autonomia e tempo em modo de baixo consumo}
+            \centering
+            \includegraphics[width=0.8\textwidth]{figuras/autonomias_plot.png}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+            \label{graph:autonomias}
+    \end{grafico}
+
+\begin{grafico}[H]
      	    \caption{\label{exepretex} Avaliação das medições do LDR ao longo do tempo}
             \centering
-            \includegraphics[width=0.8\textwidth]{figuras/ldr_graph.jpg}
+            \includegraphics[width=0.8\textwidth]{figuras/ldr_evaluation.png}
             \vspace{\baselineskip} %%% linha em branco para atendender a norma
                 \fonte{Autor (2018)}
             \label{graph:ldr-aval}
     \end{grafico}
-    
-    \subsection{Comunicação entre \textit{sensor node} e \textit{sink node}}
-    
-    \subsection{Comunicação entre \textit{sink node} e \textit{gateway} LoRa}
-    
-\section{AVALIAÇÃO DOS RESULTADOS}
-
-
 
 
 \chapter{CONCLUSÕES}
-	 
+Ao fim do desenvolvimento deste trabalho, pode-se observar que a assertividade do sensor LDR nesta aplicação foi muito positiva. Ainda que seja um componente simples e de baixíssimo custo, teve-se uma taxa de acerto nas medidas de 67\% no pior caso (em que veículos estão mal estacionados e ocupam duas vagas ao mesmo tempo), e chegando a 93\% nas situações de estacionamento correto. 
+
+Já o sistema de comunicação utilizado entre os nós sensores e nó central, que assim como os outros componentes foi escolhido devido ao baixo custo e praticidade de desenvolvimento dos testes, apresentou um resultado muito ruim. Um raio de cobertura máximo de 4 metros, mesmo tendo sido testados dois tipos diferentes de antena, demonstra a baixa qualidade destes componentes. Segundo a especificação dos transmissores, é possível obter maior distância nas transmissões caso fosse utilizado uma tensão superior à de alimentação do sistema (4.5V), implicando na necessidade de utilização de conversores de amplificação (\textit{boost converter}), e consequentemente redução na autonomia do circuito. Dessa forma, fica claro que a escolha destes componentes, baseando-se apenas na redução de custos, foi equivocada por não trazer a qualidade necessária para tornar o sistema de comunicação robusto.
+
+% Entretanto, ainda é possível obter dados de até 3 vagas por parte do \textit{sink node}, o que propicia o tão almejado baixo custo, pois dessa forma teríamos o maior custo ainda em apenas um dos nós.
 
         
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
@@ -1309,18 +1499,46 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
 	\apendice %%%% TEXTOS A PARIR DESTE PONTO SERAO CONSIDERADOS APENDICES
 
-\chapter{Demonstração de algo}
-        \par Algo como apêndice.  
-        \par \begin{figure}[ht]
- 	    \caption{\label{exepretex} Fluxograma do \textit{sink node}}
+\chapter{Código dos \textit{sensor nodes}}
+\label{apendice:sensor-nodes-code}
+        \begin{figure}[H]
+ 	  %  \caption{\label{exepretex} Código dos \textit{sensor nodes}}
         \centering
-        \includegraphics[width=0.6\textwidth]{figuras/sensor_node_v2-1.png}
+        \includegraphics[width=0.8\textwidth]{figuras/sensor_node.png}
         \vspace{\baselineskip} %%% linha em branco para atendender a norma
             \fonte{Autor (2018)}
 \end{figure}
 
-        
-        
+\chapter{Código do \textit{back-end}}
+\label{apendice:back-end-code}
+        \begin{figure}[H]
+ 	  %  \caption{\label{exepretex} Código dos \textit{sensor nodes}}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figuras/backend_image.png}
+        \vspace{\baselineskip} %%% linha em branco para atendender a norma
+            \fonte{Autor (2018)}
+\end{figure}
+
+\chapter{Esquemático do \textit{sensor node}}
+\label{apendice:sensor-node-sch}
+        \begin{figure}[H]
+ 	  %  \caption{\label{exepretex} Código dos \textit{sensor nodes}}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figuras/sensor_node_sc.png}
+        \vspace{\baselineskip} %%% linha em branco para atendender a norma
+            \fonte{Autor (2018)}
+\end{figure}
+
+\chapter{Esquemático do \textit{sink node}}
+\label{apendice:sink-node-sch}
+        \begin{figure}[H]
+ 	  %  \caption{\label{exepretex} Código dos \textit{sensor nodes}}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figuras/central_sch.png}
+        \vspace{\baselineskip} %%% linha em branco para atendender a norma
+            \fonte{Autor (2018)}
+\end{figure}
+
         
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
 % % % % % % % % % % % % % % % ANEXOS  % % % % % % % % % % % % % % % % % % % 
