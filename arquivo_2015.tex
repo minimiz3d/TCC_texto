@@ -204,6 +204,7 @@ O crescimento do número de veículos em circulação no país gera diversos inc
 \item[AM] \textit{Amplitude Modulation}
 \item[ASK] \textit{Amplitude-Shift Keying}
 \item[BW] \textit{Bandwidth}
+\item[CdS] \textit{Sulfeto de Cádimo}
 \item[CHIRP] \textit{Compressed High Intensity Radar Pulses}
 \item[CoAP] \textit{Constrained Application Protocol}
 \item[CPS] \textit{Cyber Physical Systems}
@@ -224,7 +225,7 @@ O crescimento do número de veículos em circulação no país gera diversos inc
 \item[SF] \textit{Spreading Factor}
 \item[SH] \textit{Sample and Hold}
 \item[WSN]	\textit{Wireless Sensor Networks}
-% \item[CdS] Sulfeto de Cádimo
+
 
 
 }
@@ -338,9 +339,7 @@ Dessa forma, para que cidades inteligentes ou “infraestruturas em rede para me
 
 Neste contexto, pode-se imaginar como uma possível solução deste problema o uso de uma rede de sensores, onde o objetivo seja indicar de forma automatizada a disponibilidade das vagas monitoradas, e com isso contribuir diretamente na informatização das cidades. No entanto, uma implementação robusta destas redes é um grande desafio, pois são sensíveis a diversos fatores como a necessidade de empregar fontes de alimentação que disponibilizem energia durante longos períodos de tempo; proteção dos elementos perceptores, que podem não ser resistentes à água ou altas e baixas temperaturas, por exemplo; robustez e segurança na comunicação para que se tenha integridade dos dados; entre outros aspectos que impedem um desenvolvimento mais acelerado destes sistemas \cite{puccinelli2005wireless}. 
 
-Com isso, a cada ano estão surgindo soluções no campo de IoT para os complicadores anteriormente citados. A tecnologia de comunicação sem fio LoRa é um bom exemplo por ser recente e ter como objetivo contribuir na implementação de \textit{wireless sensor networks} (WSN) de baixo consumo de energia e longo alcance de transmissão. Características como estas são essenciais para que iniciativas baseadas em redes LoRaWAN, como a Digital Living Lab, situada em Wollongong na Austrália, sejam realizadas e possam colaborar com projetos de impacto urbano e social \cite{site:dll}. 
-
-% de modo que as pessoas da região entendam e possam contribuir no desenvolvimento de aplicações que ajudem na transformação de cidades mais inteligentes. Dessa forma, projetos que auxiliem de alguma forma a comunidade local são incentivados, como por exemplo a implantação de uma rede de sensores sem fio que possa mapear os hidrantes da cidade, ou possíveis pontos suscetíveis a deslizamentos de terra, e com isso ser útil para serviços de emergência.
+Com isso, a cada ano estão surgindo soluções no campo de IoT para os complicadores anteriormente citados. A tecnologia de comunicação sem fio LoRa é um bom exemplo por ser recente e ter como objetivo contribuir na implementação de \textit{wireless sensor networks} (WSN) de baixo consumo de energia e longo alcance de transmissão. Características como estas são essenciais para que iniciativas baseadas em redes LoRaWAN, como a Digital Living Lab, situada em Wollongong na Austrália, sejam realizadas e possam colaborar com projetos de impacto urbano e social \cite{site:dll}. Além disso, pode-se citar o projeto de extensão extremamente útil aos estudantes entitulado BUFSM, que monitora em tempo real a posição do ônibus intracampus da Universidade Federal de Santa Maria \cite{bufsm-site}.
 
 A partir disso, este trabalho de conclusão de curso tem a finalidade de abordar temas como WSN, comunicação em radiofrequência, tecnologia LoRa, sensores de luminosidade e propor a implementação de um protótipo de uma rede de sensores sem fio de baixo custo, afim de monitorar o estado de vagas de um estacionamento ao ar livre. Para tanto, serão usados em conjunto sensores LDR e também módulos de comunicação de radiofrequência.
 
@@ -1011,13 +1010,13 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
           \label{table:pull-down}
     \end{table}
     
-    Dessa forma, ainda que o resistor de 10k$\Omega$ tenha um consumo teórico máximo cinco vezes maior que o de 100k$\Omega$, a precisão para casos de menor luminosidade é essencial para distinguir se determinada vaga está ou não ocupada, e portanto o seleciona para a aplicação.
+    Dessa forma, mesmo que o resistor de 10k$\Omega$ tenha um consumo teórico máximo cinco vezes maior que o de 100k$\Omega$, a precisão para casos de menor luminosidade é essencial para distinguir se determinada vaga está ou não ocupada, e portanto o seleciona para a aplicação.
     
     \subsubsection{Leitura do sensor}
     Nesta etapa é realizada a coleta de dados que indicam o estado atual das vagas. Para isso é utilizado o conversor A/D do microcontrolador, realizando medições do sensor LDR. Como pode ser visto no Apêndice \ref{apendice:sensor-nodes-code}, é feita uma média de quinhentas medidas de luminosidade para aumentar a assertividade da presença ou não de um veículo no local.
     
     \subsubsection{Transmissão dos dados}
-    Após a definição de presença ou ausência de veículo sobre a vaga, são enviadas mensagens com essa informação ao \textit{sink node}. Para tanto, foi empregado o módulo MX-FS-03V que opera em 315MHz e utiliza modulação ASK para comunicação de dados. Vale ressaltar que devido a este dispositivo ser apenas emissor, não é possível receber confirmação (ACK) de recebimento dos pacotes por parte da central. Após a transmissão do pacote o sistema volta ao modo de baixo consumo.
+    Após a definição de presença ou ausência de veículo sobre a vaga, são enviadas mensagens com essa informação ao \textit{sink node}, transmitindo também a identificação do nó transmissor. Para tanto, foi empregado o módulo MX-FS-03V que opera em 315MHz e utiliza modulação ASK para comunicação de dados. Vale ressaltar que devido a este dispositivo ser apenas emissor, não é possível receber confirmação (ACK) de recebimento dos pacotes por parte da central. Após a transmissão do pacote o sistema volta ao modo de baixo consumo.
     
     \subsection{Projeto do \textit{sink node}}
     A central deste sistema foi projetada com o intuito de disponibilizar as informações recebidas dos \textit{sensor nodes} para a aplicação. Para encaminhar os dados à aplicação foi selecionada a tecnologia LoRa por dois motivos: aproveitar a disponibilidade de acesso a um \textit{gateway} já instalado sobre a reitoria da UFSM e também devido à capacidade de transmissão de dados em longas distâncias, permitindo que estacionamentos em áreas remotas, como em alguns lugares da universidade, pudessem ser monitorados sem a necessidade de roteadores, caso fosse utilizado Wi-Fi, por exemplo. Além disso, por utilizar uma faixa de frequência não licenciada, esta tecnologia se tornou ainda mais atrativa. E por fim, é possível expandir este sistema sem a necessidade de reprojetá-lo para comportar mais estacionamentos, vide a facilidade de se obter dados de dispositivos LoRa cadastrados na plataforma \textit{The Things Network}. A operação deste sistema está brevemente descrita no fluxograma da Figura \ref{fig:flux-sink-node}.
@@ -1476,6 +1475,8 @@ Além disso, foi elucidado através do Gráfico \ref{graph:autonomias} a relaç�
 Ao fim do desenvolvimento deste trabalho, pode-se observar que a assertividade do sensor LDR nesta aplicação foi muito positiva. Ainda que seja um componente simples e de baixíssimo custo, teve-se uma taxa de acerto nas medidas de 67\% no pior caso (em que veículos estão mal estacionados e ocupam duas vagas ao mesmo tempo), e chegando a 93\% nas situações de estacionamento correto. 
 
 Já o sistema de comunicação utilizado entre os nós sensores e nó central, que assim como os outros componentes foi escolhido devido ao baixo custo e praticidade de desenvolvimento dos testes, apresentou um resultado muito ruim. Um raio de cobertura máximo de 4 metros, mesmo tendo sido testados dois tipos diferentes de antena, demonstra a baixa qualidade destes componentes. Segundo a especificação dos transmissores, é possível obter maior distância nas transmissões caso fosse utilizado uma tensão superior à de alimentação do sistema (4.5V), implicando na necessidade de utilização de conversores de amplificação (\textit{boost converter}), e consequentemente redução na autonomia do circuito. Dessa forma, fica claro que a escolha destes componentes, baseando-se apenas na redução de custos, foi equivocada por não trazer a qualidade necessária para tornar o sistema de comunicação robusto.
+
+\section{TRABALHOS FUTUROS}
 
 % Entretanto, ainda é possível obter dados de até 3 vagas por parte do \textit{sink node}, o que propicia o tão almejado baixo custo, pois dessa forma teríamos o maior custo ainda em apenas um dos nós.
 
