@@ -1165,7 +1165,16 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     Inicialmente foi gravado o \textit{firmware} na placa Arduino Nano, através da interface USB. O código desenvolvido utiliza três bibliotecas: Low-Power, RCSwitch e Arduino-LMIC. A primeira, assim como nos nós sensores, foi empregada com o intuito de reduzir o consumo de energia; a segunda para recebimento dos dados vindos dos \textit{sensor nodes}; e a terceira é uma modificação da biblioteca IBM LMIC para transmissão de dados via o protocolo LoRaWAN. Foram selecionadas duas configurações muito importantes para o correto funcionamento do módulo LoRa: a primeira foi a seleção de frequência central de operação, definida como 915MHz, e a outra é o fator de espalhamento configurado com o valor de 12, afim de obter maior qualidade nas transmissões.
     
     \subsection{Prototipagem}
-    Os circuitos foram implementados em \textit{protoboard} para realização dos testes. Depois, com o sistema já testado, soldou-se os componentes em placas ilhadas (Figuras \ref{} e \ref{}).
+    Os circuitos foram implementados em \textit{protoboard} para realização dos testes. Depois, com o sistema já testado, soldou-se os componentes do \textit{sensor node } em uma placa ilhada (Figura \ref{fig:sensor-node-pcb}). Os esquemáticos dos circuitos estão disponíveis nos Apêndices \ref{apendice:sensor-node-sch} e \ref{apendice:sink-node-sch}.
+    
+    \begin{figure}[ht]
+ 	    \caption{\label{exepretex} Nó sensor em placa ilhada}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figuras/sensor-node-pcb.jpg}
+        \vspace{\baselineskip} %%% linha em branco para atendender a norma
+            \fonte{Autor (2018)}
+        \label{fig:sensor-node-pcb}
+    \end{figure}
     
     \subsection{Configuração do servidor de rede TTN}
     Nesta etapa é realizada a criação e configuração da interface de comunicação entre os dados vindos dos nós sensores, e a aplicação final. Dessa forma, primeiramente deve-se criar um usuário no sistema, e depois criar e configurar um dispositivo em ''Console'' na seção \textit{Applications} (Figura \ref{fig:add-app-ttn}). As configurações necessárias são as seguintes: 
@@ -1174,7 +1183,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     \begin{figure}[ht]
  	    \caption{\label{exepretex} Criação de aplicação na TTN}
         \centering
-        \includegraphics[width=0.8\textwidth]{figuras/teste.png}
+        \includegraphics[width=0.8\textwidth]{figuras/create-app-ttn.png}
         \vspace{\baselineskip} %%% linha em branco para atendender a norma
             \fonte{Autor (2018)}
         \label{fig:add-app-ttn}
@@ -1332,7 +1341,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     \end{table}
     
     \subsubsection{Assertividade do sensor}
-    Com base nas medidas de nível de intensidade luminosa, foi avaliada a precisão do sensor em indicar o estado de uma vaga escolhida aleatoriamente no mesmo estacionamento. Assim como nos testes anteriores, foram realizadas 10 medidas por vaga, nos mesmos horários, porém em dias diferentes. Os resultados obtidos estão descritos na Tabela \ref{table:assertividade-ldr}. Vale ressaltar que em todos os testes citados até agora, os sensores estavam dispostos no centro das vagas, e os carros estavam estacionados de maneira correta, ou seja, ocupando apenas a própria vaga e consequentemente produzindo sombra sobre o circuito. Entretanto, há sempre a possibilidade de um veículo estacionar indevidamente e ocupar duas vagas, por exemplo. Diante disso, foi verificado que nestas situações o índice de luminosidade indicava um valor próximo ao de uma vaga disponível, pois o sensor estava mais exposto à claridade. Em situações como esta, o sensor apresentou uma taxa de acerto máxima de apenas 67\%. As Figuras \ref{fig:ocupada} e \ref{fig:disponivel} mostram o circuito em operação normal, e a Figura \ref{fig:mal-estacionado} quando um veículo está mal estacionado.
+    Com base nas medidas de nível de intensidade luminosa, foi avaliada a precisão do sensor em indicar o estado de uma vaga escolhida aleatoriamente no mesmo estacionamento. Assim como nos testes anteriores, foram realizadas 10 medidas por vaga, nos mesmos horários, porém em dias diferentes. Os resultados obtidos estão descritos na Tabela \ref{table:assertividade-ldr}. Vale ressaltar que em todos os testes citados até agora, os sensores estavam dispostos no centro das vagas, e os carros estavam estacionados de maneira correta, ou seja, ocupando apenas a própria vaga e consequentemente produzindo sombra sobre o circuito. Entretanto, há sempre a possibilidade de um veículo estacionar indevidamente e ocupar duas vagas, por exemplo. Diante disso, foi verificado que nestas situações o índice de luminosidade indicava um valor próximo ao de uma vaga disponível, pois o sensor estava mais exposto à claridade. Em situações como esta, o sensor apresentou uma taxa de acerto máxima de apenas 73\%. As Figuras \ref{fig:ocupada} e \ref{fig:disponivel} mostram o circuito em operação normal, e a Figura \ref{fig:mal-estacionado} quando um veículo está mal estacionado.
     
     \begin{table}[ht]
          \centering
@@ -1372,7 +1381,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     \begin{figure}[ht]
      	    \caption{\label{exepretex} Teste em uma vaga ocupada}
             \centering
-            \includegraphics[width=0.6\textwidth]{figuras/ocupada.png}
+            \includegraphics[width=0.8\textwidth]{figuras/ocupada.png}
             \vspace{\baselineskip} %%% linha em branco para atendender a norma
                 \fonte{Autor (2018)}
             \label{fig:ocupada}
@@ -1381,7 +1390,7 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     \begin{figure}[ht]
      	    \caption{\label{exepretex} Teste em uma vaga disponível}
             \centering
-            \includegraphics[width=0.6\textwidth]{figuras/disponivel.jpg}
+            \includegraphics[width=0.8\textwidth]{figuras/disponivel.jpg}
             \vspace{\baselineskip} %%% linha em branco para atendender a norma
                 \fonte{Autor (2018)}
             \label{fig:disponivel}
@@ -1390,14 +1399,14 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
     \begin{figure}[ht]
      	    \caption{\label{exepretex} Teste com carro mal estacionado}
             \centering
-            \includegraphics[width=0.6\textwidth]{figuras/mal-estacionado.jpg}
+            \includegraphics[width=0.8\textwidth]{figuras/mal-estacionado.jpg}
             \vspace{\baselineskip} %%% linha em branco para atendender a norma
                 \fonte{Autor (2018)}
             \label{fig:mal-estacionado}
     \end{figure}
     
     \subsection{Comunicação entre \textit{sensor node} e \textit{sink node}}
-    Para verificar a efetividade das transmissões dos nós sensores ao nó central, foram realizados testes em vagas ocupadas e vagas disponíveis. Assim como nas medições anteriores, o circuito foi inserido no centro das vagas (Figura \ref{}). Como os rádios utilizados não implementam \textit{acknowledgment} nas transmissões, então foi definido um teste baseado em um contador de transmissões. Isto é, o \textit{sensor node} incrementa uma variável a cada tentativa de comunicação (com sucesso ou não, pois não há como saber se houve sucesso por parte do transmissor) e a envia ao \textit{sink node}, de modo que se possa avaliar a quantia de transmissões com sucesso (Tabela \ref{table:sensor-to-sink}).
+    Para verificar a efetividade das transmissões dos nós sensores ao nó central, foram realizados testes em vagas ocupadas e vagas disponíveis. Assim como nas medições anteriores, o circuito foi inserido no centro das vagas. Como os rádios empregados não utilizam \textit{acknowledgment}, então foi definido um teste baseado em um contador de transmissões. Isto é, o \textit{sensor node} incrementa uma variável a cada tentativa de comunicação (com sucesso ou não, pois não há como saber se houve sucesso por parte do transmissor) e a envia ao \textit{sink node}, de modo que se possa avaliar a quantia de transmissões com sucesso (Tabela \ref{table:sensor-to-sink}). Observou-se que acima de 4 metros, a comunicação começou a apresentar comportamento extremamente instável, e portanto descartou-se distâncias superiores à 4 metros entre nós sensores e nó central.
     
     \begin{table}[ht]
          \centering
@@ -1406,19 +1415,19 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
              \hline
               Distância [m] & \begin{tabular}{@{}c@{}}Taxa de sucesso \\ nas transmissões [\%]\end{tabular} \\ 
              \hline
-             1 & 80\\
+             1 & 90\\
              \hline
-             1.5 & 80\\
+             1.5 & 83\\
              \hline
-             2 & 80\\
+             2 & 77\\
              \hline
-             2.5 & 80\\
+             2.5 & 68\\
              \hline
-             3 & 80\\
+             3 & 61\\
              \hline
-             3.5 & 80\\
+             3.5 & 56\\
              \hline
-             4 & 80\\
+             4 & 45\\
              \hline
          \end{tabular}
          \vspace{\baselineskip} %%% linha em branco para atender a norma
@@ -1426,8 +1435,39 @@ Neste capítulo é descrito o sistema num todo, desde a definição dos componen
           \label{table:sensor-to-sink}
     \end{table}
     
-    \subsection{Comunicação entre \textit{sink node} e \textit{gateway} LoRa}
+    \subsection{Comunicação entre \textit{sink node} e TTN}
     Nesta etapa foram colocados em operação estes dois sistemas. Visto que já existem resultados relacionados ao raio de cobertura do sistema LoRa, disponível em \cite{tcc:matheus-neis}, o objetivo destes testes foi apenas verificar a capacidade do \textit{sink node} em encaminhar as informações sobre o número de vagas disponíveis no tempo esperado. Para isso, o \textit{sink node} foi disposto no mesmo estacionamento ao lado da Reitoria da UFSM, enviando mensagens periódicas à cada 5 segundos (pior caso) \textbf{ADICIONAR IMAGEM}. Para observar o recebimento de dados transmitidos pelo nó central, foi utilizado o monitor de dados da TTN (Figura \ref{}).
+    
+    \subsection{Comunicação com a aplicação final}
+    Por fim, avaliou-se a conexão entre a aplicação final e a TTN. Para isso, foram executados os clientes MQTT no \textit{back-end} e \textit{front-end}, de modo a visualizar a entrada de dados transferidos pelo servidor de rede, através do protocolo \textit{MQTT over WebSockets} (Figuras \ref{} e \ref{fig:front-end}). O teste consistiu na transmissão de 100 mensagens pelo \textit{sink node}, através do protocolo LoRaWAN. Como mostra a Tabela \ref{table:ttn-to-app}, quase todos os pacotes foram entregues à aplicação.
+    
+    \textbf{ADICIONAR IMAGEM DO RECEBIMENTO DE DADOS NO BACKEND}
+    
+    % ##### Teste de recebimento dos dados no front
+    \begin{figure}[ht]
+     	    \caption{\label{exepretex} Teste de recebimento dos dados no \textit{front-end}}
+            \centering
+            \includegraphics[width=0.8\textwidth]{figuras/frontend-test.png}
+            \vspace{\baselineskip} %%% linha em branco para atendender a norma
+                \fonte{Autor (2018)}
+            \label{fig:front-end}
+    \end{figure}
+    
+    % ##### Tabela de resultados
+    \begin{table}[ht]
+         \centering
+         \caption{Testes de entrega de pacotes à aplicação final}
+         \begin{tabular}{ c c }
+             \hline
+             \begin{tabular}{@{}c@{}}Número \\ de transmissões\end{tabular} & \begin{tabular}{@{}c@{}}Transmissões \\ com sucesso [\%]\end{tabular} \\
+             \hline
+             100 & 90\\
+             \hline
+         \end{tabular}
+         \vspace{\baselineskip} %%% linha em branco para atender a norma
+          \fonte{Autor (2018)}
+          \label{table:ttn-to-app}
+    \end{table}
     
     
 \section{AVALIAÇÃO DOS RESULTADOS}
@@ -1450,7 +1490,9 @@ Com os dados obtidos nos testes da seção anterior, foi possível analisar par�
           \label{table:autonomia}
     \end{table}
 
-Além disso, foi elucidado através do Gráfico \ref{graph:autonomias} a relação direta entre a autonomia do sistema e o tempo em modo de baixo consumo. Fica claro, portanto que quanto mais vezes o sistema sair do modo \textit{low power}, ou menos tempo permanecer neste modo, maior será o consumo energético e consequentemente menor a autonomia. Esse dado é muito importante, pois nesta aplicação é necessário que se tenha um balanço entre a autonomia e a rapidez na detecção do estado de uma vaga, pois isso impacta diretamente nos possíveis custos relacionados à substituição das baterias, e também na disponibilização de informações em tempo real da aplicação final. 
+Além disso, foi elucidado através do Gráfico \ref{graph:autonomias} a relação direta entre a autonomia do sistema e o tempo em modo de baixo consumo. Fica claro, portanto que quanto mais vezes o sistema sair do modo \textit{low power}, ou menos tempo permanecer neste modo, maior será o consumo energético e consequentemente menor a autonomia. Esse dado é muito importante, pois nesta aplicação é necessário que se tenha um balanço entre a autonomia e a rapidez na detecção do estado de uma vaga, pois isso impacta diretamente nos possíveis custos relacionados à substituição das baterias, e também na disponibilização de informações em tempo real da aplicação final. Neste projeto, o tempo de 30 segundos foi definido previamente, levando em conta que alterações no estado de uma vaga duram pelo menos esta quantia de tempo.
+
+Nos testes de comunicação, pode-se observar que os nós sensores e o nó central devem estar distantes em no máximo 4 metros para que haja comunicação. Diferentemente destes testes, na avaliação de transferência de dados do \textit{sink node} à aplicação obteve-se bons resultados, sendo possível obter os dados da TTN em tempo real em 90\% das transmissões.
 
 \begin{grafico}[ht]
      	    \caption{\label{exepretex} Relação entre autonomia e tempo em modo de baixo consumo}
@@ -1470,17 +1512,23 @@ Além disso, foi elucidado através do Gráfico \ref{graph:autonomias} a relaç�
             \label{graph:ldr-aval}
     \end{grafico}
 
-
 \chapter{CONCLUSÕES}
-Ao fim do desenvolvimento deste trabalho, pode-se observar que a assertividade do sensor LDR nesta aplicação foi muito positiva. Ainda que seja um componente simples e de baixíssimo custo, teve-se uma taxa de acerto nas medidas de 67\% no pior caso (em que veículos estão mal estacionados e ocupam duas vagas ao mesmo tempo), e chegando a 93\% nas situações de estacionamento correto. 
+Ao fim do desenvolvimento deste trabalho, pode-se observar que a assertividade do sensor LDR nesta aplicação foi muito positiva. Ainda que seja um componente simples e de baixíssimo custo, teve-se uma taxa de acerto nas medidas de 73\% no pior caso (em que veículos estão mal estacionados e ocupam duas vagas ao mesmo tempo), e chegando a 93\% nas situações de estacionamento correto. 
 
 Já o sistema de comunicação utilizado entre os nós sensores e nó central, que assim como os outros componentes foi escolhido devido ao baixo custo e praticidade de desenvolvimento dos testes, apresentou um resultado muito ruim. Um raio de cobertura máximo de 4 metros, mesmo tendo sido testados dois tipos diferentes de antena, demonstra a baixa qualidade destes componentes. Segundo a especificação dos transmissores, é possível obter maior distância nas transmissões caso fosse utilizado uma tensão superior à de alimentação do sistema (4.5V), implicando na necessidade de utilização de conversores de amplificação (\textit{boost converter}), e consequentemente redução na autonomia do circuito. Dessa forma, fica claro que a escolha destes componentes, baseando-se apenas na redução de custos, foi equivocada por não trazer a qualidade necessária para tornar o sistema de comunicação robusto.
 
+Por fim, pode-se afirmar que a utilização da tecnologia LoRa se mostrou eficaz na entrega de dados à aplicação. Entretanto, deve-se elucidar que essa eficácia é dependente de múltiplos fatores: o primeiro, é o correto funcionamento dos módulos de transmissão e recepção; depois, é necessário que o servidor de rede esteja estável, de modo que os dados possam ser transferidos à aplicação; e por último, os \textit{brokers} que fazem a interface do servidor de rede e dos clientes da aplicação também devem estar estáveis. 
+
+
 \section{TRABALHOS FUTUROS}
+Como sugestões para continuidade e futuras melhorias deste projeto, pode-se primeiramente ressaltar que devido aos resultados ruins na comunicação entre \textit{sensor nodes} e \textit{sink node}, podem ser utilizadas outras abordagens nesta etapa. Ou seja, ainda que alavanquem o preço unitário dos nós, empregar módulos de rádio mais robustos, por exemplo, seria fundamental para maior qualidade da aplicação proposta. Outra possibilidade, seria manter os módulos utilizados, mas utilizar outra topologia, como uma rede em malha, de modo que se propague a informação entre os nós sensores até atingir o nó central.
 
-% Entretanto, ainda é possível obter dados de até 3 vagas por parte do \textit{sink node}, o que propicia o tão almejado baixo custo, pois dessa forma teríamos o maior custo ainda em apenas um dos nós.
+Quanto à autonomia do sistema, sugere-se o uso de um microcontrolador desenvolvido com foco em \textit{low power}, como os MSP430 da Texas Instruments. Além disso, tipicamente estes controladores de baixo consumo operam em faixas de tensão menores, como 3.3V, o que possibilitaria como outra vantagem a redução de área do circuito.
 
-        
+No quesito detecção das vagas, o uso de mais de um sensor de luminosidade surge como opção, pois dessa forma pode-se obter maior precisão nas medidas ao se combinar dados de luminosidade de diferentes fontes. Isto é, relacionando medidas de luminosidade lateral e superior das vagas, por exemplo, seria possível avaliar se o veículo estava mal estacionado ou não.
+
+Por fim, em relação à aplicação final, sugere-se o estudo da utilização de algoritmos de aprendizado de máquina para melhorias na assertividade em indicar qual o estado atual das vagas. Neste caso, combinar o histórico de medidas de luminosidade com a situação climática do momento das medidas em questão, por exemplo, seria possível treinar uma rede neural que obtivesse resultados baseados em múltiplos parâmetros. Outro ponto deste tópico, seria o desenvolvimento de melhorias na interface com o usuário, onde este pudesse selecionar o local de destino e acompanhar as vagas daquela região.
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % % % % FIM DAS PAGINAS TEXTUAIS % % % % % % % % % % % % % % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
